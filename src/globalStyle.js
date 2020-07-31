@@ -11,6 +11,10 @@ body {
   font-weight:300;
   line-height:1.5;
   font-size: 1.75vw;
+  h1{
+    font-size:2.75rem;
+    font-weight:400;
+  }
 }
 
 code {
