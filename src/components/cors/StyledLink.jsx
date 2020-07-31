@@ -1,5 +1,5 @@
-import styled from "styled-components/macro";
-import { Link } from "react-router-dom";
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 
 const StyledLink = styled(Link)`
@@ -7,15 +7,11 @@ const StyledLink = styled(Link)`
   text-decoration:none;
   cursor: pointer;
   text-align: center;
-  /* width: ${props => props.w || "100%"}; */
+  padding: 0 1rem;
   &:hover{
     text-decoration:none;
-    /* color:${props => props.theme.global.colors.secondary}; */
-  }
-  &:focus {
-    /* color:${props => props.theme.global.colors.secondary};    */
-    /* border-bottom: 1px solid ${props => props.theme.global.colors.primary}; */
+    color: #07BEB8;
   }
 `;
 
-export default StyledLink;
+export default StyledLink
