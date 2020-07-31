@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Menu from './components/menu'
 import Burger from './components/burger'
+import Footer from './components/footer'
 import { useOnClickOutside } from './hooks'
 import Home from './components/pages/home'
 import WhoAmI from './components/pages/whoAmI'
@@ -33,6 +34,7 @@ function App() {
           <Route exact path="/prices" component={PricesAndOptions} />
           <Route exact path="/contact" component={ContactMe} />
         </Switch>
+        <Footer />
       </Router>
 
     </div>

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { device } from "./ResponsiveSettings"
+import { device } from './ResponsiveSettings'
 
 const StyledMenu = styled.nav`
   display: flex;
@@ -26,9 +26,9 @@ const StyledMenu = styled.nav`
     color: white;
     text-decoration: none;
     transition: color 0.3s linear;
+    
     &:hover {
       color: #07BEB8;
-      /* color: #FFE66D; */
     }
   }
     
