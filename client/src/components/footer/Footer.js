@@ -22,4 +22,5 @@ const Wrapper = styled.div`
   height: 10vh;
   background-color: #03071e;
   color:white;
+  font-size: 1.5rem;
 `

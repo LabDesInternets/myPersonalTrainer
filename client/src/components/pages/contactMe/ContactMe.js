@@ -11,20 +11,20 @@ const ContactMe = () => {
       <h1>Contact</h1>
       <StyledForm action="" method="post">
         <FormWrapper>
-          <label for="fName">Prénom *</label>
-          <StyledInput type="text" id="fName" name="firstname" />
 
-          <label for="lName">Nom *</label>
-          <StyledInput type="text" id="lName" name="lastname" />
+          <StyledInput type="text" id="fName" name="firstname" placeholder="Prénom" />
 
-          <label for="email">Adresse email *</label>
-          <StyledInput type="text" id="email" name="email" />
 
-          <label for="subject">Sujet *</label>
-          <StyledInput type="text" id="subject" name="subject" />
+          <StyledInput type="text" id="lName" name="lastname" placeholder="Nom" />
 
-          <label for="message">Message *</label>
-          <STextArea id="message" name="message"></STextArea>
+
+          <StyledInput type="text" id="email" name="email" placeholder="Adresse email" />
+
+
+          <StyledInput type="text" id="subject" name="subject" placeholder="Sujet" />
+
+
+          <STextArea id="message" name="message" placeholder="Message..."></STextArea>
         </FormWrapper>
         <div>
           <StyledButton type="submit">Envoyer</StyledButton>
@@ -41,7 +41,7 @@ const Wrapper = styled.div`
   flex-direction:column;
   justify-content:center;
   align-items: center;
-  padding: 4rem 1.5rem;
+  padding: 4rem 2rem;
   font-size: 1.5rem;
 
 @media ${device.laptop} {
@@ -78,7 +78,7 @@ height:10rem;
 border: 1px solid gray;
 border-radius:5px;
 padding: 1rem;
-margin: 1rem 0;
+margin-top: 2rem;
 font-size:1.25rem;
 
 &:focus {

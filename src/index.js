@@ -1,21 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import "@csstools/normalize.css";
-import "reset-css";
-import App from './App';
-import GlobalStyle from './globalStyle'
-import * as serviceWorker from './serviceWorker';
+require('dotenv').config();
+const logger = require('./helpers/logger');
 
-ReactDOM.render(
-  <React.StrictMode>
-    <GlobalStyle />
-    <App />
+const server = require('./server');
 
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const port = process.env.PORT || 8000;
+const env = process.env.NODE_ENV || 'development';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+server.listen(port, () => {
+  logger.info(`Server is listening on port ${port}`);
+  logger.info(`Current environment is ${env}`);
+});
