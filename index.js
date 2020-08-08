@@ -1,5 +1,5 @@
 require('dotenv').config();
-const logger = require('./helpers/logger');
+const logger = require('./src/helpers/logger');
 
 const server = require('./server');
 
