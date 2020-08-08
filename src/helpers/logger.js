@@ -11,7 +11,7 @@ const logger = createLogger({
     format.splat(),
     format.json()
   ),
-  defaultMeta: { service: 'Jud_API' },
+  defaultMeta: { service: 'MPT_API' },
   transports: [
     // - Write to all logs with level `info` and below to `quick-start-combined.log`.
     // - Write all logs error (and below) to `quick-start-error.log`.

@@ -4,7 +4,7 @@ const StyledInput = styled.input`
   height: 2rem;
   font-family: 'Dosis';  
   font-size: 1.25rem;
-  padding-top: 1rem;
+  padding: 1rem 0;
   margin: 0.5rem 0;
   border: none; 
   color: black;
