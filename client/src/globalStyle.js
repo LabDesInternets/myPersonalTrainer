@@ -15,6 +15,9 @@ body {
     font-size:2.75rem;
     font-weight:400;
   }
+  svg {
+    cursor: pointer;
+  }
 }
 
 code {

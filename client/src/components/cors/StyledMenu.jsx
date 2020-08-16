@@ -28,7 +28,7 @@ const StyledMenu = styled.nav`
     transition: color 0.3s linear;
     
     &:hover {
-      color: #07BEB8;
+      color: #0096c7;
     }
   }
     
