@@ -13,7 +13,6 @@ const Category = ({ cat, element }) => {
           <Wrapper>
             <h1>{cat.title}</h1>
             <p>{cat.content1}</p>
-            <p>{cat.content2}</p>
             <StyledLink to={cat.linkTo}><StyledButton>En savoir plus</StyledButton></StyledLink>
           </Wrapper>
           <ImageWrapper bgImg={cat.img}></ImageWrapper>
@@ -24,7 +23,6 @@ const Category = ({ cat, element }) => {
             <Wrapper>
               <h1>{cat.title}</h1>
               <p>{cat.content1}</p>
-              <p>{cat.content2}</p>
               <StyledLink to={cat.linkTo}><StyledButton>En savoir plus</StyledButton></StyledLink>
             </Wrapper>
           </Section>

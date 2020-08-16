@@ -58,12 +58,12 @@ const Wrapper = styled.nav`
   }
 
     ${props =>
-    props.cl == 'navbar' &&
+    props.cl === 'navbar' &&
     css`
       background: transparent;
     `}
     ${props =>
-    props.cl == 'navbarSticky' &&
+    props.cl === 'navbarSticky' &&
     css`
       width:100vw;
       background: #03071e;

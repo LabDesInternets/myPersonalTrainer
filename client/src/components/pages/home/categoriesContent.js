@@ -5,8 +5,10 @@ import pricesRaw from '../../../assets/images/pricesRaw.jpg'
 const categories = {
   about: {
     title: 'Qui suis-je ?',
-    content1: `Je m'appelle Raphael, j'ai 29 ans et je suis diplomé d'un BPJEPS Activités de la forme.`,
-    content2: `Passionné de tennis et de football depuis mon plus jeune âge, j'ai plus tard découvert le monde du fitness et de la musculation, et j'en ai fait mon métier.`,
+    content1: `Passionné de sport depuis l'enfance, avec notamment la pratique du football et du tennis en compétition, j'ai toujours cherché à donner le meilleur de moi même dans chaque discipline. Après avoir été éducateur en club de football et en club de tennis je me suis tourné vers la musculation et le fitness ...`,
+    content2: `Diplomé d'Etat depuis presque 1 an, j'accompagne mes clients avec la plus grande rigueur et le plus grand professionnalisme, qu'ils aient un objectif de perte de poids, de prise de muscle ou tout simplement de se remettre au sport. Passionné de tennis et de football depuis mon plus jeune âge, j'ai plus tard découvert le monde du fitness et de la musculation, et j'en ai fait mon métier.`,
+    content3: `Ma soif d'apprendre et de vous donner le meilleur me poussent à constamment développer mes compétences et me tenir au courant des dernières avancées dans le sport et la musculation en particulier.`,
+    content4: `Mes différentes expériences aussi bien au niveau de l'encadrement de personnes que de la pratique du sport me permettent de vous proposer un plan d'entraînement et un suivi personnalisé adapté à vos besoins, à vos attentes mais aussi à vos contraintes et emploi du temps.`,
     linkTo: `./about`,
     img: whoAmI1400,
     bgPos: 'top'
