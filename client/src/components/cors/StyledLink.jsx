@@ -10,7 +10,7 @@ const StyledLink = styled(Link)`
   padding: 0 1rem;
   &:hover{
     text-decoration:none;
-    color: #07BEB8;
+    color: #0096c7;
   }
 `;
 

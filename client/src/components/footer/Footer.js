@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Instagram } from 'grommet-icons';
+import { Instagram, Facebook } from 'grommet-icons';
 import StyledLink from '../cors/StyledLink';
 
 
@@ -8,7 +8,8 @@ const Footer = () => {
   return (
     <Wrapper>
       <div>Retrouvez moi sur</div>
-      <StyledLink to='https://www.instagram.com/'><Instagram size='large' color='#07BEB8' /></StyledLink>
+      <StyledLink to='https://www.instagram.com/'><Instagram size='large' color='white' /></StyledLink>
+      <StyledLink to='https://www.facebook.com/'><Facebook size='large' color='white' /></StyledLink>
     </Wrapper>
   )
 }

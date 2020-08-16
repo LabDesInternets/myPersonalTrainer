@@ -1,6 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+
 const routes = require('./src/routes');
 const { errorLogger, errorHandler } = require('./src/middlewares');
 
@@ -9,6 +11,8 @@ const server = express();
 
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
+
+server.use('/api', cors());
 
 server.use('/api', routes);
 server.use('/api/images', express.static('src/assets'));

@@ -45,9 +45,10 @@ export const StyledBurger = styled.button`
   }
 
   @media ${device.laptop} {
-    div{
+    display:none;
+    /* div{
       background: black; 
-    }
+    } */
    
   }
 `;

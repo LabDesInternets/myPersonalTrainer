@@ -1,12 +1,10 @@
 import styled, { css } from "styled-components/macro";
 
 const StyledButton = styled.button`
-  /* background: #48CAE4; */
-  background: #07BEB8;
+  background: #0096c7;
   border-radius: 15px;
   width: ${props => props.w || "11rem"};
-  /* border: 2px solid #48CAE4; */
-  border: 2px solid #07BEB8;
+  border: 2px solid #0096c7;
   color: white;
   margin: 0.5rem 1rem;
   padding: 0.5rem 0;
@@ -14,8 +12,7 @@ const StyledButton = styled.button`
   font-weight: 400;
   cursor: pointer;
   &&:hover {
-    /* background: #48CAE4; */
-    background: #07BEB8;
+    background: #0096c7;
     color: white;
   }
 

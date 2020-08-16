@@ -5,9 +5,9 @@ import StyledLink from '../../cors/StyledLink'
 import StyledButton from '../../cors/StyledButton'
 
 
-const Category = ({ cat }) => {
+const Category = ({ cat, element }) => {
   return (
-    <>
+    <div ref={element}>
       {cat.switchDisplay ? (
         <Section>
           <Wrapper>
@@ -29,7 +29,7 @@ const Category = ({ cat }) => {
             </Wrapper>
           </Section>
         )}
-    </>
+    </div>
   )
 }
 

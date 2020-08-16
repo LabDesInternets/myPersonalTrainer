@@ -7,10 +7,11 @@ import StyledLink from '../../cors/StyledLink'
 import Container from '../../cors/Container'
 import homeBanner from '../../../assets/images/homeBanner.jpg'
 import categories from './categoriesContent'
+import BlogHp from './BlogHp'
 
 
 
-const Home = () => {
+const Home = ({ element }) => {
   return (
     <div>
       <Container width='100vw' height='100vh'>
@@ -23,9 +24,12 @@ const Home = () => {
         </Banner>
       </Container>
 
-      <Category cat={categories.about}></Category>
+      <Category element={element} cat={categories.about}></Category>
       <Category cat={categories.services}></Category>
       <Category cat={categories.prices}></Category>
+
+      <BlogHp />
+
     </div >
   )
 }

@@ -1,16 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import "@csstools/normalize.css";
-import "reset-css";
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import "@csstools/normalize.css"
+import "reset-css"
+import App from './App'
 import GlobalStyle from './globalStyle'
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './serviceWorker'
+import BlogProvider from './context/BlogContext'
+import UserProvider from './context/UserContext'
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
-    <App />
-
+    <BlogProvider>
+      <UserProvider>
+        <App />
+      </UserProvider>
+    </BlogProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
