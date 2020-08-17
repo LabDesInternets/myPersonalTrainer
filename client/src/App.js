@@ -12,6 +12,9 @@ import PricesAndOptions from './components/pages/pricesAndOptions'
 import ContactMe from './components/pages/contactMe'
 import Admin from './components/pages/admin'
 import useSticky from './components/hooks/useSticky'
+import SignIn from './components/pages/SignIn'
+import SignUp from './components/pages/SignUp'
+import PrivateRoute from './components/HOC/PrivateRoute'
 
 
 function App() {
@@ -38,7 +41,9 @@ function App() {
           <Route path="/services" component={Services} />
           <Route path="/prices" component={PricesAndOptions} />
           <Route path="/contact" component={ContactMe} />
-          <Route path={`/${urlAdmin}`} component={Admin} />
+          <Route path="/signin" component={SignIn} />
+          <PrivateRoute path="/signup" component={SignUp} />
+          <PrivateRoute path={`/${urlAdmin}`} component={Admin} />
         </Switch>
         <Footer />
       </Router>

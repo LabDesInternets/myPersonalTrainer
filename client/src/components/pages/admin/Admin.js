@@ -1,11 +1,13 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import axios from 'axios'
 import { BlogContext } from '../../../context/BlogContext'
 import { UserContext } from '../../../context/UserContext'
 import Table from '../../cors/Table'
 import Container from '../../cors/Container'
-import { Edit, Add, Erase, Close } from 'grommet-icons';
+import StyledLink from '../../cors/StyledLink'
+import { Edit, Add, Erase, Close, Logout } from 'grommet-icons';
 import ArticleForm from './ArticleForm'
+import { useAuth } from '../../../context/AuthContext'
 
 const urlDeleteArticle = `/api/blog/articles/delete`
 
@@ -18,7 +20,9 @@ const Admin = () => {
   const [editMode, setEditMode] = useState(false)
   const [editArticleMode, setEditArticleMode] = useState(false)
   const [articleToEdit, setArticleToEdit] = useState("");
-  const refresh = () => window.location.reload()
+  const { setAuthToken } = useAuth()
+  const refresh = () => window.location.reload(false)
+
 
   const deleteArticle = async (articleId) => {
     try {
@@ -34,15 +38,19 @@ const Admin = () => {
     setEditArticleMode(true);
     setArticleToEdit(articleData);
   }
+  const logOut = async () => {
+    setAuthToken('');
+  }
 
   return (
     <Container padding="5rem 2rem" width="100vw">
-      <Container fD='row' width='18rem' jC='space-around'>
+      <Container fD='row' width='25rem' jC='space-around'>
         <div>Liste des articles du blog</div>
         <Add onClick={() => setAddMode(true)} size='medium' color='#FB3640' />
         <Edit onClick={() => setEditMode(true)} size='medium' color='#FB3640' />
         <Erase onClick={() => setDeleteMode(true)} size='medium' color='#FB3640' />
         <Close onClick={() => { setAddMode(false); setDeleteMode(false); setEditMode(false); setEditArticleMode(false) }} size='medium' color='#FB3640' />
+        <div><Logout onClick={() => logOut()} size='large' color='#0096c7' /></div>
       </Container>
       <div>
         {editMode && editArticleMode &&
@@ -55,10 +63,7 @@ const Admin = () => {
       </div>
       <Container fD='row' width='18rem' jC='space-around'>
         <div>Liste des utilisateurs</div>
-        <Add onClick={() => setAddMode(true)} size='medium' color='#FB3640' />
-        <Edit onClick={() => setEditMode(true)} size='medium' color='#FB3640' />
-        <Erase onClick={() => setDeleteMode(true)} size='medium' color='#FB3640' />
-        <Close onClick={() => { setAddMode(false); setDeleteMode(false); setEditMode(false); setEditArticleMode(false) }} size='medium' color='#FB3640' />
+        <StyledLink to='/signup'><Add size='medium' color='#FB3640' /></StyledLink>
       </Container>
       <div>
         <div>
