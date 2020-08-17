@@ -7,15 +7,18 @@ import GlobalStyle from './globalStyle'
 import * as serviceWorker from './serviceWorker'
 import BlogProvider from './context/BlogContext'
 import UserProvider from './context/UserContext'
+import AuthProvider from './context/AuthContext'
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
-    <BlogProvider>
-      <UserProvider>
-        <App />
-      </UserProvider>
-    </BlogProvider>
+    <AuthProvider>
+      <BlogProvider>
+        <UserProvider>
+          <App />
+        </UserProvider>
+      </BlogProvider>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

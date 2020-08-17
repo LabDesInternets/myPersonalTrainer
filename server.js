@@ -2,8 +2,11 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const passport = require('passport');
+const expressValidator = require('express-validator');
 
 const routes = require('./src/routes');
+require('./src/config/passport');
 const { errorLogger, errorHandler } = require('./src/middlewares');
 
 const server = express();
@@ -11,11 +14,20 @@ const server = express();
 
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
+server.use(expressValidator());
 
-server.use('/api', cors());
+server.use(passport.initialize());
+server.use(passport.session());
+server.use(
+  '/api',
+  cors({
+    exposedHeaders: ['Content-Length', 'xAuth']
+  })
+);
 
-server.use('/api', routes);
 server.use('/api/images', express.static('src/assets'));
+server.use('/api', routes);
+
 
 server.use(errorLogger);
 

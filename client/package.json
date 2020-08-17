@@ -19,7 +19,7 @@
     "reset-css": "^5.0.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.1.1",
-    "yup": "^0.29.3"
+    "yup": "^0.28.3"
   },
   "scripts": {
     "start": "react-scripts start",

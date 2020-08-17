@@ -6,7 +6,6 @@ import { device } from '../cors/ResponsiveSettings'
 
 const Navbar = (props) => {
   const { sticky } = props
-  console.log("props ", props)
   return (
     <div>
       <Wrapper cl={sticky ? "navbarSticky" : "navbar"}>
