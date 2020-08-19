@@ -26,15 +26,17 @@ export default ArticleCard
 const ArticleWrapper = styled(Container)`
   display:flex;
   flex-direction: column;
-  height:80vh;
+  flex-wrap: nowrap;
+  /* height:65vh; */
   align-items: center;
-  justify-content:center;
-  padding: 1rem;
+  justify-content:start;
+  padding: 3rem 1rem;
   p{
     font-size: 1.5rem;
   }
   @media ${device.laptop} {
     width:30vw;
+    height:65vh;
   }
 
 `
