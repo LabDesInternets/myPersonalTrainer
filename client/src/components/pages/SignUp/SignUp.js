@@ -8,6 +8,7 @@ import StyledLink from '../../cors/StyledLink'
 import StyledInput from '../../cors/StyledInput'
 import StyledForm from '../../cors/StyledForm'
 
+
 const UrlSignup = `/api/users/register`
 const urlAdmin = process.env.REACT_APP_ADMIN
 
@@ -24,12 +25,14 @@ const SignUp = props => {
       const response = await axios.post(UrlSignup, newUser)
       console.log(response)
       if (response.status === 201) setIsCreated(true)
+      console.log('is created', isCreated)
     } catch (error) {
       console.log('ooooops => ', error)
     }
   };
   if (isCreated) {
-    return <Redirect to={`/${urlAdmin}`} />;
+    // return <Redirect to={`/${urlAdmin}`} />;
+    props.history.push(`${urlAdmin}`)
   }
 
   return (

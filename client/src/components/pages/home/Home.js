@@ -19,7 +19,7 @@ const Home = ({ element }) => {
           <BannerContent>
             <h2>Raphael Coaching</h2>
             <p>Des entraînements sur-mesure qui vous permettront d'atteindre vos objectifs</p>
-            <StyledLink to="/services"><StyledButton>Découvrir</StyledButton></StyledLink>
+            <StyledLink to="/services"><StyledButton style={{ color: 'white' }}>Découvrir</StyledButton></StyledLink>
           </BannerContent>
         </Banner>
       </Container>
