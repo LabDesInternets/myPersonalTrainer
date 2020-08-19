@@ -8,6 +8,7 @@ import Container from '../../cors/Container'
 import homeBanner from '../../../assets/images/homeBanner.jpg'
 import categories from './categoriesContent'
 import BlogHp from './BlogHp'
+import BlogSlider from './BlogSlider'
 
 
 
@@ -27,8 +28,8 @@ const Home = ({ element }) => {
       <Category element={element} cat={categories.about}></Category>
       <Category cat={categories.services}></Category>
       <Category cat={categories.prices}></Category>
-
       <BlogHp />
+      <BlogSlider />
 
     </div >
   )

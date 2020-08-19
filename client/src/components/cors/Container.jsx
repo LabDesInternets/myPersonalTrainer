@@ -10,6 +10,7 @@ const Container = styled.div`
   width: ${props => props.width || "100%"};
   padding: ${props => props.padding || "0"};
   font-size: 1.5rem;
+  background-color: ${props => props.bgColor || "none"};
 `;
 
 export default Container;

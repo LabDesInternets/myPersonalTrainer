@@ -13,9 +13,11 @@ const BlogHp = () => {
 
   return (
     <Wrapper>
-      <h6>
-        Blog
+      <Container height='10vh' bgColor='#0096c7' width='100vw'>
+        <h6>
+          Blog
       </h6>
+      </Container>
       <ArticlesContainer>
         {articles && articles.map(article =>
           <ArticleCard key={article.id} article={article} />
@@ -39,12 +41,13 @@ const Wrapper = styled.div`
     font-size: 2rem;
   }
   @media ${device.laptop} {
-    padding: 2rem 2rem;
+    display:none;
   }
 `
 
 const ArticlesContainer = styled(Container)`
-  flex-direction: row;
+/* height:80vh; */
+  flex-direction: column;
   flex-wrap:nowrap;
   align-items: baseline;
 `
