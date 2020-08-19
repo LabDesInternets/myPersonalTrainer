@@ -20,7 +20,7 @@ const StyledMenu = styled.nav`
   
   a {
     font-size: 1.5rem;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     padding: 2rem 0;
     letter-spacing: 0.5rem;
     color: white;
