@@ -39,7 +39,7 @@ function App() {
         <Switch>
           <Route exact path="/" render={props => <Home {...props} element={element} />} />
           <Route path="/about" render={props => <WhoAmI {...props} element={element} />} />
-          <Route path="/services" component={Services} />
+          <Route path="/services" render={props => <Services {...props} element={element} />} />
           <Route path="/prices" render={props => <PricesAndOptions {...props} element={element} />} />
           <Route path="/contact" component={ContactMe} />
           <Route path="/signin" component={SignIn} />

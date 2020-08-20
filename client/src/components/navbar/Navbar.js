@@ -8,7 +8,7 @@ const Navbar = (props) => {
   const { sticky } = props
   return (
     <div>
-      <Wrapper cl={sticky ? "navbarSticky" : "navbar"}>
+      <Wrapper cl={sticky ? 'navbarSticky' : 'navbar'}>
         <NavContainer>
           <StyledLink to='./'>Accueil</StyledLink>
           <StyledLink to='./about'>Qui suis-je</StyledLink>

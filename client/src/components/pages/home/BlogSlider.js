@@ -61,6 +61,7 @@ p{
 }
 h6{
   font-size: 2rem;
+  color:white;
 }
 @media ${device.laptop} {
   display:flex;
