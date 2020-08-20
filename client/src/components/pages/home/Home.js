@@ -20,7 +20,7 @@ const Home = ({ element }) => {
           <BannerContent>
             <h2>Raphael Coaching</h2>
             <p>Des entraînements sur-mesure qui vous permettront d'atteindre vos objectifs</p>
-            <StyledLink to="/services"><StyledButton style={{ color: 'white' }}>Découvrir</StyledButton></StyledLink>
+            <StyledLink to="/services"><StyledButtonHp>Découvrir</StyledButtonHp></StyledLink>
           </BannerContent>
         </Banner>
       </Container>
@@ -28,6 +28,7 @@ const Home = ({ element }) => {
       <Category element={element} cat={categories.about}></Category>
       <Category cat={categories.services}></Category>
       <Category cat={categories.prices}></Category>
+
       <BlogHp />
       <BlogSlider />
 
@@ -39,5 +40,11 @@ export default Home
 
 
 const BannerContent = styled.div`
-padding:1rem;
+  padding:1rem;
+`
+const StyledButtonHp = styled(StyledButton)`
+  background-color:white;
+  color: #0096c7;
+  opacity:0.8;
+  
 `

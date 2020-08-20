@@ -27,7 +27,6 @@ const ArticleWrapper = styled(Container)`
   display:flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  /* height:65vh; */
   align-items: center;
   justify-content:start;
   padding: 3rem 1rem;
@@ -42,10 +41,6 @@ const ArticleWrapper = styled(Container)`
 `
 const ImgWrapper = styled.img`
   width:100%;
-
-  /* @media ${device.laptop} {
-    width:50%;
-  } */
 `
 
 const ContentWrapper = styled(Container)`
@@ -55,8 +50,4 @@ const ContentWrapper = styled(Container)`
   h5{
     font-size: 1.75rem;
   }
-  /* @media ${device.laptop} {
-    width:50%;
-  } */
-
 `

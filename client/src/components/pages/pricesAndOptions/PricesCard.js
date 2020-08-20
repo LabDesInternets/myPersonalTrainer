@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import Container from '../../cors/Container'
 import { Clock, Gift, Home, TreeOption } from 'grommet-icons'
 import dumbbell from '../../../assets/icons/dumbbell.png'
+import equipment from '../../../assets/icons/equipmentWhite.png'
 import { device } from '../../cors/ResponsiveSettings'
 
 
@@ -51,7 +52,7 @@ const PricesCard = ({ prices }) => {
           <div>A domicile ou en extérieur</div>
         </div>
         <div>
-          <span><img src={dumbbell} /></span>
+          <span><img src={equipment} /></span>
           <div>Equipement inclus</div>
         </div>
       </Section>
@@ -79,7 +80,7 @@ const Card = styled(Container)`
     color: white;
   }
   img{
-    height:30px;
+    height:20px;
   }
   @media ${device.tablet} {
     font-size: 1.5rem;
