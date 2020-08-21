@@ -27,7 +27,7 @@ const BlogSlider = () => {
     <BlogWrapper>
       <Container height='10vh' bgColor='#0096c7' width='100vw'>
         <h6>
-          Blog
+          Le blog
       </h6>
       </Container>
       <Wrapper>
@@ -57,7 +57,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 p{
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 h6{
   font-size: 2rem;

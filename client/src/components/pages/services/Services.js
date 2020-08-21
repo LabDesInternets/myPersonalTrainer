@@ -5,16 +5,12 @@ import ServiceCard from './ServiceCard'
 import { device } from '../../cors/ResponsiveSettings'
 import Container from '../../cors/Container'
 import servicesBg from '../../../assets/images/servicesBg.jpg'
-import servicesStairs from '../../../assets/images/servicesStairs.jpg'
-import servicesStadium from '../../../assets/images/servicesStadium.jpg'
 
 
 const Services = ({ element }) => {
 
   const objectives = []
-  Object.keys(services).forEach(target => {
-    objectives.push(services[target])
-  })
+  Object.keys(services).forEach(target => objectives.push(services[target]))
 
   return (
     <ServicesContainer ref={element} bgImg={servicesBg}>

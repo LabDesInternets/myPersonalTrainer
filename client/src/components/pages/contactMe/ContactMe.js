@@ -28,7 +28,7 @@ const contactFormValidation = yup.object().shape({
 });
 
 
-const ContactMe = props => {
+const ContactMe = ({ element }) => {
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -60,7 +60,7 @@ const ContactMe = props => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper ref={element}>
       <h1>Contact</h1>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <FormWrapper>
@@ -132,7 +132,7 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 4rem 2rem;
   font-size: 1.5rem;
-
+  height:90vh;
 @media ${device.laptop} {
   flex-direction: row;
   justify-content: space-around;

@@ -2,7 +2,6 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Container from '../../cors/Container'
 import { Clock, Gift, Home, TreeOption } from 'grommet-icons'
-import dumbbell from '../../../assets/icons/dumbbell.png'
 import equipment from '../../../assets/icons/equipmentWhite.png'
 import { device } from '../../cors/ResponsiveSettings'
 
@@ -52,7 +51,7 @@ const PricesCard = ({ prices }) => {
           <div>A domicile ou en extérieur</div>
         </div>
         <div>
-          <span><img src={equipment} /></span>
+          <span><img src={equipment} alt='' /></span>
           <div>Equipement inclus</div>
         </div>
       </Section>
@@ -68,7 +67,7 @@ const Card = styled(Container)`
   height:80vh;
   background-color:#071013;
   opacity:0.9;
-  border-radius:3px ;
+  border-radius:10px ;
   margin:1rem;
   padding:1rem 0.5rem;
   font-size:1.3rem;

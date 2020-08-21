@@ -17,7 +17,7 @@ const ServiceCard = ({ service, section }) => {
 
   return (
 
-    <Wrapper bgColor={section === 'Perdre du poids' ? 'limeGreen' : section === 'Se muscler' ? 'paleBlue' : 'lightOrange'}>
+    <Wrapper bgColor={section === 'Perdre du poids' ? 'waterGreen' : section === 'Se muscler' ? 'paleOrange' : 'pink'}>
 
       <Icon src={service.icon} />
       <Title>{service.title}</Title>
@@ -38,19 +38,21 @@ const Wrapper = styled(Container)`
   width:100vw;
   height:100vh;
   ${props =>
-    props.bgColor === 'limeGreen' &&
+    props.bgColor === 'waterGreen' &&
     css`
-      background-color: #f4acb7;
+    background-color: #d8e2dc;
+    
   `}
   ${props =>
-    props.bgColor === 'paleBlue' &&
+    props.bgColor === 'paleOrange' &&
     css`
       background-color: #ffe5d9;
   `}
   ${props =>
-    props.bgColor === 'lightOrange' &&
+    props.bgColor === 'pink' &&
     css`
-      background-color: #d8e2dc;
+     background-color: #f4acb7;
+      
   `}
 
     @media ${device.laptop} {

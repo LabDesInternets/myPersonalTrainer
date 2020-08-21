@@ -44,7 +44,7 @@ top:0;
 z-index:10;
 color:white;
 padding: 2rem;
-font-size: 1.5rem;
+font-size: 1.25rem;
 
 h1{
   font-size: 2.75rem;
