@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import StyledButton from '../../cors/StyledButton'
 import Container from '../../cors/Container'

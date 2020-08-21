@@ -9,6 +9,8 @@ import homeBanner from '../../../assets/images/homeBanner.jpg'
 import categories from './categoriesContent'
 import BlogHp from './BlogHp'
 import BlogSlider from './BlogSlider'
+import Review from './Review'
+
 
 
 
@@ -31,6 +33,9 @@ const Home = ({ element }) => {
 
       <BlogHp />
       <BlogSlider />
+
+      <Review />
+      {/* <ReviewSlide /> */}
 
     </div >
   )

@@ -17,6 +17,7 @@ import SignUp from './components/pages/SignUp'
 import PrivateRoute from './components/HOC/PrivateRoute'
 
 
+
 function App() {
 
 
@@ -41,7 +42,7 @@ function App() {
           <Route path="/about" render={props => <WhoAmI {...props} element={element} />} />
           <Route path="/services" render={props => <Services {...props} element={element} />} />
           <Route path="/prices" render={props => <PricesAndOptions {...props} element={element} />} />
-          <Route path="/contact" component={ContactMe} />
+          <Route path="/contact" render={props => <ContactMe {...props} element={element} />} />
           <Route path="/signin" component={SignIn} />
           <PrivateRoute path="/signup" component={SignUp} />
           <PrivateRoute path={`/${urlAdmin}`} component={Admin} />
