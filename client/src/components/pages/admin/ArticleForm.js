@@ -1,55 +1,70 @@
 import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
-import axios from 'axios'
 import StyledInput from '../../cors/StyledInput'
 import StyledButton from '../../cors/StyledButton'
 import { device } from '../../cors/ResponsiveSettings'
+
 
 const urlAddArticle = `/api/blog/articles/add`
 const urlUpdateArticle = `/api/blog/articles/edit`
 
 const ArticleForm = (props) => {
-  const { addMode, data, editMode, editArticleMode } = props
+  const { addMode, dataToEdit, editMode, editArticleMode } = props
   const [formData, setFormData] = useState({
     title: '',
     description: '',
     text: '',
-    picture: '',
+    articleImage: '',
     date: ''
   });
-
   const { register, handleSubmit } = useForm()
-
-  useEffect(() => {
-    if (data) setFormData(data);
-  }, [data])
-
   const refresh = () => window.location.reload()
 
+  useEffect(() => {
+    if (dataToEdit) setFormData(dataToEdit);
+  }, [dataToEdit])
+
+
   const updateFormData = event => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value
-    })
+    if (event.target.name === 'articleImage') {
+      setFormData({
+        ...formData,
+        [event.target.name]: event.target.files[0]
+      })
+    } else {
+      setFormData({
+        ...formData,
+        [event.target.name]: event.target.value
+      })
+    }
   }
 
-  const onSubmit = async dataForm => {
+  const onSubmit = async (data) => {
+    const dataToSend = new FormData()
+    Object.keys(formData).map(key => {
+      if (key !== "articleImage") {
+        dataToSend.append(`${key}`, formData[key])
+      }
+    })
+    dataToSend.append('articleImage', data.articleImage[0])
 
     if (editMode) {
-      const updatedArticle = { ...dataForm };
       try {
-        const response = await axios.put(`${urlUpdateArticle}/${data.id}`, updatedArticle)
-        console.log(response);
+        const response = await fetch(`${urlUpdateArticle}/${dataToEdit.id}`, {
+          method: 'PUT',
+          body: dataToSend
+        })
         refresh()
       } catch (error) {
         console.log("ooops ! => ", error);
       }
     } else {
-      const newArticle = { ...dataForm };
       try {
-        const response = await axios.post(urlAddArticle, newArticle)
-        console.log(response);
+        const response = await fetch(urlAddArticle, {
+          method: 'POST',
+          body: dataToSend
+        })
         refresh()
       } catch (error) {
         console.log("ooops ! => ", error);
@@ -96,12 +111,13 @@ const ArticleForm = (props) => {
 
 
           <StyledInput
-            name="picture"
-            type="text"
+            name="articleImage"
+            type="file"
             placeholder="Picture"
             ref={register}
-            value={formData.picture}
+            value={formData.file}
             onChange={updateFormData}
+            height='3rem'
           />
 
 

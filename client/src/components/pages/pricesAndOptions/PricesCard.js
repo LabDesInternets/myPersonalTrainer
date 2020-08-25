@@ -36,17 +36,17 @@ const PricesCard = ({ prices }) => {
       </HeaderWrapper>
       <Section>
         <div>
-          <span><Gift size='medium' color='white' /></span>
+          <span><Gift size='medium' color='#0096c7' /></span>
           <div>1ère séance bilan offerte</div>
         </div>
         <div>
-          <span><Clock size='medium' color='white' /></span>
+          <span><Clock size='medium' color='#0096c7' /></span>
           <div>1h15</div>
         </div>
         <div>
           <div style={{ display: 'flex', flexDirection: 'column', padding: 0 }}>
-            <Home size='medium' color='white' />
-            <TreeOption size='medium' color='white' />
+            <Home size='medium' color='#0096c7' />
+            <TreeOption size='medium' color='#0096c7' />
           </div>
           <div>A domicile ou en extérieur</div>
         </div>
@@ -71,7 +71,7 @@ const Card = styled(Container)`
   margin:1rem;
   padding:1rem 0.5rem;
   font-size:1.3rem;
-  justify-content: space-around;
+  justify-content: center;
   h2{
     color: #0096c7;
   }
@@ -90,6 +90,7 @@ const Card = styled(Container)`
     width:25%;
     margin:2rem;
     padding: 3rem 1rem;
+    justify-content: space-around;
   }
   
 `
@@ -107,7 +108,8 @@ const Section = styled.div`
     align-items:baseline;
     justify-content:center;
     padding: 0.5rem 1rem;
-    color: #bdede0;
+    /* color: #bdede0; */
+    color: white;
   }
   @media ${device.tablet} {
     align-items:center;
@@ -126,6 +128,7 @@ const Header = styled.div`
   align-items:center;
   color: #bdede0;
   line-height:1;
+  padding:1rem 0;
   p{
     font-size:1rem;
   }
@@ -133,18 +136,17 @@ const Header = styled.div`
   ${props =>
     props.align &&
     css`
-      position:relative;
-      bottom: -15%;
+      /* position:relative; */
     `}
 
     ${props =>
     props.optionAlign &&
     css`
       position:relative;
-      bottom: -5%;
+      bottom: 12%;
       text-align:center;
     `}
 `
 const HeaderWrapper = styled.div`
-  height:30%;
+  height:25%;
 `

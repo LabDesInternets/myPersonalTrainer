@@ -25,7 +25,7 @@ server.use(
   })
 );
 
-server.use('/api/images', express.static('src/assets'));
+server.use('/api/src/assets', express.static('src/assets'));
 server.use('/api', routes);
 
 

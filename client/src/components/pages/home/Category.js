@@ -20,11 +20,13 @@ const Category = ({ cat, element }) => {
       ) : (
           <Section>
             <ImageWrapper bgImg={cat.img} bgPos={cat.bgPos}></ImageWrapper>
+
             <Wrapper>
               <h1>{cat.title}</h1>
               <p>{cat.content1}</p>
               <StyledLink to={cat.linkTo}><StyledButton>En savoir plus</StyledButton></StyledLink>
             </Wrapper>
+
           </Section>
         )}
     </div>
@@ -32,6 +34,7 @@ const Category = ({ cat, element }) => {
 }
 
 export default Category
+
 
 const Wrapper = styled.div`
 width:100vw;
@@ -45,6 +48,7 @@ z-index:10;
 color:white;
 padding: 2rem;
 font-size: 1.25rem;
+font-weight:400;
 
 h1{
   font-size: 2.75rem;
@@ -55,6 +59,7 @@ h1{
   width: 50vw;
   position:relative;
   color:black;
+  font-weight:300;
 }
 `
 
@@ -67,9 +72,21 @@ background-image: url(.${props => props.bgImg});
 background-repeat: no-repeat;
 background-size: cover;
 background-position: ${props => props.bgPos || '50%'};
+  &&::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.25);
+  }
 
 @media ${device.laptop} {
   width: 50vw;
+  &&::before{
+    background-color: rgba(0,0,0,0);
+  }
 }
 `
 const Section = styled.div`

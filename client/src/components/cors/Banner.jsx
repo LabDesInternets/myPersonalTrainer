@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { device } from './ResponsiveSettings'
 import homeBanner1400 from '../../assets/images/homeBanner_w_1400.jpg'
 import homeBanner from '../../assets/images/homeBanner.jpg'
+import homeBannerMobile from '../../assets/images/homeBannerMobile.jpg'
 
 const Banner = styled.div`
   width: ${props => props.width || '100%'};
@@ -13,7 +14,7 @@ const Banner = styled.div`
   color:white;
   font-size: 1.75rem;
   text-align: center;
-  background-image: url(.${homeBanner1400});
+  background-image: url(.${homeBannerMobile});
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -24,9 +25,10 @@ const Banner = styled.div`
 
 @media ${device.laptop} {
   background-image: url(.${homeBanner});
+  font-size: 3vw;
   h2{
-  font-size:3.5rem;
-}
+  font-size:5vw;
+  }
 } 
 `;
 

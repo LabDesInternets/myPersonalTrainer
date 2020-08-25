@@ -1,8 +1,34 @@
 const express = require('express');
+const multer = require('multer');
 const blogController = require('./blogController');
 const logger = require('../../helpers/logger');
 const { OK, CREATED } = require('../../helpers/status_code');
 
+
+const storage = multer.diskStorage({
+  destination: (request, file, cb) => {
+    cb(null, './src/assets/blog/');
+  },
+  filename: (request, file, cb) => {
+    cb(null, new Date().toISOString() + file.originalname);
+  }
+});
+
+const fileFilter = (request, file, cb) => {
+  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+    cb(null, true); // accept the file = store the file
+  } else {
+    cb(null, false); // reject/ignore the file  => does not throw an error
+  }
+};
+
+const upload = multer({
+  storage,
+  limits: {
+    fileSize: 1024 * 1024 * 5 // up to 5MB max
+  },
+  fileFilter
+});
 
 const blogRouter = express.Router();
 
@@ -25,19 +51,35 @@ blogRouter.get('/articles/:id', async (request, response, next) => {
 });
 
 
-blogRouter.post('/articles/add', async (request, response) => {
-  const data = request.body;
-  const createdArticle = await blogController.addArticle(data);
+blogRouter.post('/articles/add', upload.single('articleImage'), async (request, response) => {
+  const data = {
+    title: request.body.title,
+    description: request.body.description,
+    text: request.body.text,
+    picture: `/api/${request.file.path}`,
+    date: request.body.date
+  };
 
-  response.status(CREATED).json({ createdArticle, message: 'Your article has been added! ' });
+  try {
+    const createdArticle = await blogController.addArticle(data);
+    response.status(CREATED).json({ createdArticle, message: 'Your article has been added! ' });
+  } catch (error) {
+    console.log('ooops => ', error);
+  }
 });
 
-blogRouter.put('/articles/edit/:id', async (request, response) => {
+blogRouter.put('/articles/edit/:id', upload.single('articleImage'), async (request, response) => {
+  const dataToUpdate = {
+    title: request.body.title,
+    description: request.body.description,
+    text: request.body.text,
+    picture: `/api/${request.file.path}`,
+    date: request.body.date
+  };
   const { id } = request.params;
-  const dataToUpdate = request.body;
+
   const [numberOfAffectedRows, affectedRows] = await blogController.updateArticle(id, dataToUpdate);
   response.status(OK).json({ numberOfAffectedRows, affectedRows, message: 'The article has been updated !' });
-
 });
 
 blogRouter.delete('/articles/delete/:id', async (request, response) => {

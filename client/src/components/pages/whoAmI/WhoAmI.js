@@ -41,6 +41,15 @@ const WrapperFP = styled.div`
   flex-direction:column;
   align-items:center;
   justify-content:center;
+    &&::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.25);
+  }
 
 
 `
@@ -50,7 +59,7 @@ const ContentWrapper = styled(Container)`
    padding:2rem 1rem 1rem 1rem;
    justify-content: space-evenly;
    background-color:black;
-   font-weight:400;
+   font-weight:500;
    flex-wrap:nowrap;
   opacity:0.8;
    @media ${device.tablet} {
@@ -58,6 +67,7 @@ const ContentWrapper = styled(Container)`
      padding: 4rem;
    }
    @media ${device.laptop} {
+    font-weight:400;
     padding:4rem;
     height:60vh;
    }

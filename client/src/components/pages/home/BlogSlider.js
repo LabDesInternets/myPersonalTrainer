@@ -39,7 +39,7 @@ const BlogSlider = () => {
         </Slider>
 
       </Wrapper>
-    </BlogWrapper>
+    </BlogWrapper >
   )
 }
 
