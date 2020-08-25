@@ -15,7 +15,7 @@ const Review = () => {
     <Wrapper>
       <Container height='10vh' bgColor='#0096c7' width='100vw'>
         <h6>
-          L'avis des clients
+          Leur retour d'expérience
       </h6>
       </Container>
       <Laptop>

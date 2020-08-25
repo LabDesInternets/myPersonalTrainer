@@ -54,7 +54,7 @@ const Admin = () => {
       </Container>
       <div>
         {editMode && editArticleMode &&
-          <ArticleForm data={articleToEdit} addMode={addMode} editMode={editMode} editArticleMode={editArticleMode} />
+          <ArticleForm dataToEdit={articleToEdit} addMode={addMode} editMode={editMode} editArticleMode={editArticleMode} />
         }
         <ArticleForm addMode={addMode} editMode={editMode} />
         <div>

@@ -39,13 +39,13 @@ const moveDown = keyframes`
   }
 `
 const Wrapper = styled.nav`
-    font-size:1.5rem;
+    font-size:1.75rem;
     display: none;
     position: fixed;
     top: 0;
     right: 0;
     width: 100vw;
-    justify-content: end;
+    justify-content: center;
     padding: 0.5rem 1.5rem;
     height:7vh;
     z-index: 100;

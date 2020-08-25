@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const StyledInput = styled.input`
-  height: 2rem;
+  height: ${props => props.height || '2rem'};
   font-family: 'Dosis';  
   font-size: 1.25rem;
   padding: 1rem 0;

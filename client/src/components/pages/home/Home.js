@@ -5,7 +5,6 @@ import Banner from '../../cors/Banner'
 import StyledButton from '../../cors/StyledButton'
 import StyledLink from '../../cors/StyledLink'
 import Container from '../../cors/Container'
-import homeBanner from '../../../assets/images/homeBanner.jpg'
 import categories from './categoriesContent'
 import BlogHp from './BlogHp'
 import BlogSlider from './BlogSlider'
@@ -18,11 +17,11 @@ const Home = ({ element }) => {
   return (
     <div>
       <Container width='100vw' height='100vh'>
-        <Banner bgImg={homeBanner}>
+        <Banner>
           <BannerContent>
             <h2>Raphael Coaching</h2>
             <p>Des entraînements sur-mesure qui vous permettront d'atteindre vos objectifs</p>
-            <StyledLink to="/services"><StyledButtonHp>Découvrir</StyledButtonHp></StyledLink>
+            <StyledLink to="/services"><StyledButton mobile>Découvrir</StyledButton></StyledLink>
           </BannerContent>
         </Banner>
       </Container>
@@ -46,10 +45,4 @@ export default Home
 
 const BannerContent = styled.div`
   padding:1rem;
-`
-const StyledButtonHp = styled(StyledButton)`
-  background-color:white;
-  color: #0096c7;
-  opacity:0.8;
-  
 `
