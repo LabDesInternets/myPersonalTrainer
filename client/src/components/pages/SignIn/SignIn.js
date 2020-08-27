@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import StyledButton from '../../cors/StyledButton'
 import Container from '../../cors/Container'
 import StyledInput from '../../cors/StyledInput'
+import StyledLink from '../../cors/StyledLink'
 import StyledForm from '../../cors/StyledForm'
 import { useAuth } from '../../../context/AuthContext'
 
@@ -56,6 +57,7 @@ let SignIn = (props) => {
       <Container fD='column' height='80%'>
         <Container fD='column' height='20%'>
           <div style={{ fontSize: '2rem' }}>Connecte-toi</div>
+          <StyledLink to='/ooopsie'>Mot de passe oublié ?</StyledLink>
         </Container>
         <>
           <StyledForm onSubmit={handleSubmit(onSubmit)} height='60%'>

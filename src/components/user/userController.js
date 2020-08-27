@@ -60,7 +60,24 @@ const userController = {
   signupOneUser: async (newUser) => {
     const createdUser = await User.create(newUser);
     return createdUser;
+  },
+  updateUserData: async (data) => {
+    const { userId, email, password, resetPasswordToken, resetPasswordExpires } = data;
+    const updatedUser = await User.update({
+      password,
+      resetPasswordToken,
+      resetPasswordExpires
+    },
+      {
+        where: {
+          id: {
+            [Op.eq]: userId
+          }
+        }
+      });
+    return updatedUser;
   }
+
 };
 
 module.exports = userController;

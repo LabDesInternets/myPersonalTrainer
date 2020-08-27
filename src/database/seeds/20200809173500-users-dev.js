@@ -9,6 +9,7 @@ module.exports = [
   {
     id: uuidv4(),
     email: 'raph@gmail.com',
+    password: 'raph',
     role: 'admin',
     created_at: now,
     updated_at: now
