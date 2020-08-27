@@ -1,5 +1,7 @@
 const nodemailer = require('nodemailer');
 
+const urlClient = process.env.URL_CLIENT
+
 // create reusable transporter object using the default SMTP transport
 const smtpTransporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
@@ -33,6 +35,25 @@ const contactController = {
     `
     };
 
+    smtpTransporter.sendMail(mailOptions, (error) => {
+      if (error) {
+        console.log(error); // Show a page indicating failure
+      } else {
+        console.log('email sent'); // Show a page indicating success
+      }
+    });
+  },
+  sendMailToUser: async (data) => {
+    const { userId, email, resetPasswordToken } = data;
+    const mailOptions = {
+      to: email,
+      from: process.env.GMAIL_USER,
+      subject: 'MyPersonalTrainer Password Reset',
+      text: `${'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n'
+        + 'Please click on the following link, or paste this into your browser to complete the process:\n\n'
+        + 'http://'}${urlClient}/reset/${userId}/${resetPasswordToken}\n\n`
+        + 'If you did not request this, please ignore this email and your password will remain unchanged.\n'
+    };
     smtpTransporter.sendMail(mailOptions, (error) => {
       if (error) {
         console.log(error); // Show a page indicating failure

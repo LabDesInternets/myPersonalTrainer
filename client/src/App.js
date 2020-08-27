@@ -14,7 +14,9 @@ import Admin from './components/pages/admin'
 import useSticky from './components/hooks/useSticky'
 import SignIn from './components/pages/SignIn'
 import SignUp from './components/pages/SignUp'
+import Ooops from './components/pages/Ooops'
 import PrivateRoute from './components/HOC/PrivateRoute'
+import ResetPw from './components/pages/resetPw'
 
 
 
@@ -22,6 +24,7 @@ function App() {
 
 
   const urlAdmin = process.env.REACT_APP_ADMIN
+  const urlBaseApi = process.env.REACT_APP_API_BASE_URL
 
   const [open, setOpen] = useState(false)
   const { isSticky, element } = useSticky();
@@ -44,8 +47,10 @@ function App() {
           <Route path="/prices" render={props => <PricesAndOptions {...props} element={element} />} />
           <Route path="/contact" render={props => <ContactMe {...props} element={element} />} />
           <Route path="/signin" component={SignIn} />
-          <PrivateRoute path="/signup" component={SignUp} />
+          <Route path="/signup" component={SignUp} />
           <PrivateRoute path={`/${urlAdmin}`} component={Admin} />
+          <Route path='/ooopsie' component={Ooops} />
+          <Route path='/reset/:id/:token' component={ResetPw} />
         </Switch>
         <Footer />
       </Router>

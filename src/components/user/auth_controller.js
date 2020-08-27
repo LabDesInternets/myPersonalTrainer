@@ -1,4 +1,8 @@
+const { Op } = require('sequelize');
 const passport = require('passport');
+const { User } = require('../../models');
+const { AppError } = require('../../helpers/errors/appError');
+const HttpStatusCode = require('../../helpers/status_code');
 
 
 const authenticate = (req, res) => new Promise((resolve, reject) => {
@@ -21,6 +25,22 @@ const authController = {
   logout: (request, response) => {
     request.logout();
     response.status(200).json({ message: 'you are now logged out !' });
+  },
+  checkToken: async (token) => {
+    const user = await User.findOne({
+      where: {
+        [Op.and]: [
+          { resetPasswordToken: token },
+          { resetPasswordExpires: { [Op.gt]: Date.now() } }
+        ]
+      },
+      attributes: ['id', 'email'],
+      raw: true
+    });
+    if (user === null) {
+      throw new AppError('Unauthorized', HttpStatusCode.UNAUTHORIZED, 'password reset token is invalid or has expired', true);
+    }
+    return user;
   }
 };
 
