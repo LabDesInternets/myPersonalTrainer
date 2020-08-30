@@ -1,35 +1,44 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import Container from '../../cors/Container'
-import reviewsContent from './reviewsContent'
+import ArticleCard from './ArticleCard'
 import { device } from '../../cors/ResponsiveSettings'
-import ReviewSlide from './ReviewSlide'
+import { BlogContext } from '../../../context/BlogContext'
+import BlogSlider from './BlogSlider'
+import StyledButton from '../../cors/StyledButton'
+import StyledLink from '../../cors/StyledLink'
 
+const Blog = ({ history }) => {
 
-const Review = () => {
-
+  const { articles } = useContext(BlogContext)
 
   return (
+
     <Wrapper>
       <Container height='10vh' bgColor='#0096c7' width='100vw'>
         <h6>
-          Leur retour d'expérience
-      </h6>
+          <StyledLink to='./blog'>Le blog</StyledLink>
+        </h6>
       </Container>
       <Laptop>
-        <ReviewSlide display='laptop' />
+        <BlogSlider blog={articles} display='laptop' />
+
       </Laptop>
       <Mobile>
-        <ReviewSlide display='mobile' />
+        <BlogSlider blog={articles} display='mobile' />
+
       </Mobile>
+      <StyledButton primary onClick={() => history.push('./blog')}>Voir tous les articles</StyledButton>
     </Wrapper>
+
+
   )
 }
 
-export default Review
+export default Blog
 
 const Wrapper = styled.div`
-  height:90vh;
+  height:100vh;
   display: flex;
   flex-direction: column;
   justify-content: start;

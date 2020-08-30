@@ -15,6 +15,14 @@ const StyledButton = styled.button`
   font-weight: 400;
   cursor: pointer;
 
+  ${props =>
+    props.primary &&
+    css`
+      background-color:#0096c7;
+      color: white;
+
+    `}
+
 
   @media ${device.laptop} {
     background: transparent;
@@ -28,6 +36,13 @@ const StyledButton = styled.button`
       background-color:white;
       color: #0096c7;
       opacity:0.8;
+    `}
+    ${props =>
+    props.primary &&
+    css`
+      background-color:#0096c7;
+      color: white;
+
     `}
   }
 

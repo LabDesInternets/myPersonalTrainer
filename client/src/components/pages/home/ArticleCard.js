@@ -16,7 +16,7 @@ const ArticleCard = (props) => {
         <h5>{article.title}</h5>
         <p style={{ padding: '0.75rem 0' }}>{article.description}</p>
       </ContentWrapper>
-      <StyledButton>En savoir plus</StyledButton>
+      <StyledButton>Lire l'article</StyledButton>
     </ArticleWrapper>
   )
 }
@@ -31,7 +31,7 @@ const ArticleWrapper = styled(Container)`
   justify-content:start;
   padding: 3rem 1rem;
   p{
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   @media ${device.laptop} {
     width:30vw;
@@ -48,6 +48,6 @@ const ContentWrapper = styled(Container)`
   align-items: baseline;
   height: auto;
   h5{
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 `
