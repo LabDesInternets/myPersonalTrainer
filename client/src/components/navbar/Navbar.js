@@ -39,7 +39,7 @@ const moveDown = keyframes`
   }
 `
 const Wrapper = styled.nav`
-    font-size:1.75rem;
+    font-size:1.8vw;
     display: none;
     position: fixed;
     top: 0;

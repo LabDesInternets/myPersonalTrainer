@@ -14,7 +14,7 @@ const ArticleCard = (props) => {
       <ContentWrapper>
         <p style={{ fontSize: '1rem' }}>{article.date}</p>
         <h5>{article.title}</h5>
-        <p>{article.description}</p>
+        <p style={{ padding: '0.75rem 0' }}>{article.description}</p>
       </ContentWrapper>
       <StyledButton>En savoir plus</StyledButton>
     </ArticleWrapper>

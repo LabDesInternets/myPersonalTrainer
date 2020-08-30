@@ -63,7 +63,7 @@ const ContactMe = ({ element }) => {
     <Wrapper ref={element}>
       <h1>Contact</h1>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
-        <FormWrapper>
+        <FormWrapper height='60vh'>
 
           <StyledInput
             name="firstName"

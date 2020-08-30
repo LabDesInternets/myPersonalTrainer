@@ -7,7 +7,7 @@ const StyledLink = styled(Link)`
   text-decoration:none;
   cursor: pointer;
   text-align: center;
-  padding: 0 1rem;
+  padding: ${props => props.padding || '0 1rem'};
   &:hover{
     text-decoration:none;
     color: #0096c7;
