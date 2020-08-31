@@ -1,11 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
 
 const blogPage = () => {
   return (
-    <div>
+    <Wrapper>
       Blog ici
-    </div>
+    </Wrapper>
   )
 }
 
 export default blogPage
+
+const Wrapper = styled.div`
+  
+`

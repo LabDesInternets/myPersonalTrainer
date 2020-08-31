@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
 import Container from '../../cors/Container'
 import { Clock, Gift, Home, TreeOption } from 'grommet-icons'
-import equipment from '../../../assets/icons/equipmentWhite.png'
+import equipment from '../../../assets/icons/gym-blue.png'
 import { device } from '../../cors/ResponsiveSettings'
 
 
@@ -52,7 +52,7 @@ const PricesCard = ({ prices }) => {
         </div>
         <div>
           <span><img src={equipment} alt='' /></span>
-          <div>Equipement inclus</div>
+          <div style={{ marginLeft: '-3px' }}>Equipement inclus</div>
         </div>
       </Section>
     </Card>
@@ -102,7 +102,8 @@ const Card = styled(Container)`
     color: white;
   }
   img{
-    height:20px;
+    height:22px;
+    margin-left:-3px;
   }
   @media ${device.tablet} {
     font-size: 1.5rem;

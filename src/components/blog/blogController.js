@@ -6,8 +6,7 @@ const HttpStatusCode = require('../../helpers/status_code');
 const blogController = {
   getAllArticles: async () => {
     const articles = await Article.findAll({
-      attributes: ['id', 'title', 'description', 'text', 'picture', 'date'],
-      raw: true
+      attributes: ['id', 'title', 'description', 'text', 'picture', 'date']
     });
     if (!articles) {
       throw new AppError('no content', HttpStatusCode.NO_CONTENT, 'no articles found in the db', true);

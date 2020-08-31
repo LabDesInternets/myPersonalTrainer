@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 module.exports = (sequelize, DataTypes) => {
   const Article = sequelize.define(
     'Article',
@@ -29,8 +31,12 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       },
       date: {
-        type: DataTypes.STRING(10),
-        allowNull: false
+        type: DataTypes.DATE,
+        allowNull: false,
+        get() {
+          const rawValue = this.getDataValue('date');
+          return moment(rawValue).format('DD/MM/YYYY');
+        }
       },
       createdAt: {
         field: 'created_at',

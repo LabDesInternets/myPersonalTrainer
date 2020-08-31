@@ -12,7 +12,7 @@ const ArticleCard = (props) => {
       <ImgWrapper src={article.picture} />
 
       <ContentWrapper>
-        <p style={{ fontSize: '1rem' }}>{article.date}</p>
+        <p>{article.date}</p>
         <h5>{article.title}</h5>
         <p style={{ padding: '0.75rem 0' }}>{article.description}</p>
       </ContentWrapper>
@@ -30,9 +30,6 @@ const ArticleWrapper = styled(Container)`
   align-items: center;
   justify-content:start;
   padding: 3rem 1rem;
-  p{
-    font-size: 1.25rem;
-  }
   @media ${device.laptop} {
     width:30vw;
     height:65vh;
@@ -41,12 +38,21 @@ const ArticleWrapper = styled(Container)`
 `
 const ImgWrapper = styled.img`
   width:100%;
+  @media ${device.laptop} {
+  width:28vw;
+  height:18vw;
+  object-position: top;
+  object-fit: cover;
+  }
 `
 
 const ContentWrapper = styled(Container)`
   justify-content: start;
   align-items: baseline;
   height: auto;
+  p{
+    font-size:1rem;
+  }
   h5{
     font-size: 1.5rem;
   }

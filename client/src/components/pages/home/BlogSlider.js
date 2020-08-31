@@ -4,6 +4,7 @@ import ArticleCard from './ArticleCard'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import './BlogSlider.css'
 import { BlogContext } from '../../../context/BlogContext'
 import { device } from '../../cors/ResponsiveSettings'
 import Container from '../../cors/Container'
@@ -72,15 +73,15 @@ export default BlogSlider
 const Wrapper = styled.div`
   width:100vw;
   height:80vh;
-  p{
-  font-size: 1.25rem;
-}
-h6{
-  font-size: 2rem;
-  color:white;
-}
+  p { font-size: 1rem;}
+  h6 { 
+    font-size: 2rem;
+    color:white;
+  }
   @media ${device.laptop} {
-    /* padding:3rem 8rem; */
     height:70vh;
+    p {
+      font-size: 1.25rem;
+    }
   }
 `
