@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Instagram, Facebook, Google, Linkedin } from 'grommet-icons'
-import StyledLink from '../cors/StyledLink'
 import { device } from '../cors/ResponsiveSettings'
 
 

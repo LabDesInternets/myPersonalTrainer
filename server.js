@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
@@ -24,6 +25,16 @@ server.use(
     exposedHeaders: ['Content-Length', 'xAuth']
   })
 );
+
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  server.use(express.static(path.join(__dirname, 'client/build')));
+  // Handle React routing, return all requests to React app
+  server.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}
+
 
 server.use('/api/src/assets', express.static('src/assets'));
 server.use('/api', routes);

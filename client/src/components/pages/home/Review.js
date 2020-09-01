@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Container from '../../cors/Container'
-import reviewsContent from './reviewsContent'
 import { device } from '../../cors/ResponsiveSettings'
 import ReviewSlide from './ReviewSlide'
 
