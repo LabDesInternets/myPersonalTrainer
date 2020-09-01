@@ -1,9 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Container from '../../cors/Container'
 import { device } from '../../cors/ResponsiveSettings'
 import categories from '../home/categoriesContent'
-import servicesStairs from '../../../assets/images/servicesStairs.jpg'
+import servicesStairsTop from '../../../assets/images/servicesStairsTop.jpg'
+import servicesStairsBottom from '../../../assets/images/servicesStairsBottom.jpg'
 
 
 
@@ -13,14 +14,18 @@ const WhoAmI = ({ element }) => {
   return (
     <div ref={element}>
 
-      <WrapperFP bgImg={servicesStairs}>
-        <ContentWrapper>
+      <Wrapper bgImg={servicesStairsTop}>
+        <ContentWrapper textBottom>
           <p>{category.content1}</p>
           <p>{category.content2}</p>
+        </ContentWrapper>
+      </Wrapper>
+      <Wrapper bgImg={servicesStairsBottom}>
+        <ContentWrapper textTop>
           <p>{category.content3}</p>
           <p>{category.content4}</p>
         </ContentWrapper>
-      </WrapperFP>
+      </Wrapper>
 
     </div>
   )
@@ -28,20 +33,19 @@ const WhoAmI = ({ element }) => {
 
 export default WhoAmI
 
-const WrapperFP = styled.div`
+const Wrapper = styled.div`
   width:100vw;
   height:100vh;
   background-image: url(".${props => props.bgImg}");
   background-size:cover;
-  background-color:black;
+  /* background-color:black; */
   opacity:0.8;
   background-position:50%; 
   color:white;
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:center;
-    &&::before{
+    &&::before::after{
     content: "";
     position: absolute;
     top: 0px;
@@ -51,17 +55,25 @@ const WrapperFP = styled.div`
     background-color: rgba(0,0,0,0.25);
   }
 
-
 `
 
 const ContentWrapper = styled(Container)`
-   font-size:1rem;
+   font-size:1.25rem;
    padding:2rem 1rem 1rem 1rem;
-   justify-content: space-evenly;
    background-color:black;
    font-weight:500;
    flex-wrap:nowrap;
   opacity:0.8;
+  ${props =>
+    props.textBottom &&
+    css`
+    justify-content:end;
+  `}
+  ${props =>
+    props.textTop &&
+    css`
+    justify-content:start;
+      `}
    @media ${device.tablet} {
      font-size:1.5rem;
      padding: 4rem;

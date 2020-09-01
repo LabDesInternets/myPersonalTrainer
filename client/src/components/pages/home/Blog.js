@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import Container from '../../cors/Container'
-import ArticleCard from './ArticleCard'
 import { device } from '../../cors/ResponsiveSettings'
 import { BlogContext } from '../../../context/BlogContext'
 import BlogSlider from './BlogSlider'
