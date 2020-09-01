@@ -4,12 +4,15 @@ import styled from 'styled-components'
 import StyledInput from '../../cors/StyledInput'
 import StyledButton from '../../cors/StyledButton'
 import { device } from '../../cors/ResponsiveSettings'
+import moment from 'moment'
 
+const now = moment().utc().toDate()
 
 const urlAddArticle = `/api/blog/articles/add`
 const urlUpdateArticle = `/api/blog/articles/edit`
 
 const ArticleForm = (props) => {
+  console.log("now ", now)
   const { addMode, dataToEdit, editMode, editArticleMode } = props
   const [formData, setFormData] = useState({
     title: '',
@@ -27,6 +30,7 @@ const ArticleForm = (props) => {
 
 
   const updateFormData = event => {
+    console.log("form ", typeof event.target.value)
     if (event.target.name === 'articleImage') {
       setFormData({
         ...formData,
@@ -123,11 +127,15 @@ const ArticleForm = (props) => {
 
           <StyledInput
             name="date"
-            type="text"
+            type="date"
+            min="2020-01-01"
+            max={now}
             placeholder="Date"
             ref={register}
             value={formData.date}
             onChange={updateFormData}
+            required
+            height='3rem'
           ></StyledInput>
 
         </FormWrapper>

@@ -13,7 +13,7 @@ const Category = ({ cat, element }) => {
           <Wrapper>
             <h1>{cat.title}</h1>
             <p>{cat.content1}</p>
-            <StyledLink to={cat.linkTo}><StyledButton>En savoir plus</StyledButton></StyledLink>
+            <StyledLink to={cat.linkTo} padding='1rem'><StyledButton>En savoir plus</StyledButton></StyledLink>
           </Wrapper>
           <ImageWrapper bgImg={cat.img}></ImageWrapper>
         </Section>
@@ -24,7 +24,7 @@ const Category = ({ cat, element }) => {
             <Wrapper>
               <h1>{cat.title}</h1>
               <p>{cat.content1}</p>
-              <StyledLink to={cat.linkTo}><StyledButton>En savoir plus</StyledButton></StyledLink>
+              <StyledLink to={cat.linkTo} padding='1rem'><StyledButton>En savoir plus</StyledButton></StyledLink>
             </Wrapper>
 
           </Section>
@@ -42,17 +42,20 @@ height:100vh;
 display:flex;
 flex-direction: column;
 justify-content: center;
+font-size: 1.25rem;
+padding:1rem;
 position: absolute;
 top:0;
 z-index:10;
 color:white;
-padding: 2rem;
-font-size: 1.25rem;
 font-weight:400;
-
 h1{
   font-size: 2.75rem;
   font-weight: 400;
+  padding:0.5rem 1rem;
+}
+p{
+  padding: 0.5rem 1rem;
 }
 
 @media ${device.laptop} {
@@ -60,6 +63,11 @@ h1{
   position:relative;
   color:black;
   font-weight:300;
+  line-height:2;
+  padding: 6rem;
+  align-items:center;
+  text-align:center;
+  font-size: 1.5rem;
 }
 `
 

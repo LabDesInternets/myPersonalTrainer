@@ -6,14 +6,16 @@ import StyledButton from '../../cors/StyledButton'
 import StyledLink from '../../cors/StyledLink'
 import Container from '../../cors/Container'
 import categories from './categoriesContent'
-import BlogHp from './BlogHp'
-import BlogSlider from './BlogSlider'
 import Review from './Review'
+import Blog from './Blog'
 
 
 
 
-const Home = ({ element }) => {
+const Home = (props) => {
+
+  const { element, history } = props
+
   return (
     <div>
       <Container width='100vw' height='100vh'>
@@ -30,11 +32,9 @@ const Home = ({ element }) => {
       <Category cat={categories.services}></Category>
       <Category cat={categories.prices}></Category>
 
-      <BlogHp />
-      <BlogSlider />
+      <Blog history={history} />
 
       <Review />
-      {/* <ReviewSlide /> */}
 
     </div >
   )

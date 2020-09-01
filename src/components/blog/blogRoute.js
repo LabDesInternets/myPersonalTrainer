@@ -44,7 +44,7 @@ blogRouter.get('/articles/:id', async (request, response, next) => {
   const { id } = request.params;
   try {
     const article = await blogController.getOneArticle(id);
-    response.status(OK).json({ article, message: 'This is the article requested! ' });
+    response.status(OK).json(article);
   } catch (err) {
     next(err);
   }

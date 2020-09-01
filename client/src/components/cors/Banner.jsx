@@ -25,7 +25,7 @@ const Banner = styled.div`
 
 @media ${device.laptop} {
   background-image: url(.${homeBanner});
-  font-size: 3vw;
+  font-size: 2.5vw;
   h2{
   font-size:5vw;
   }

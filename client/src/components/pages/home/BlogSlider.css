@@ -1,0 +1,19 @@
+.slick-dots {
+  bottom: 5px;
+}
+
+.slick-list {
+  height:80vh;
+}
+
+
+@media (min-width:992px) {
+  .slick-slider {
+    height:65vh;
+  
+  }
+  .laptop {
+    height:40vh;
+  }
+ 
+}

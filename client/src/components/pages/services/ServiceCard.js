@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Container from '../../cors/Container'
 import { device } from '../../cors/ResponsiveSettings'
+import { fadeIn } from '../pricesAndOptions/PricesCard'
 
 
 
@@ -17,7 +18,7 @@ const ServiceCard = ({ service, section }) => {
 
   return (
 
-    <Wrapper bgColor={section === 'Perdre du poids' ? 'waterGreen' : section === 'Se muscler' ? 'paleOrange' : 'blue'}>
+    <Wrapper bgColor={section === 'Perdre du poids' ? 'paleOrange' : section === 'Se muscler' ? 'blue' : 'waterGreen'}>
 
       <Icon src={service.icon} />
       <Title>{service.title}</Title>
@@ -37,6 +38,19 @@ export default ServiceCard
 const Wrapper = styled(Container)`
   width:100vw;
   height:100vh;
+  animation: ${fadeIn} 3s;
+  &:nth-child(1) { 
+    animation-duration: 1s;
+    }
+    &:nth-child(2) { 
+    animation-duration: 2s;
+    }
+    &:nth-child(3) { 
+    animation-duration: 3s;
+    }
+    &:nth-child(4) { 
+    animation-duration: 4s;
+    }
   ${props =>
     props.bgColor === 'waterGreen' &&
     css`

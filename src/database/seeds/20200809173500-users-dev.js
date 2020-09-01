@@ -8,8 +8,8 @@ const now = moment()
 module.exports = [
   {
     id: uuidv4(),
-    email: 'raph@gmail.com',
-    password: 'raph',
+    email: 'test@test.com',
+    password: 'test',
     role: 'admin',
     created_at: now,
     updated_at: now

@@ -10,11 +10,12 @@ const Navbar = (props) => {
     <div>
       <Wrapper cl={sticky ? 'navbarSticky' : 'navbar'}>
         <NavContainer>
-          <StyledLink to='./'>Accueil</StyledLink>
-          <StyledLink to='./about'>Qui suis-je</StyledLink>
-          <StyledLink to='./services'>Prestations</StyledLink>
-          <StyledLink to='./prices'>Tarifs et formules</StyledLink>
-          <StyledLink to='./contact'>Me contacter</StyledLink>
+          <StyledLink to='/'>Accueil</StyledLink>
+          <StyledLink to='/about'>Qui suis-je</StyledLink>
+          <StyledLink to='/services'>Prestations</StyledLink>
+          <StyledLink to='/prices'>Tarifs et formules</StyledLink>
+          <StyledLink to='/blog'>Blog</StyledLink>
+          <StyledLink to='/contact'>Me contacter</StyledLink>
         </NavContainer>
       </Wrapper>
     </div>
@@ -39,7 +40,7 @@ const moveDown = keyframes`
   }
 `
 const Wrapper = styled.nav`
-    font-size:1.75rem;
+    font-size:1.8vw;
     display: none;
     position: fixed;
     top: 0;

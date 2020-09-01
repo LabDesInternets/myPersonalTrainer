@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useForm } from 'react-hook-form'
-import * as yup from 'yup'
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers';
+import * as yup from 'yup';
 import styled from 'styled-components'
 import StyledInput from '../../cors/StyledInput'
 import StyledButton from '../../cors/StyledButton'
@@ -39,8 +40,9 @@ const ContactMe = ({ element }) => {
   });
 
   const { register, handleSubmit, errors } = useForm({
-    validationSchema: contactFormValidation
+    resolver: yupResolver(contactFormValidation)
   });
+
 
   const updateFormData = event => {
     setFormData({
@@ -63,7 +65,7 @@ const ContactMe = ({ element }) => {
     <Wrapper ref={element}>
       <h1>Contact</h1>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
-        <FormWrapper>
+        <FormWrapper height='60vh'>
 
           <StyledInput
             name="firstName"
@@ -73,7 +75,7 @@ const ContactMe = ({ element }) => {
             value={formData.firstName}
             onChange={updateFormData}
           />
-          {errors.firstName && <p>errors.firstName.message</p>}
+          {errors.firstName?.message}
 
           <StyledInput
             name="lastName"
@@ -83,7 +85,7 @@ const ContactMe = ({ element }) => {
             value={formData.lastName}
             onChange={updateFormData}
           />
-          {errors.lastName && errors.lastName.message}
+          {errors.lastName?.message}
 
           <StyledInput
             name="email"
@@ -93,7 +95,7 @@ const ContactMe = ({ element }) => {
             value={formData.email}
             onChange={updateFormData}
           />
-          {errors.email && errors.email.message}
+          {errors.email?.message}
 
           <StyledInput
             name="subject"
@@ -103,7 +105,7 @@ const ContactMe = ({ element }) => {
             value={formData.subject}
             onChange={updateFormData}
           />
-          {errors.subject && errors.subject.message}
+          {errors.subject?.message}
 
           <STextArea
             name="messageToSend"
@@ -113,7 +115,7 @@ const ContactMe = ({ element }) => {
             value={formData.messageToSend}
             onChange={updateFormData}
           ></STextArea>
-          {errors.messageToSend && errors.messageToSend.message}
+          {errors.messageToSend?.message}
         </FormWrapper>
         <div>
           <StyledButton type="submit">Envoyer</StyledButton>

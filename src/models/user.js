@@ -64,6 +64,5 @@ module.exports = (sequelize, DataTypes) => {
     const hashedPassword = await bcrypt.hash(user.password, 10);
     user.password = hashedPassword;
   });
-
   return User;
 };

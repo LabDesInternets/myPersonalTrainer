@@ -9,12 +9,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import { device } from '../../cors/ResponsiveSettings'
 
 
-
-
-
 const ReviewSlide = ({ display }) => {
-
-
 
   const customDisplay = () => {
     if (display === 'mobile') {
@@ -52,30 +47,27 @@ const ReviewSlide = ({ display }) => {
 
 
   return (
-    <div>
-      <Container>
-        <Wrapper>
-          <Slider {...settings}>
-            {reviews.map(review =>
-              <ReviewCard key={review.name} review={review} />
-            )}
-          </Slider>
-        </Wrapper>
-      </Container>
-    </div>
+
+    <Container>
+      <Wrapper>
+        <Slider className='laptop' {...settings}>
+          {reviews.map(review =>
+            <ReviewCard key={review.name} review={review} />
+          )}
+        </Slider>
+      </Wrapper>
+    </Container>
+
   )
 }
 
 export default ReviewSlide
 
 const Wrapper = styled.div`
-
-
   width:100vw;
   height:80vh;
   @media ${device.laptop} {
     padding:3rem 8rem;
     height:40vh;
- 
   }
 `
