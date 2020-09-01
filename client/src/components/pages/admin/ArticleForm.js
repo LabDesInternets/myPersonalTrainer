@@ -135,6 +135,7 @@ const ArticleForm = (props) => {
             value={formData.date}
             onChange={updateFormData}
             required
+            height='3rem'
           ></StyledInput>
 
         </FormWrapper>

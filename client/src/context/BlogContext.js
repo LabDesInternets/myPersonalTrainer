@@ -12,8 +12,8 @@ const BlogProvider = ({ children }) => {
   const getArticles = () => {
     axios.get(urlBlog)
       .then(function (response) {
-        console.log('articles from blogContext ', response.data)
         setArticles(response.data);
+        console.log("art from blog ", response.data)
       })
       .catch(function (error) {
         console.log("ooops ! => ", error)

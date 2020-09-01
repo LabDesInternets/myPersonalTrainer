@@ -18,7 +18,7 @@ const ServiceCard = ({ service, section }) => {
 
   return (
 
-    <Wrapper bgColor={section === 'Perdre du poids' ? 'waterGreen' : section === 'Se muscler' ? 'paleOrange' : 'blue'}>
+    <Wrapper bgColor={section === 'Perdre du poids' ? 'paleOrange' : section === 'Se muscler' ? 'blue' : 'waterGreen'}>
 
       <Icon src={service.icon} />
       <Title>{service.title}</Title>

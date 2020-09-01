@@ -5,20 +5,8 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import './BlogSlider.css'
-import { BlogContext } from '../../../context/BlogContext'
 import { device } from '../../cors/ResponsiveSettings'
 import Container from '../../cors/Container'
-
-// const settings = {
-//   dots: true,
-//   infinite: true,
-//   speed: 500,
-//   slidesToShow: 3,
-//   slidesToScroll: 1,
-//   // arrows: true,
-//   // autoplay: true,
-//   // autoplaySpeed: 5000
-// };
 
 const BlogSlider = ({ display, blog }) => {
 
@@ -31,7 +19,6 @@ const BlogSlider = ({ display, blog }) => {
           speed: 500,
           slidesToShow: 1,
           slidesToScroll: 1,
-          // arrows: true,
           autoplay: true,
           autoplaySpeed: 7000
         }
@@ -43,10 +30,7 @@ const BlogSlider = ({ display, blog }) => {
           infinite: true,
           speed: 500,
           slidesToShow: 3,
-          slidesToScroll: 1,
-          // arrows: true,
-          // autoplay: true,
-          // autoplaySpeed: 5000
+          slidesToScroll: 1
         }
       )
     }

@@ -38,6 +38,9 @@ const Wrapper = styled.div`
     font-size: 2rem;
     color:white;
   }
+  /* @media ${device.laptop} {
+    max-height:60vh;
+  } */
 `
 const Laptop = styled.div`
   display:none;

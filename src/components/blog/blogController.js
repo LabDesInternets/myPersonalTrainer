@@ -23,8 +23,7 @@ const blogController = {
         'text',
         'picture',
         'date'
-      ],
-      raw: true
+      ]
     });
     if (!article) {
       throw new AppError(
