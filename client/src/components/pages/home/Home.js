@@ -10,8 +10,6 @@ import Review from './Review'
 import Blog from './Blog'
 
 
-
-
 const Home = (props) => {
 
   const { element, history } = props

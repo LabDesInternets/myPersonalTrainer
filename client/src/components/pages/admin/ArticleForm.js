@@ -12,7 +12,7 @@ const urlAddArticle = `/api/blog/articles/add`
 const urlUpdateArticle = `/api/blog/articles/edit`
 
 const ArticleForm = (props) => {
-  console.log("now ", now)
+
   const { addMode, dataToEdit, editMode, editArticleMode } = props
   const [formData, setFormData] = useState({
     title: '',
@@ -30,7 +30,6 @@ const ArticleForm = (props) => {
 
 
   const updateFormData = event => {
-    console.log("form ", typeof event.target.value)
     if (event.target.name === 'articleImage') {
       setFormData({
         ...formData,

@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import Container from '../../cors/Container'
 import { device } from '../../cors/ResponsiveSettings'
 import categories from '../home/categoriesContent'
+import servicesStairs from '../../../assets/images/servicesStairs.jpg'
 import servicesStairsTop from '../../../assets/images/servicesStairsTop.jpg'
 import servicesStairsBottom from '../../../assets/images/servicesStairsBottom.jpg'
 
@@ -14,18 +15,30 @@ const WhoAmI = ({ element }) => {
   return (
     <div ref={element}>
 
-      <Wrapper bgImg={servicesStairsTop}>
-        <ContentWrapper textBottom>
-          <p>{category.content1}</p>
-          <p>{category.content2}</p>
-        </ContentWrapper>
-      </Wrapper>
-      <Wrapper bgImg={servicesStairsBottom}>
-        <ContentWrapper textTop>
-          <p>{category.content3}</p>
-          <p>{category.content4}</p>
-        </ContentWrapper>
-      </Wrapper>
+      <Mobile>
+        <Wrapper bgImg={servicesStairsTop}>
+          <ContentWrapper textBottom>
+            <p>{category.content1}</p>
+            <p>{category.content2}</p>
+          </ContentWrapper>
+        </Wrapper>
+        <Wrapper bgImg={servicesStairsBottom}>
+          <ContentWrapper textTop>
+            <p>{category.content3}</p>
+            <p>{category.content4}</p>
+          </ContentWrapper>
+        </Wrapper>
+      </Mobile>
+      <Laptop>
+        <Wrapper bgImg={servicesStairs}>
+          <ContentWrapper>
+            <p>{category.content1}</p>
+            <p>{category.content2}</p>
+            <p>{category.content3}</p>
+            <p>{category.content4}</p>
+          </ContentWrapper>
+        </Wrapper>
+      </Laptop>
 
     </div>
   )
@@ -38,7 +51,7 @@ const Wrapper = styled.div`
   height:100vh;
   background-image: url(".${props => props.bgImg}");
   background-size:cover;
-  /* background-color:black; */
+  justify-content:center;
   opacity:0.8;
   background-position:50%; 
   color:white;
@@ -83,4 +96,15 @@ const ContentWrapper = styled(Container)`
     padding:4rem;
     height:60vh;
    }
+`
+const Mobile = styled.div`
+  @media ${device.laptop} {
+    display:none;
+  }
+`
+const Laptop = styled.div`
+  display:none;
+  @media ${device.laptop} {
+    display:block;
+  }
 `
