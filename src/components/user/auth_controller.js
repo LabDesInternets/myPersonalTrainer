@@ -8,7 +8,7 @@ const HttpStatusCode = require('../../helpers/status_code');
 const authenticate = (req, res) => new Promise((resolve, reject) => {
   passport.authenticate('local', { session: false }, (err, user) => {
     if (err) reject(new Error(err));
-    else if (!user) reject(new Error('No user found with these credentials'));
+    else if (!user) reject(new AppError('Unauthorized', HttpStatusCode.UNAUTHORIZED, 'No user found with these credentials', true));
     resolve(user);
   })(req, res);
 });

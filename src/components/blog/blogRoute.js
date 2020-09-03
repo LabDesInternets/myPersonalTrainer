@@ -51,20 +51,16 @@ blogRouter.get('/articles/:id', async (request, response, next) => {
 });
 
 
-blogRouter.post('/articles/add', upload.single('articleImage'), async (request, response) => {
-  const data = {
-    title: request.body.title,
-    description: request.body.description,
-    text: request.body.text,
-    picture: `/api/${request.file.path}`,
-    date: request.body.date
-  };
+blogRouter.post('/articles/add', upload.single('articleImage'), async (request, response, next) => {
+  const { title, description, text, date } = request.body;
+  const picture = `/api/${request.file.path}`;
+  const data = { title, description, text, picture, date };
 
   try {
     const createdArticle = await blogController.addArticle(data);
     response.status(CREATED).json({ createdArticle, message: 'Your article has been added! ' });
   } catch (error) {
-    console.log('ooops => ', error);
+    next(error);
   }
 });
 

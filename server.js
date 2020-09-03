@@ -12,19 +12,15 @@ const { errorLogger, errorHandler } = require('./src/middlewares');
 
 const server = express();
 
-
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(expressValidator());
 
 server.use(passport.initialize());
 server.use(passport.session());
-server.use(
-  '/api',
-  cors({
-    exposedHeaders: ['Content-Length', 'xAuth']
-  })
-);
+server.use('/api/src/assets', express.static('src/assets'));
+server.use('/api', routes);
+server.use('/api', cors({ exposedHeaders: ['Content-Length', 'xAuth'] }));
 
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
@@ -35,13 +31,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-
-server.use('/api/src/assets', express.static('src/assets'));
-server.use('/api', routes);
-
-
 server.use(errorLogger);
-
 
 server.use(async (error, req, res, next) => {
   const isOperationalError = await errorHandler.handleError(error);

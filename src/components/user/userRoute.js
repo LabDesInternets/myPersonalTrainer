@@ -35,7 +35,7 @@ userRouter.post('/register', validateSignup, checkAccount, async (request, respo
     .json({ createdUser, userInfo, message: 'you are now logged in ! ' });
 });
 
-userRouter.post('/login', async (request, response) => {
+userRouter.post('/login', async (request, response, next) => {
   try {
     const userInfo = await login(request);
     const token = authenticate.generateAuthToken(userInfo);
@@ -44,8 +44,8 @@ userRouter.post('/login', async (request, response) => {
       .status(200)
       .header('xAuth', token)
       .json({ userInfo, message: 'you are now logged in ! ' });
-  } catch (err) {
-    console.log('oooops => ', err);
+  } catch (error) {
+    console.log('ooops => ', error);
   }
 });
 

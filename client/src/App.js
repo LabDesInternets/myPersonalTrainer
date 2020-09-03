@@ -20,13 +20,10 @@ import ResetPw from './components/pages/resetPw'
 import BlogPage from './components/pages/blogPage'
 import ArticlePage from './components/pages/article'
 
+const urlAdmin = process.env.REACT_APP_ADMIN
 
 
-function App() {
-
-
-  const urlAdmin = process.env.REACT_APP_ADMIN
-
+const App = () => {
 
   const [open, setOpen] = useState(false)
   const { isSticky, element } = useSticky();
@@ -35,7 +32,6 @@ function App() {
 
   return (
     <div>
-
       <Router>
         <div ref={node}>
           <Burger open={open} setOpen={setOpen} />
@@ -55,11 +51,9 @@ function App() {
           <Route path="/blog/:id" render={props => <ArticlePage {...props} element={element} />} />
           <PrivateRoute path="/signup" component={SignUp} />
           <PrivateRoute exact path={`/${urlAdmin}`} component={Admin} />
-
         </Switch>
         <Footer />
       </Router>
-
     </div>
   );
 }
