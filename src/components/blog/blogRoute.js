@@ -58,10 +58,12 @@ blogRouter.post('/articles/add', upload.single('articleImage'), async (request, 
 
   try {
     const createdArticle = await blogController.addArticle(data);
-    response.status(CREATED).json({ createdArticle, message: 'Your article has been added! ' });
+    const articles = await blogController.getAllArticles();
+    response.status(CREATED).json({ articles, message: 'Your article has been added! ' });
   } catch (error) {
     next(error);
   }
+
 });
 
 blogRouter.put('/articles/edit/:id', upload.single('articleImage'), async (request, response) => {

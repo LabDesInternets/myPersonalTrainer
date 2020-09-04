@@ -1,18 +1,49 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import { BlogContext } from '../../../context/BlogContext'
 import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers';
+import * as yup from 'yup';
+import { setLocale } from 'yup';
 import styled from 'styled-components'
 import StyledInput from '../../cors/StyledInput'
 import StyledButton from '../../cors/StyledButton'
 import { device } from '../../cors/ResponsiveSettings'
-import moment from 'moment'
 
-const now = moment().utc().toDate()
+
+
+const now = new Date().toISOString().split("T")[0]
 
 const urlAddArticle = `/api/blog/articles/add`
 const urlUpdateArticle = `/api/blog/articles/edit`
 
+setLocale({
+  mixed: {
+    notType: "Avec une ${path} c'est encore mieux",
+  }
+})
+
+
+const articleFormValidation = yup.object().shape({
+  title: yup.string()
+    .min(2, "Un titre court c'est efficace mais moins de 2 caractères ça ne passe pas!")
+    .max(50, "Ce titre semble excessivement long, soyons raisonnable, moins de 50 caractères.")
+    .required("Tout article digne de ce nom mérite un bon titre"),
+  description: yup.string()
+    .min(2, "Une bonne description nécessite plus de 2 caractères!")
+    .max(150, "Une bonne description ne doit pas dépasser 50 caractères!")
+    .required("Une description est requise"),
+  text: yup.string()
+    .required("Un peu de sérieux! le texte est nécessaire pour publier un article"),
+  // articleImage: yup.object().shape({
+  //   name: yup.string()
+  // }).label('image')
+});
+
+
+
 const ArticleForm = (props) => {
 
+  const { articles, setArticles } = useContext(BlogContext)
   const { addMode, dataToEdit, editMode, editArticleMode } = props
   const [formData, setFormData] = useState({
     title: '',
@@ -21,7 +52,12 @@ const ArticleForm = (props) => {
     articleImage: '',
     date: ''
   });
-  const { register, handleSubmit } = useForm()
+
+  const { register, handleSubmit, errors } = useForm({
+    resolver: yupResolver(articleFormValidation)
+  });
+
+
   const refresh = () => window.location.reload()
 
   useEffect(() => {
@@ -91,7 +127,7 @@ const ArticleForm = (props) => {
             value={formData.title}
             onChange={updateFormData}
           />
-
+          <p>{errors.title?.message}</p>
 
           <StyledInput
             name="description"
@@ -101,7 +137,7 @@ const ArticleForm = (props) => {
             value={formData.description}
             onChange={updateFormData}
           />
-
+          <p>{errors.description?.message}</p>
 
           <STextArea
             name="text"
@@ -111,7 +147,7 @@ const ArticleForm = (props) => {
             value={formData.text}
             onChange={updateFormData}
           />
-
+          <p>{errors.text?.message}</p>
 
           <StyledInput
             name="articleImage"
@@ -122,7 +158,7 @@ const ArticleForm = (props) => {
             onChange={updateFormData}
             height='3rem'
           />
-
+          <p>{errors.articleImage?.message}</p>
 
           <StyledInput
             name="date"
@@ -136,7 +172,7 @@ const ArticleForm = (props) => {
             required
             height='3rem'
           ></StyledInput>
-
+          <p>{errors.date?.message}</p>
         </FormWrapper>
         <div>
           <StyledButton type="submit">Publier</StyledButton>
@@ -171,6 +207,10 @@ const StyledForm = styled.form`
   align-items:center;
   height: ${props => props.height || "100%"};
   width: ${props => props.width || "100%"};
+
+  p{
+    color: #ff5a5f;
+  }
 
   @media ${device.laptop} {
     width: 50rem;
