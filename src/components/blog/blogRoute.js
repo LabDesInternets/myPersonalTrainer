@@ -63,7 +63,7 @@ blogRouter.post('/articles/add', upload.single('articleImage'), async (request, 
   } catch (error) {
     next(error);
   }
-  console.log('ok');
+
 });
 
 blogRouter.put('/articles/edit/:id', upload.single('articleImage'), async (request, response) => {
