@@ -53,7 +53,7 @@ let SignIn = (props) => {
   }
 
   return (
-    <Container width='100vw' height='80vh' >
+    <Container width='100vw' height='90vh' >
       <Container fD='column' height='80%'>
         <Container fD='column' height='20%'>
           <div style={{ fontSize: '2rem' }}>Connecte-toi</div>

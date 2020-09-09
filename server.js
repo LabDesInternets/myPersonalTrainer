@@ -22,14 +22,14 @@ server.use('/api/src/assets', express.static('src/assets'));
 server.use('/api', routes);
 server.use('/api', cors({ exposedHeaders: ['Content-Length', 'xAuth'] }));
 
-// if (process.env.NODE_ENV === 'production') {
-//   // Serve any static files
-//   server.use(express.static(path.join(__dirname, 'client/build')));
-//   // Handle React routing, return all requests to React app
-//   server.get('/*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-//   });
-// }
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  server.use(express.static(path.join(__dirname, 'client/build')));
+  // Handle React routing, return all requests to React app
+  server.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}
 
 server.get('/', (req, res) => {
   res.send('it is oooonnnnnnnnn')

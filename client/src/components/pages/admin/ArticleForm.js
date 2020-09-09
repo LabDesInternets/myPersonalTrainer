@@ -26,11 +26,11 @@ setLocale({
 const articleFormValidation = yup.object().shape({
   title: yup.string()
     .min(2, "Un titre court c'est efficace mais moins de 2 caractères ça ne passe pas!")
-    .max(50, "Ce titre semble excessivement long, soyons raisonnable, moins de 50 caractères.")
+    .max(50, "Ce titre semble excessivement long, soyons raisonnable, moins de 200 caractères.")
     .required("Tout article digne de ce nom mérite un bon titre"),
   description: yup.string()
     .min(2, "Une bonne description nécessite plus de 2 caractères!")
-    .max(150, "Une bonne description ne doit pas dépasser 50 caractères!")
+    .max(200, "Une bonne description ne doit pas dépasser 200 caractères!")
     .required("Une description est requise"),
   text: yup.string()
     .required("Un peu de sérieux! le texte est nécessaire pour publier un article"),
