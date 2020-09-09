@@ -17,8 +17,6 @@ import SignUp from './components/pages/SignUp'
 import Ooops from './components/pages/Ooops'
 import PrivateRoute from './components/HOC/PrivateRoute'
 import ResetPw from './components/pages/resetPw'
-import BlogPage from './components/pages/blogPage'
-import ArticlePage from './components/pages/article'
 
 const urlAdmin = process.env.REACT_APP_ADMIN
 
@@ -47,8 +45,6 @@ const App = () => {
           <Route path="/signin" component={SignIn} />
           <Route path="/ooopsie" component={Ooops} />
           <Route path="/reset/:id/:token" component={ResetPw} />
-          <Route exact path="/blog" render={props => <BlogPage {...props} element={element} />} />
-          <Route path="/blog/:id" render={props => <ArticlePage {...props} element={element} />} />
           <PrivateRoute path="/signup" component={SignUp} />
           <PrivateRoute exact path={`/${urlAdmin}`} component={Admin} />
         </Switch>
