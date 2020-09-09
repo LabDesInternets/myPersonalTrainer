@@ -2,7 +2,7 @@
   "name": "my_personal_trainer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://raphaelcoachsportif.com",
+  "homepage": "https://raphaelcoachsportif.herokuapp.com",
   "dependencies": {
     "@hookform/resolvers": "^0.1.0",
     "@testing-library/jest-dom": "^4.2.4",
