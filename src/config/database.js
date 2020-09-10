@@ -16,8 +16,8 @@ module.exports = {
     dialect: 'postgres'
   },
   production: {
-    use_env_variable: 'postgresql-globular-11459',
-    dialect: 'postgres',
+    use_env_variable: "postgresql-globular-11459",
+    dialect: "postgres",
     dialectOptions: {
       ssl: {
         require: true,
