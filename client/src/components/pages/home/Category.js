@@ -64,7 +64,7 @@ p{
   color:black;
   font-weight:300;
   line-height:2;
-  padding: 6rem;
+  padding: 0;
   align-items:center;
   text-align:center;
   font-size: 1.5rem;
