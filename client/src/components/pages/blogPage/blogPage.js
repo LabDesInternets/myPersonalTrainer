@@ -40,6 +40,10 @@ export default BlogPage
 
 const Wrapper = styled.div`
   max-width:100vw;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   h6{
     font-size: 2rem;
     color:white;

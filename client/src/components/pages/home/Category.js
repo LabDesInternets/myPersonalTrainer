@@ -43,7 +43,6 @@ display:flex;
 flex-direction: column;
 justify-content: center;
 font-size: 1.25rem;
-padding:1rem;
 position: absolute;
 top:0;
 z-index:10;
@@ -64,7 +63,6 @@ p{
   color:black;
   font-weight:300;
   line-height:2;
-  padding: 6rem;
   align-items:center;
   text-align:center;
   font-size: 1.5rem;

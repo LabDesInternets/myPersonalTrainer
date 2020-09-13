@@ -4,13 +4,14 @@ import styled from 'styled-components'
 import { device } from '../../cors/ResponsiveSettings'
 import { BlogContext } from '../../../context/BlogContext'
 import ArticleCard from '../home/ArticleCard'
+import work from '../../../assets/images/workHarderRaw.jpg'
 
 const urlBlog = `/api/blog/articles`
 
 const ArticlePage = (props) => {
 
   const { articles } = useContext(BlogContext)
-
+  console.log("art ", articles)
 
   const [article, setArticle] = useState()
   const { id } = props.match.params
@@ -60,7 +61,7 @@ const ArticlePage = (props) => {
 export default ArticlePage
 
 const Wrapper = styled.div`
-  padding:1.5rem;
+  padding: 4rem 2rem;
   h3{
     font-size:1.5rem;
   }
