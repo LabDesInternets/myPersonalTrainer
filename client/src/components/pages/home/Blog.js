@@ -9,6 +9,8 @@ import StyledLink from '../../cors/StyledLink'
 
 const Blog = ({ history }) => {
 
+
+
   const { articles } = useContext(BlogContext)
 
   return (
@@ -16,7 +18,7 @@ const Blog = ({ history }) => {
     <Wrapper>
       <Container height='10vh' bgColor='#0096c7' width='100vw'>
         <h6>
-          <StyledLink to='./blog'>Le blog</StyledLink>
+          <BlogLink to='./blog'>Le blog</BlogLink>
         </h6>
       </Container>
       <Laptop>
@@ -47,6 +49,13 @@ const Wrapper = styled.div`
     color:white;
   }
 `
+const BlogLink = styled(StyledLink)`
+  &:hover{
+    text-decoration:none;
+    color: #ffdf9f;
+  } 
+`
+
 const Laptop = styled.div`
   display:none;
   @media ${device.laptop} {

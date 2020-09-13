@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 const StyledInput = styled.input`
   height: ${props => props.height || '2rem'};
+  border-radius: 0;
   font-family: 'Dosis';  
   font-size: 1.25rem;
   padding: 1rem 0;

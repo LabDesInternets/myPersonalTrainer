@@ -40,12 +40,14 @@ const ArticleWrapper = styled(Container)`
 
 `
 const ImgWrapper = styled.img`
-  width:100%;
-  @media ${device.laptop} {
-  width:28vw;
-  height:18vw;
+  --ratio: 135 / 240;
+  width:95vw;
+  height: calc(95vw * var(--ratio));
   object-position: top;
   object-fit: cover;
+  @media ${device.laptop} {
+    width:28vw;
+    height: calc(28vw * var(--ratio));
   }
 `
 

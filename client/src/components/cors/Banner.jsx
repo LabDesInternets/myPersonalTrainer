@@ -12,7 +12,6 @@ const Banner = styled.div`
   justify-content:center;
   align-items:center;
   color:white;
-  font-size: 1.75rem;
   text-align: center;
   background-image: url(.${homeBannerMobile});
   background-size: cover;
@@ -25,10 +24,6 @@ const Banner = styled.div`
 
 @media ${device.laptop} {
   background-image: url(.${homeBanner});
-  font-size: 2.5vw;
-  h2{
-  font-size:5vw;
-  }
 } 
 `;
 

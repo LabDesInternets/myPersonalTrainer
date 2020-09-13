@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers';
@@ -30,6 +30,10 @@ const contactFormValidation = yup.object().shape({
 
 
 const ContactMe = ({ element }) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   const [formData, setFormData] = useState({
     firstName: '',

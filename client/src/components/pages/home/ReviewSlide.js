@@ -20,9 +20,8 @@ const ReviewSlide = ({ display }) => {
           speed: 500,
           slidesToShow: 1,
           slidesToScroll: 1,
-          // arrows: true,
           autoplay: true,
-          autoplaySpeed: 5000
+          autoplaySpeed: 7000
         }
       )
     } else {
@@ -34,7 +33,7 @@ const ReviewSlide = ({ display }) => {
           slidesToShow: 2,
           slidesToScroll: 1,
           autoplay: true,
-          autoplaySpeed: 5000
+          autoplaySpeed: 7000
         }
       )
     }

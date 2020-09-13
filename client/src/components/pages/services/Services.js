@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import services from './servicesContent'
 import ServiceCard from './ServiceCard'
@@ -8,6 +8,10 @@ import servicesBg from '../../../assets/images/servicesBg.jpg'
 
 
 const Services = ({ element }) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   const objectives = []
   Object.keys(services).forEach(target => objectives.push(services[target]))

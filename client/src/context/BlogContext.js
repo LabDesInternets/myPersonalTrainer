@@ -7,13 +7,12 @@ export const BlogContext = createContext();
 
 const BlogProvider = ({ children }) => {
 
-  const [articles, setArticles] = useState()
+  const [articles, setArticles] = useState([])
 
   const getArticles = () => {
     axios.get(urlBlog)
       .then(function (response) {
         setArticles(response.data);
-        console.log("art from blog ", response.data)
       })
       .catch(function (error) {
         console.log("ooops ! => ", error)

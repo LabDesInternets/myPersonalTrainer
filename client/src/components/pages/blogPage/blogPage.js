@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components'
 import { BlogContext } from '../../../context/BlogContext'
 import { device } from '../../cors/ResponsiveSettings'
@@ -7,6 +7,10 @@ import Container from '../../cors/Container'
 import ArticleCardBlogPage from './ArticleCardBlogPage'
 
 const BlogPage = (props) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   const { articles } = useContext(BlogContext)
   const { element } = props
@@ -35,9 +39,7 @@ const BlogPage = (props) => {
 export default BlogPage
 
 const Wrapper = styled.div`
-
-  
-
+  max-width:100vw;
   h6{
     font-size: 2rem;
     color:white;
@@ -55,6 +57,7 @@ const Mobile = styled.div`
   }
 `
 const Laptop = styled.div`
+  padding: 1rem 4rem;
   display:none;
   @media ${device.laptop} {
     display:block;

@@ -48,7 +48,7 @@ process.on('unhandledRejection', (reason, p) => {
 process.on('uncaughtException', (error) => {
   // error never handled => handle it and decide whether a restart is needed
   errorHandler.handleError(error);
-  if (!errorHandler.isTrustedError(error)) process.exit(1);
+  //if (!errorHandler.isTrustedError(error)) process.exit(1);
 });
 
 

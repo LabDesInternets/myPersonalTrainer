@@ -1,19 +1,19 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import Container from '../../cors/Container'
-import { device } from '../../cors/ResponsiveSettings'
+import { size, device } from '../../cors/ResponsiveSettings'
 import { fadeIn } from '../pricesAndOptions/PricesCard'
 
 
 
 const ServiceCard = ({ service, section }) => {
 
-  Object.keys(service).forEach(section => {
-    if (section.includes('content')) {
-      console.log(service[section])
-    }
-  }
-  )
+  // Object.keys(service).forEach(section => {
+  //   if (section.includes('content')) {
+  //     console.log(service[section])
+  //   }
+  // }
+  // )
 
 
   return (
@@ -36,7 +36,8 @@ const ServiceCard = ({ service, section }) => {
 export default ServiceCard
 
 const Wrapper = styled(Container)`
-  width:100vw;
+  text-align:center;
+  max-width:100vw;
   height:100vh;
   animation: ${fadeIn} 3s;
   &:nth-child(1) { 
@@ -91,11 +92,8 @@ const Icon = styled.img`
 `
 const Title = styled.h3`
   margin:1rem;
-  @media ${device.tablet} {
-    font-size: 2rem;
-  }
-  @media ${device.laptop} {
-    font-size: 1.5rem;
+  @media (max-width: ${size.laptop}){
+    font-size: calc(1.5rem + 1vw);
   }
 `
 

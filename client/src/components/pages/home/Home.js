@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Category from './Category'
 import Banner from '../../cors/Banner'
@@ -12,14 +12,18 @@ import Blog from './Blog'
 
 const Home = (props) => {
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   const { element, history } = props
 
   return (
-    <div>
+    <Wrapper>
       <Container width='100vw' height='100vh'>
         <Banner>
           <BannerContent>
-            <h2>Raphael Coaching</h2>
+            <h1>Raphael Coaching</h1>
             <p>Des entraînements sur-mesure qui vous permettront d'atteindre vos objectifs</p>
             <StyledLink to="/services"><StyledButton mobile>Découvrir</StyledButton></StyledLink>
           </BannerContent>
@@ -34,7 +38,7 @@ const Home = (props) => {
 
       <Review />
 
-    </div >
+    </Wrapper>
   )
 }
 
@@ -43,4 +47,12 @@ export default Home
 
 const BannerContent = styled.div`
   padding:1rem;
+  p{
+    font-size: calc(1.25rem + 0.5vw);
+  }
+
+`
+const Wrapper = styled.div`
+  max-width: 100vw;
+  flex: 1 0 auto;
 `

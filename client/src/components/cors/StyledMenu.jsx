@@ -5,11 +5,12 @@ const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items:center;
   background: black;
   opacity:1;
-  width:100%;
+  width:100vw;
   height: 100vh;
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
   text-align: center;
   position: fixed;
   z-index:100;

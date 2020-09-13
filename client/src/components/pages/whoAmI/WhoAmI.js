@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import Container from '../../cors/Container'
 import { device } from '../../cors/ResponsiveSettings'
@@ -10,6 +10,10 @@ import servicesStairsBottom from '../../../assets/images/servicesStairsBottom.jp
 
 
 const WhoAmI = ({ element }) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   const category = categories.about
   return (
@@ -71,8 +75,8 @@ const Wrapper = styled.div`
 `
 
 const ContentWrapper = styled(Container)`
-   font-size:1.25rem;
-   padding:2rem 1rem 1rem 1rem;
+   /* font-size:1.25rem; */
+   padding:2rem 1rem 0 1rem;
    background-color:black;
    font-weight:500;
    flex-wrap:nowrap;

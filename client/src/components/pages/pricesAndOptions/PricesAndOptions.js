@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import pricesAndOptionsRaw from '../../../assets/images/pricesAndOptionsRaw.jpg'
 import pricesAndOptionsRaw1 from '../../../assets/images/pricesAndOptionsRaw1.jpg'
@@ -43,6 +43,12 @@ const MobileWrapper = styled.div`
 `
 
 const PricesAndOptions = ({ element }) => {
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <>
       <MobileWrapper mobile>

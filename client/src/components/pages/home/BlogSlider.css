@@ -15,5 +15,7 @@
   .laptop {
     height:40vh;
   }
- 
+  .laptop > div {
+    height: 50vh;
+  }
 }

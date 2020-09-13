@@ -9,7 +9,7 @@ const StyledButton = styled.button`
   width: ${props => props.w || "11rem"};
   border: 2px solid #0096c7;
   color: #0096c7;
-  /* margin: 0.5rem 1rem; */
+  margin: 1rem 0rem; 
   padding: 0.5rem 0;
   font-size: 1rem;
   font-weight: 400;

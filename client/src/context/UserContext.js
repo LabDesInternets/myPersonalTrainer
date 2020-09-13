@@ -7,7 +7,7 @@ export const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
 
-  const [users, setUsers] = useState()
+  const [users, setUsers] = useState([])
 
   const getUsers = () => {
     axios.get(urlUser)

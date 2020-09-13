@@ -16,13 +16,13 @@ const ArticleCardBlogPage = (props) => {
 
 
       <ContentWrapper>
-        <p>{article.date}</p>
-        <h5>{article.title}</h5>
-        <p style={{ padding: '0.75rem 0' }}>{article.description}</p>
-        <StyledLink to={`/blog/${article.id}`}><StyledButton>Lire l'article</StyledButton></StyledLink>
+        <p style={{ fontSize: '1rem' }}>{article.date}</p>
+        <h3>{article.title}</h3>
+        <p>{article.description}</p>
+        <StyledLink to={`/blog/${article.id}`} padding='0'><StyledButton>Lire l'article</StyledButton></StyledLink>
       </ContentWrapper>
 
-    </ArticleWrapper>
+    </ArticleWrapper >
 
   )
 }
@@ -41,10 +41,10 @@ const ArticleWrapper = styled.div`
 const ImgWrapper = styled.img`
   width:100%;
   @media ${device.laptop} {
-  width:40vw;
-  height:26.7vw;
-  object-position: top;
-  object-fit: cover;
+    width:30vw;
+    height:20.025vw;
+    object-position: top;
+    object-fit: cover;
   }
 `
 
@@ -53,7 +53,7 @@ const ContentWrapper = styled(Container)`
   align-items: baseline;
  padding:0 2rem;
   p{
-    font-size:1.25rem;
+    /* font-size:1.25rem; */
   }
   h5{
     font-size: 1.75rem;
