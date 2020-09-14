@@ -35,6 +35,8 @@ const ContactMe = ({ element }) => {
     window.scrollTo(0, 0);
   }, [])
 
+  const [message, setMessage] = useState('')
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -60,6 +62,7 @@ const ContactMe = ({ element }) => {
     try {
       const response = await axios.post(urlContact, newMessage)
       console.log(response);
+      setMessage(response.data.message)
     } catch (error) {
       console.log(error);
     }
@@ -69,6 +72,7 @@ const ContactMe = ({ element }) => {
     <Wrapper ref={element}>
       <h1>Contact</h1>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
+        {message && <FlashMessage>{message}</FlashMessage>}
         <FormWrapper height='60vh'>
 
           <StyledInput
@@ -186,4 +190,11 @@ font-size:1.25rem;
     border-color: #07BEB8;
     outline: none;
   }
+`
+
+const FlashMessage = styled.div`
+  border: solid 1px #0096c7;
+  background-color: #8ac4ff;
+  border-radius:5px;
+  padding:1rem;
 `
