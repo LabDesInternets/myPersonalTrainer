@@ -58,7 +58,8 @@ p{
 }
 
 @media ${device.laptop} {
-  width: 50vw;
+  max-width: 50vw;
+  padding:6rem;
   position:relative;
   color:black;
   font-weight:300;
@@ -97,7 +98,7 @@ background-position: ${props => props.bgPos || '50%'};
 `
 const Section = styled.div`
 position:relative;
-width:100vw;
+max-width:100vw;
 height: 100vh;
 
 @media ${device.laptop} {

@@ -15,6 +15,7 @@ body {
   font-weight:300;
   line-height: calc(1.5rem + 0.8vw);
   font-size: calc(0.8rem + 0.5vw);
+  box-sizing: border-box;
   h1{
     font-size: calc(2.5rem + 0.8vw);
     font-weight:500;

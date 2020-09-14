@@ -10,7 +10,7 @@ contactRouter.post('/send', async (request, response) => {
 
   const result = await contactController.sendMeMail(mailInfo);
 
-  response.status(200).json({ result, message: 'Your message has been sent! ' });
+  response.status(200).json({ result, message: 'Votre message a bien été envoyé !' });
 });
 
 module.exports = contactRouter;

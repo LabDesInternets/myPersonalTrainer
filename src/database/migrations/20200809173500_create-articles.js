@@ -7,6 +7,10 @@ module.exports = {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4
     },
+    picture: {
+      allowNull: false,
+      type: Sequelize.STRING(200)
+    },
     title: {
       allowNull: false,
       type: Sequelize.STRING(200)
@@ -15,12 +19,64 @@ module.exports = {
       allowNull: false,
       type: Sequelize.TEXT
     },
-    text: {
+    title1: {
+      allowNull: true,
+      type: Sequelize.STRING(200),
+    },
+    text1: {
       allowNull: false,
       type: Sequelize.TEXT
     },
-    picture: {
-      allowNull: false,
+    picture1: {
+      allowNull: true,
+      type: Sequelize.STRING(200)
+    },
+    title2: {
+      allowNull: true,
+      type: Sequelize.STRING(200),
+    },
+    text2: {
+      allowNull: true,
+      type: Sequelize.TEXT
+    },
+    picture2: {
+      allowNull: true,
+      type: Sequelize.STRING(200)
+    },
+    title3: {
+      allowNull: true,
+      type: Sequelize.STRING(200),
+    },
+    text3: {
+      allowNull: true,
+      type: Sequelize.TEXT
+    },
+    picture3: {
+      allowNull: true,
+      type: Sequelize.STRING(200)
+    },
+    title4: {
+      allowNull: true,
+      type: Sequelize.STRING(200),
+    },
+    text4: {
+      allowNull: true,
+      type: Sequelize.TEXT
+    },
+    picture4: {
+      allowNull: true,
+      type: Sequelize.STRING(200)
+    },
+    title5: {
+      allowNull: true,
+      type: Sequelize.STRING(200),
+    },
+    text5: {
+      allowNull: true,
+      type: Sequelize.TEXT
+    },
+    picture5: {
+      allowNull: true,
       type: Sequelize.STRING(200)
     },
     date: {

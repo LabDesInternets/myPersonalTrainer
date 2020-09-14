@@ -6,7 +6,7 @@ const HttpStatusCode = require('../../helpers/status_code');
 const blogController = {
   getAllArticles: async () => {
     const articles = await Article.findAll({
-      attributes: ['id', 'title', 'description', 'text', 'picture', 'date']
+      attributes: ['id', 'picture', 'title', 'description', 'title1', 'text1', 'picture1', 'title2', 'text2', 'picture2', 'title3', 'text3', 'picture3', 'title4', 'text4', 'picture4', 'title5', 'text5', 'picture5', 'date']
     });
     if (!articles) {
       throw new AppError('no content', HttpStatusCode.NO_CONTENT, 'no articles found in the db', true);
@@ -16,14 +16,7 @@ const blogController = {
 
   getOneArticle: async (id) => {
     const article = await Article.findByPk(id, {
-      attributes: [
-        'id',
-        'title',
-        'description',
-        'text',
-        'picture',
-        'date'
-      ]
+      attributes: ['id', 'picture', 'title', 'description', 'title1', 'text1', 'picture1', 'title2', 'text2', 'picture2', 'title3', 'text3', 'picture3', 'title4', 'text4', 'picture4', 'title5', 'text5', 'picture5', 'date']
     });
     if (!article) {
       throw new AppError(

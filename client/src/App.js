@@ -31,30 +31,28 @@ const App = () => {
   useOnClickOutside(node, () => setOpen(false))
 
   return (
-    <div>
-      <Router>
-        <div ref={node}>
-          <Burger open={open} setOpen={setOpen} />
-          <Menu open={open} setOpen={setOpen} />
-          <Navbar sticky={isSticky} />
-        </div>
-        <Switch>
-          <Route exact path="/" render={props => <Home {...props} element={element} />} />
-          <Route path="/about" render={props => <WhoAmI {...props} element={element} />} />
-          <Route path="/services" render={props => <Services {...props} element={element} />} />
-          <Route path="/prices" render={props => <PricesAndOptions {...props} element={element} />} />
-          <Route path="/contact" render={props => <ContactMe {...props} element={element} />} />
-          <Route path="/signin" component={SignIn} />
-          <Route path="/ooopsie" component={Ooops} />
-          <Route path="/reset/:id/:token" component={ResetPw} />
-          <Route exact path="/blog" render={props => <BlogPage {...props} element={element} />} />
-          <Route path="/blog/:id" render={props => <ArticlePage {...props} element={element} />} />
-          <PrivateRoute path="/signup" component={SignUp} />
-          <PrivateRoute exact path={`/${urlAdmin}`} component={Admin} />
-        </Switch>
-        <Footer />
-      </Router>
-    </div>
+    <Router>
+      <div ref={node}>
+        <Burger open={open} setOpen={setOpen} />
+        <Menu open={open} setOpen={setOpen} />
+        <Navbar sticky={isSticky} />
+      </div>
+      <Switch>
+        <Route exact path="/" render={props => <Home {...props} element={element} />} />
+        <Route path="/about" render={props => <WhoAmI {...props} element={element} />} />
+        <Route path="/services" render={props => <Services {...props} element={element} />} />
+        <Route path="/prices" render={props => <PricesAndOptions {...props} element={element} />} />
+        <Route path="/contact" render={props => <ContactMe {...props} element={element} />} />
+        <Route path="/signin" component={SignIn} />
+        <Route path="/ooopsie" component={Ooops} />
+        <Route path="/reset/:id/:token" component={ResetPw} />
+        <Route exact path="/blog" render={props => <BlogPage {...props} element={element} />} />
+        <Route path="/blog/:id" render={props => <ArticlePage {...props} element={element} />} />
+        <PrivateRoute path="/signup" component={SignUp} />
+        <PrivateRoute exact path={`/${urlAdmin}`} component={Admin} />
+      </Switch>
+      <Footer />
+    </Router>
   );
 }
 

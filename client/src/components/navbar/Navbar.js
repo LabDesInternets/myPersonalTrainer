@@ -7,18 +7,18 @@ import { device } from '../cors/ResponsiveSettings'
 const Navbar = (props) => {
   const { sticky } = props
   return (
-    <div>
-      <Wrapper cl={sticky ? 'navbarSticky' : 'navbar'}>
-        <NavContainer>
-          <StyledLink to='/'>Accueil</StyledLink>
-          <StyledLink to='/about'>Qui suis-je</StyledLink>
-          <StyledLink to='/services'>Prestations</StyledLink>
-          <StyledLink to='/prices'>Tarifs et formules</StyledLink>
-          <StyledLink to='/blog'>Blog</StyledLink>
-          <StyledLink to='/contact'>Me contacter</StyledLink>
-        </NavContainer>
-      </Wrapper>
-    </div>
+
+    <Wrapper cl={sticky ? 'navbarSticky' : 'navbar'}>
+      <NavContainer>
+        <StyledLink to='/'>Accueil</StyledLink>
+        <StyledLink to='/about'>Qui suis-je</StyledLink>
+        <StyledLink to='/services'>Prestations</StyledLink>
+        <StyledLink to='/prices'>Tarifs et formules</StyledLink>
+        <StyledLink to='/blog'>Blog</StyledLink>
+        <StyledLink to='/contact'>Me contacter</StyledLink>
+      </NavContainer>
+    </Wrapper>
+
   )
 }
 

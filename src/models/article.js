@@ -14,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
           notNull: true
         }
       },
+      picture: {
+        type: DataTypes.STRING(200),
+        allowNull: false
+      },
       title: {
         type: DataTypes.STRING(200),
         allowNull: false
@@ -22,13 +26,65 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false
       },
-      text: {
+      title1: {
+        type: DataTypes.STRING(200),
+        allowNull: true
+      },
+      text1: {
         type: DataTypes.TEXT,
         allowNull: false
       },
-      picture: {
+      picture1: {
         type: DataTypes.STRING(200),
-        allowNull: false
+        allowNull: true
+      },
+      title2: {
+        type: DataTypes.STRING(200),
+        allowNull: true
+      },
+      text2: {
+        type: DataTypes.TEXT,
+        allowNull: true
+      },
+      picture2: {
+        type: DataTypes.STRING(200),
+        allowNull: true
+      },
+      title3: {
+        type: DataTypes.STRING(200),
+        allowNull: true
+      },
+      text3: {
+        type: DataTypes.TEXT,
+        allowNull: true
+      },
+      picture3: {
+        type: DataTypes.STRING(200),
+        allowNull: true
+      },
+      title4: {
+        type: DataTypes.STRING(200),
+        allowNull: true
+      },
+      text4: {
+        type: DataTypes.TEXT,
+        allowNull: true
+      },
+      picture4: {
+        type: DataTypes.STRING(200),
+        allowNull: true
+      },
+      title5: {
+        type: DataTypes.STRING(200),
+        allowNull: true
+      },
+      text5: {
+        type: DataTypes.TEXT,
+        allowNull: true
+      },
+      picture5: {
+        type: DataTypes.STRING(200),
+        allowNull: true
       },
       date: {
         type: DataTypes.DATE,
