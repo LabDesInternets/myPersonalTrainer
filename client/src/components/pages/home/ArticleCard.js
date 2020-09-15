@@ -19,7 +19,7 @@ const ArticleCard = (props) => {
         <h5>{article.title}</h5>
         <p style={{ padding: '0.75rem 0' }}>{article.description}</p>
       </ContentWrapper>
-      <StyledLink to={`/blog/${article.id}`}><StyledButton>Lire l'article</StyledButton></StyledLink>
+      <StyledLink to={`/${article.id}`}><StyledButton>Lire l'article</StyledButton></StyledLink>
     </ArticleWrapper>
   )
 }

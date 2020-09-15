@@ -75,8 +75,7 @@ const Wrapper = styled.div`
 `
 
 const ContentWrapper = styled(Container)`
-   /* font-size:1.25rem; */
-   padding:2rem 1rem 0 1rem;
+   padding:2rem 1rem 0rem 1rem;
    background-color:black;
    font-weight:500;
    flex-wrap:nowrap;
@@ -84,7 +83,7 @@ const ContentWrapper = styled(Container)`
   ${props =>
     props.textBottom &&
     css`
-    justify-content:end;
+    justify-content:flex-end;
   `}
   ${props =>
     props.textTop &&
@@ -92,12 +91,10 @@ const ContentWrapper = styled(Container)`
     justify-content:start;
       `}
    @media ${device.tablet} {
-     font-size:1.5rem;
      padding: 4rem;
    }
    @media ${device.laptop} {
     font-weight:400;
-    padding:4rem;
     height:60vh;
    }
 `
