@@ -32,7 +32,7 @@ const ArticleWrapper = styled(Container)`
   flex-wrap: nowrap;
   align-items: center;
   justify-content:start;
-  padding: 3rem 1rem;
+  /* padding: 3rem 1rem; */
   @media ${device.laptop} {
     width:30vw;
     height:65vh;
@@ -40,6 +40,7 @@ const ArticleWrapper = styled(Container)`
 
 `
 const ImgWrapper = styled.img`
+padding-top:2rem;
   --ratio: 135 / 240;
   width:95vw;
   height: calc(95vw * var(--ratio));
@@ -52,13 +53,20 @@ const ImgWrapper = styled.img`
 `
 
 const ContentWrapper = styled(Container)`
+  box-sizing:border-box;
   justify-content: start;
   align-items: baseline;
   height: auto;
+  width:100vw;
+  padding: 0 1rem;
   p{
     font-size:1rem;
   }
   h5{
     font-size: 1.5rem;
+  }
+  @media ${device.laptop} {
+    width:100%;
+   
   }
 `

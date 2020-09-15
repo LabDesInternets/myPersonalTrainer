@@ -6,6 +6,7 @@ import { device } from '../../cors/ResponsiveSettings'
 
 const ArticlePage = (props) => {
   const { id } = props.match.params
+  const { element } = props
   const { articles } = useContext(BlogContext)
   const [article, setArticle] = useState()
 
@@ -20,7 +21,7 @@ const ArticlePage = (props) => {
   }, [articles, id])
 
   return (
-    <Wrapper>
+    <Wrapper ref={element}>
       <ArticleDisplay article={article} />
     </Wrapper>
 

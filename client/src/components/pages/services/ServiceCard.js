@@ -36,8 +36,10 @@ const ServiceCard = ({ service, section }) => {
 export default ServiceCard
 
 const Wrapper = styled(Container)`
-  text-align:center;
-  max-width:100vw;
+ text-align: justify;
+  text-justify: inter-word;
+  box-sizing:border-box;
+  max-width:100%;
   height:100vh;
   animation: ${fadeIn} 3s;
   &:nth-child(1) { 
@@ -106,7 +108,8 @@ height:60%;
 padding: 2rem;
 font-size:1.25rem;
 line-height:1.5;
-text-align:center;
+text-align: justify;
+text-justify: inter-word;
 
     @media ${device.tablet} {
       font-size:1.75rem;

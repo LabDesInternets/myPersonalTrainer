@@ -24,9 +24,9 @@ const ArticleDisplay = (props) => {
           <ImgWrapper src={article.picture4} alt='' />
           <h4>{article.title4}</h4>
           <p>{article.text4}</p>
-          <ImgWrapper src={article.picture5} alt='' />
+          {/* <ImgWrapper src={article.picture5} alt='' />
           <h4>{article.title5}</h4>
-          <p>{article.text5}</p>
+          <p>{article.text5}</p> */}
         </Wrapper>
       )}
     </>

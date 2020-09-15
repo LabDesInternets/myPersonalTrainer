@@ -47,7 +47,7 @@ const App = () => {
         <Route path="/ooopsie" component={Ooops} />
         <Route path="/reset/:id/:token" component={ResetPw} />
         <Route exact path="/blog" render={props => <BlogPage {...props} element={element} />} />
-        <Route path="/blog/:id" render={props => <ArticlePage {...props} element={element} />} />
+        <Route path="/:id" render={props => <ArticlePage {...props} element={element} />} />
         <PrivateRoute path="/signup" component={SignUp} />
         <PrivateRoute exact path={`/${urlAdmin}`} component={Admin} />
       </Switch>

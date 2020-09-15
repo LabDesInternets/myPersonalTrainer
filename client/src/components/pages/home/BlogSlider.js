@@ -10,6 +10,7 @@ import Container from '../../cors/Container'
 
 const BlogSlider = ({ display, blog }) => {
 
+
   const customDisplay = () => {
     if (display === 'mobile') {
       return (
@@ -55,6 +56,9 @@ export default BlogSlider
 
 
 const Wrapper = styled.div`
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   width:100vw;
   height:80vh;
   p { font-size: 1rem;}

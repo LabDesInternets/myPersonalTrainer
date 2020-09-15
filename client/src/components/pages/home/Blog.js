@@ -42,7 +42,6 @@ const Wrapper = styled.div`
   min-height:100vh;
   display: flex;
   flex-direction: column;
-  justify-content: start;
   align-items: center;
   h6{
     font-size: 2rem;

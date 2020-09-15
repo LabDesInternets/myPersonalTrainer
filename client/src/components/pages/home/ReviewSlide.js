@@ -47,7 +47,7 @@ const ReviewSlide = ({ display }) => {
 
   return (
 
-    <Container>
+    <Container width='100vw'>
       <Wrapper>
         <Slider className='laptop' {...settings}>
           {reviews.map(review =>
@@ -63,7 +63,7 @@ const ReviewSlide = ({ display }) => {
 export default ReviewSlide
 
 const Wrapper = styled.div`
-  width:80vw;
+  width:90vw;
   height:80vh;
   @media ${device.laptop} {
     height:45vh;

@@ -6,7 +6,16 @@
   height:80vh;
 }
 
-
+.slick-prev {
+  left:0px;
+}
+.slick-next {
+  right:0px;
+}
+.slick-initialized .slick-slide {
+  display: flex;
+  justify-content: center;
+}
 @media (min-width:992px) {
   .slick-slider {
     height:65vh;

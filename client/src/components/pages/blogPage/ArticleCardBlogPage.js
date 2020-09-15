@@ -19,7 +19,7 @@ const ArticleCardBlogPage = (props) => {
         <p style={{ fontSize: '1rem' }}>{article.date}</p>
         <h3>{article.title}</h3>
         <p>{article.description}</p>
-        <StyledLink to={`/blog/${article.id}`} padding='0'><StyledButton>Lire l'article</StyledButton></StyledLink>
+        <StyledLink to={`/${article.id}`} padding='0'><StyledButton>Lire l'article</StyledButton></StyledLink>
       </ContentWrapper>
 
     </ArticleWrapper >

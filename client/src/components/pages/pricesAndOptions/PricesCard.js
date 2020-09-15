@@ -37,7 +37,7 @@ const PricesCard = ({ prices }) => {
       <Section>
         <div>
           <span><Gift size='medium' color='#0096c7' /></span>
-          <div>1ère séance bilan offerte</div>
+          <div>1ère séance offerte</div>
         </div>
         <div>
           <span><Clock size='medium' color='#0096c7' /></span>
@@ -133,6 +133,7 @@ const Section = styled.div`
     justify-content:center;
     padding: 0.5rem 1rem;
     color: white;
+    line-height:1.2rem;
   }
   @media ${device.tablet} {
     align-items:center;

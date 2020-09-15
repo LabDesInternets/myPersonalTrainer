@@ -28,6 +28,10 @@ body {
   svg {
     cursor: pointer;
   }
+  p {
+  text-align: justify;
+  text-justify: inter-word;
+}
 }
 
 code {

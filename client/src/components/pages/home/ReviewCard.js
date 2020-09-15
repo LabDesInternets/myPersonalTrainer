@@ -23,6 +23,7 @@ const ReviewCard = ({ review }) => {
 export default ReviewCard
 
 const ReviewWrapper = styled(Container)`
+  
   display:flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -51,6 +52,7 @@ const Id = styled.p`
   font-weight:400;
 `
 const ContentWrapper = styled(Container)`
+  width:80vw;
   justify-content: start;
   align-items: baseline;
   height: auto;
