@@ -22,7 +22,7 @@ const categories = {
   },
   prices: {
     title: 'Tarifs et formules',
-    content1: `De la séance unique à un objectif sur le long terme, je vous propose différentes formules pour vous satisfaire`,
+    content1: `De la séance unique à un objectif sur le long terme, je vous propose différentes formules pour vous satisfaire.`,
     linkTo: `./prices`,
     img: pricesRaw
   }

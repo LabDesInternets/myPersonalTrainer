@@ -13,7 +13,7 @@ const Review = () => {
       <Container height='10vh' bgColor='#0096c7' width='100vw'>
         <h6>
           Leur retour d'expérience
-      </h6>
+        </h6>
       </Container>
       <Laptop>
         <ReviewSlide display='laptop' />

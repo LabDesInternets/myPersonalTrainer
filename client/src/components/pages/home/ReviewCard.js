@@ -32,8 +32,8 @@ const ReviewWrapper = styled(Container)`
   padding: 2rem 1rem;
   font-size:1rem;
   @media ${device.laptop} {
-    width:40vw;
-    height:30vh;
+    width:45vw;
+    height:40vh;
     flex-direction:row;
   
   }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import Category from './Category'
 import Banner from '../../cors/Banner'
@@ -8,10 +8,12 @@ import Container from '../../cors/Container'
 import categories from './categoriesContent'
 import Review from './Review'
 import Blog from './Blog'
+import { BlogContext } from '../../../context/BlogContext'
 
 
 const Home = (props) => {
 
+  const { articles } = useContext(BlogContext)
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
@@ -34,7 +36,10 @@ const Home = (props) => {
       <Category cat={categories.services}></Category>
       <Category cat={categories.prices}></Category>
 
-      <Blog history={history} />
+      {articles && (
+        <Blog history={history} />
+      )}
+
 
       <Review />
 

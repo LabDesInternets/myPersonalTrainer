@@ -36,9 +36,9 @@ const Wrapper = styled.div`
   flex-direction:column;
   justify-content: center;
   align-items:center;
-  padding:2.5rem;
+  padding:3rem;
   @media ${device.laptop} {
-    padding:4rem;
+    padding:6rem;
   }
  
 `
