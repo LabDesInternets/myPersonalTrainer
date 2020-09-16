@@ -25,6 +25,8 @@ const contactFormValidation = yup.object().shape({
   subject: yup.string()
     .required("Veuillez saisir l'objet du message"),
   messageToSend: yup.string()
+    .min(15, "Votre message doit contenir au moins 15 caractères!")
+    .max(500, "Votre message ne peut pas dépasser 500 caractères!")
     .required("Veuillez saisir votre message")
 });
 
@@ -45,7 +47,7 @@ const ContactMe = ({ element }) => {
     messageToSend: ''
   });
 
-  const { register, handleSubmit, errors } = useForm({
+  const { register, handleSubmit, errors, reset } = useForm({
     resolver: yupResolver(contactFormValidation)
   });
 
@@ -73,7 +75,7 @@ const ContactMe = ({ element }) => {
       <h1>Contact</h1>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         {message && <FlashMessage>{message}</FlashMessage>}
-        <FormWrapper height='60vh'>
+        <FormWrapper>
 
           <StyledInput
             name="firstName"
@@ -122,11 +124,14 @@ const ContactMe = ({ element }) => {
             ref={register}
             value={formData.messageToSend}
             onChange={updateFormData}
+            minLength='15'
+            maxLength='500'
+            required
           ></STextArea>
           {errors.messageToSend?.message}
         </FormWrapper>
         <div>
-          <StyledButton type="submit">Envoyer</StyledButton>
+          <StyledButton type="submit" onClick={reset}>Envoyer</StyledButton>
         </div>
       </StyledForm>
     </Wrapper>
@@ -140,15 +145,15 @@ const Wrapper = styled.div`
   flex-direction:column;
   justify-content:center;
   align-items: center;
-  padding: 4rem 2rem;
-  font-size: 1.5rem;
-  height:90vh;
+  padding: 4rem 2rem 0 2rem;
+  min-height:110vh;
 @media ${device.laptop} {
   flex-direction: row;
   justify-content: space-around;
   align-items: baseline;
   height: 100vh;
   margin: 0 10%;
+  padding: 4rem 2rem;
 }
 `
 const StyledForm = styled.form`
@@ -175,21 +180,30 @@ const FormWrapper = styled.div`
   padding: 1rem 0;
   @media ${device.laptop} {
     padding: 1rem 1rem;
+    height: 60vh;
   }
 `
 
 const STextArea = styled.textarea`
-height:10rem;
-border: 1px solid gray;
-border-radius:5px;
-padding: 1rem;
-margin-top: 2rem;
-font-size:1.25rem;
+  resize:none;
+  height:10rem;
+  border: 1px solid gray;
+  border-radius:5px;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: calc(0.8rem + 0.4vw); 
 
-&:focus {
-    border-color: #07BEB8;
+  &:focus {
+    /* border-color: #0096c7; */
     outline: none;
   }
+  &:valid {
+    border-color: #07BEB8;
+  };
+  &:invalid {
+    border-color: #d16666;
+  }
+
 `
 
 const FlashMessage = styled.div`

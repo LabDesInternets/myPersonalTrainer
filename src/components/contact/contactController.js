@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const logger = require('../../helpers/logger');
 
 const urlClient = process.env.URL_CLIENT
 
@@ -37,7 +38,8 @@ const contactController = {
 
     smtpTransporter.sendMail(mailOptions, (error) => {
       if (error) {
-        console.log(error); // Show a page indicating failure
+        logger.
+          console.log(error); // Show a page indicating failure
       } else {
         console.log('email sent'); // Show a page indicating success
       }
@@ -56,9 +58,9 @@ const contactController = {
     };
     smtpTransporter.sendMail(mailOptions, (error) => {
       if (error) {
-        console.log(error); // Show a page indicating failure
+        logger.error(error); // Show a page indicating failure
       } else {
-        console.log('email sent'); // Show a page indicating success
+        logger.info('email sent'); // Show a page indicating success
       }
     });
   }
