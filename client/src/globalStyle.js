@@ -15,7 +15,9 @@ body {
   font-weight:300;
   line-height: calc(1.5rem + 0.8vw);
   font-size: calc(0.8rem + 0.5vw);
-  box-sizing: border-box;
+  div{
+    box-sizing: border-box; 
+  }
   h1{
     font-size: calc(2.5rem + 0.8vw);
     font-weight:500;
@@ -25,13 +27,17 @@ body {
     font-size: calc(0.9rem + 0.6vw);
     font-weight: 550;
   }
+  h4 {
+    font-size: calc(0.8rem + 0.5vw);
+    font-weight: 450;
+  }
   svg {
     cursor: pointer;
   }
   p {
   text-align: justify;
   text-justify: inter-word;
-}
+  }
 }
 
 code {

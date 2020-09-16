@@ -12,7 +12,7 @@ const ArticleDisplay = (props) => {
         <Wrapper>
           <ImgWrapper src={article.picture} alt='' main />
           <h3>{article.title}</h3>
-          <p>{article.description}</p>
+          <div>{article.description}</div>
           <p>{article.text1}</p>
           {article.picture2 && article.title2 && article.text2 && (
             <>
@@ -55,9 +55,17 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content:center;
   align-items:center;
-  p{
-    padding: 1rem 0;
+  div{
+    text-align:center;
+    padding:1rem ;
+    @media ${device.laptop} {
+    width:50vw;
   }
+  p {
+    padding: 1rem 0;
+    }
+  }
+
 `
 const ImgWrapper = styled.img`
    --ratio: 135 / 240;
