@@ -5,20 +5,21 @@ import ArticleDisplay from './ArticleDisplay'
 import { device } from '../../cors/ResponsiveSettings'
 
 const ArticlePage = (props) => {
-  const { id } = props.match.params
+  const { slug } = props.match.params
   const { element } = props
   const { articles } = useContext(BlogContext)
   const [article, setArticle] = useState()
 
-
+  console.log("articles ", articles, slug)
   useEffect(() => {
     window.scrollTo(0, 0);
     articles.map(article => {
-      if (article.id === id) {
+      if (article.slug === slug) {
         setArticle(article)
       }
     })
-  }, [articles, id])
+
+  }, [articles, slug])
 
   return (
     <Wrapper ref={element}>

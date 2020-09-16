@@ -40,10 +40,10 @@ blogRouter.get('/articles', async (request, response) => {
 });
 
 
-blogRouter.get('/articles/:id', async (request, response, next) => {
-  const { id } = request.params;
+blogRouter.get('/articles/:slug', async (request, response, next) => {
+  const { slug } = request.params;
   try {
-    const article = await blogController.getOneArticle(id);
+    const article = await blogController.getOneArticle(slug);
     response.status(OK).json(article);
   } catch (err) {
     console.log(err);

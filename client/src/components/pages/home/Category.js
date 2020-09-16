@@ -58,7 +58,6 @@ p{
 }
 
 @media ${device.laptop} {
-  box-sizing:border-box;
   max-width: 50vw;
   padding:6rem;
   position:relative;

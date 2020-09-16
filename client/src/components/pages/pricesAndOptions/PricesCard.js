@@ -112,8 +112,8 @@ const Card = styled(Container)`
     font-size: 1.3vw;
     height: 60vh;
     width:25%;
-    margin:2rem;
-    padding: 3rem 1rem;
+    margin:calc(0.7rem + 1vw);
+    padding: 3rem calc(0.7rem + 0.8vw);
     justify-content: space-around;
   }
   

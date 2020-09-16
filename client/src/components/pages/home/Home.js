@@ -54,6 +54,7 @@ const BannerContent = styled.div`
   padding:1rem;
   p{
     font-size: calc(1.25rem + 0.5vw);
+    text-align:center;
   }
 
 `

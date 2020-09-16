@@ -1,3 +1,4 @@
+const SequelizeSlugify = require('sequelize-slugify');
 const moment = require('moment');
 
 module.exports = (sequelize, DataTypes) => {
@@ -13,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
           isUUID: 4,
           notNull: true
         }
+      },
+      slug: {
+        type: DataTypes.STRING(200),
+        unique: true,
+        allowNull: false
       },
       picture: {
         type: DataTypes.STRING(200),
@@ -119,5 +125,8 @@ module.exports = (sequelize, DataTypes) => {
       tableName: 'Articles'
     }
   );
+  SequelizeSlugify.slugifyModel(Article, {
+    source: ['title']
+  });
   return Article;
 };

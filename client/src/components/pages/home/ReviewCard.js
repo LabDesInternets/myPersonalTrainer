@@ -52,7 +52,7 @@ const Id = styled.p`
   font-weight:400;
 `
 const ContentWrapper = styled(Container)`
-  width:80vw;
+  
   justify-content: start;
   align-items: baseline;
   height: auto;
@@ -67,6 +67,7 @@ const ContentWrapper = styled(Container)`
   }
 
   @media ${device.laptop} {
+    width:50vw;
     font-size:1rem;
     padding:0;
   }

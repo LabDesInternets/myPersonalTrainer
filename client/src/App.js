@@ -44,12 +44,13 @@ const App = () => {
         <Route path="/prices" render={props => <PricesAndOptions {...props} element={element} />} />
         <Route path="/contact" render={props => <ContactMe {...props} element={element} />} />
         <Route path="/signin" component={SignIn} />
+        <PrivateRoute path="/signup" component={SignUp} />
+        <PrivateRoute exact path={`/${urlAdmin}`} component={Admin} />
         <Route path="/ooopsie" component={Ooops} />
         <Route path="/reset/:id/:token" component={ResetPw} />
         <Route exact path="/blog" render={props => <BlogPage {...props} element={element} />} />
-        <Route path="/:id" render={props => <ArticlePage {...props} element={element} />} />
-        <PrivateRoute path="/signup" component={SignUp} />
-        <PrivateRoute exact path={`/${urlAdmin}`} component={Admin} />
+        <Route exact path="/:slug" render={props => <ArticlePage {...props} element={element} />} />
+
       </Switch>
       <Footer />
     </Router>

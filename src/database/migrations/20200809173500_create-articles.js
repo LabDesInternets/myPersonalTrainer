@@ -7,6 +7,11 @@ module.exports = {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4
     },
+    slug: {
+      allowNull: false,
+      unique: true,
+      type: Sequelize.STRING(200)
+    },
     picture: {
       allowNull: false,
       type: Sequelize.STRING(200)

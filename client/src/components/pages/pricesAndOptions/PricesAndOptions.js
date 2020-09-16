@@ -10,6 +10,44 @@ import prices from './pricesContent'
 import { device } from '../../cors/ResponsiveSettings'
 
 
+
+const PricesAndOptions = ({ element }) => {
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
+  return (
+    <>
+      <MobileWrapper mobile>
+        <Wrapper bgColor='#d16666'>
+          <PricesCard prices={prices.oneSession}></PricesCard>
+        </Wrapper>
+        <Wrapper bgColor='#ffef9f'>
+          <PricesCard prices={prices.fiveSessions}></PricesCard>
+        </Wrapper>
+        <Wrapper bgColor='#ffef9f'>
+          <PricesCard prices={prices.tenSessions}></PricesCard>
+        </Wrapper>
+        <Wrapper bgColor='#12664f'>
+          <PricesCard prices={prices.groupSession}></PricesCard>
+        </Wrapper>
+      </MobileWrapper>
+
+      <Wrapper ref={element} laptop bgImg={pricesAndOptionsGroupRaw}>
+        <PricesCard prices={prices.oneSession}></PricesCard>
+        <PricesCard prices={prices.fiveSessions}></PricesCard>
+        <PricesCard prices={prices.tenSessions}></PricesCard>
+        <PricesCard prices={prices.groupSession}></PricesCard>
+      </Wrapper>
+
+    </>
+  )
+}
+
+export default PricesAndOptions
+
 const Wrapper = styled.div`
   background-image: url(".${props => props.bgImg}");
   background-color: ${props => props.bgColor || '#03071e'};
@@ -41,40 +79,3 @@ const MobileWrapper = styled.div`
         }
     `}
 `
-
-const PricesAndOptions = ({ element }) => {
-
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [])
-
-  return (
-    <>
-      <MobileWrapper mobile>
-        <Wrapper bgImg={pricesAndOptionsRaw}>
-          <PricesCard prices={prices.oneSession}></PricesCard>
-        </Wrapper>
-        <Wrapper bgImg={pricesAndOptionsRaw1}>
-          <PricesCard prices={prices.fiveSessions}></PricesCard>
-        </Wrapper>
-        <Wrapper bgImg={pricesAndOptionsRaw2}>
-          <PricesCard prices={prices.tenSessions}></PricesCard>
-        </Wrapper>
-        <Wrapper bgImg={pricesAndOptionsRaw3}>
-          <PricesCard prices={prices.groupSession}></PricesCard>
-        </Wrapper>
-      </MobileWrapper>
-
-      <Wrapper ref={element} laptop bgImg={pricesAndOptionsGroupRaw}>
-        <PricesCard prices={prices.oneSession}></PricesCard>
-        <PricesCard prices={prices.fiveSessions}></PricesCard>
-        <PricesCard prices={prices.tenSessions}></PricesCard>
-        <PricesCard prices={prices.groupSession}></PricesCard>
-      </Wrapper>
-
-    </>
-  )
-}
-
-export default PricesAndOptions

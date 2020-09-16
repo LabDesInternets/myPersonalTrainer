@@ -75,7 +75,7 @@ const Wrapper = styled.div`
 `
 
 const ContentWrapper = styled(Container)`
-   padding:2rem 1rem 0rem 1rem;
+   padding:2rem 1.5rem 0rem 1.5rem;
    background-color:black;
    font-weight:500;
    flex-wrap:nowrap;
