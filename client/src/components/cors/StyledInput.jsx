@@ -4,7 +4,7 @@ const StyledInput = styled.input`
   height: ${props => props.height || '2rem'};
   border-radius: 0;
   font-family: 'Dosis';  
-  font-size: 1.25rem;
+  font-size: calc(0.8rem + 0.4vw); 
   padding: 1rem 0;
   margin: 0.5rem 0;
   border: none; 

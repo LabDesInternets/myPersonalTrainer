@@ -12,6 +12,10 @@ const StyledLink = styled(Link)`
     text-decoration:none;
     color: #0096c7;
   }
+  &:focus {
+    outline:none;
+    color: #0096c7;
+  }
 `;
 
 export default StyledLink
