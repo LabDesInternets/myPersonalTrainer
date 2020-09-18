@@ -10,7 +10,6 @@ const ArticlePage = (props) => {
   const { articles } = useContext(BlogContext)
   const [article, setArticle] = useState()
 
-  console.log("articles ", articles, slug)
   useEffect(() => {
     window.scrollTo(0, 0);
     articles.map(article => {

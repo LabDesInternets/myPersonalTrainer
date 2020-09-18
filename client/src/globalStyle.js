@@ -23,6 +23,10 @@ body {
     font-weight:500;
     padding: 1.5rem 1rem;
   }
+  h2 {
+    font-size: calc(1rem + 0.6vw);
+    font-weight: 550;
+  }
   h3 {
     font-size: calc(0.9rem + 0.6vw);
     font-weight: 550;

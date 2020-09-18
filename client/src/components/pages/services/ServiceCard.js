@@ -36,9 +36,9 @@ const ServiceCard = ({ service, section }) => {
 export default ServiceCard
 
 const Wrapper = styled(Container)`
- text-align: justify;
+  flex-wrap: nowrap;
+  text-align: justify;
   text-justify: inter-word;
-  box-sizing:border-box;
   max-width:100%;
   height:100vh;
   animation: ${fadeIn} 3s;
@@ -74,8 +74,9 @@ const Wrapper = styled(Container)`
 
     @media ${device.laptop} {
       font-weight:400;
-      width:25vw;
+      max-width:25vw;
       height: 70vh;
+      max-height:90vh;
       margin:2rem;
       font-size: 1.5vw;
       opacity:0.9;
@@ -117,5 +118,6 @@ text-justify: inter-word;
 
     @media ${device.laptop}{
       font-size: 1.3vw;
+      justify-content: flex-start;
     }
 `

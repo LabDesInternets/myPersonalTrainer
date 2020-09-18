@@ -39,15 +39,15 @@ const BlogSlider = ({ display, blog }) => {
   const settings = customDisplay()
 
   return (
-    <Container>
-      <Wrapper>
-        <Slider {...settings}>
-          {blog && blog.map(article =>
-            <ArticleCard key={article.id} article={article} />
-          )}
-        </Slider>
-      </Wrapper>
-    </Container >
+
+    <Wrapper>
+      <Slider {...settings}>
+        {blog && blog.map(article =>
+          <ArticleCard key={article.id} article={article} />
+        )}
+      </Slider>
+    </Wrapper>
+
   )
 }
 
@@ -60,14 +60,14 @@ const Wrapper = styled.div`
   flex-direction:column;
   justify-content:center;
   width:100vw;
-  height:80vh;
+  height:90vh;
   p { font-size: 1rem;}
   h6 { 
     font-size: 2rem;
     color:white;
   }
   @media ${device.laptop} {
-    height:70vh;
+    height:80vh;
     p {
       font-size: 1.25rem;
     }

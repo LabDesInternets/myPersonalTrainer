@@ -21,16 +21,16 @@ const PricesAndOptions = ({ element }) => {
   return (
     <>
       <MobileWrapper mobile>
-        <Wrapper bgColor='#d16666'>
+        <Wrapper bgColor='#caf0f8'>
           <PricesCard prices={prices.oneSession}></PricesCard>
         </Wrapper>
-        <Wrapper bgColor='#ffef9f'>
+        <Wrapper bgColor='#ffe5d9'>
           <PricesCard prices={prices.fiveSessions}></PricesCard>
         </Wrapper>
-        <Wrapper bgColor='#ffef9f'>
+        <Wrapper bgColor='#ffe5d9'>
           <PricesCard prices={prices.tenSessions}></PricesCard>
         </Wrapper>
-        <Wrapper bgColor='#12664f'>
+        <Wrapper bgColor='#d8e2dc'>
           <PricesCard prices={prices.groupSession}></PricesCard>
         </Wrapper>
       </MobileWrapper>

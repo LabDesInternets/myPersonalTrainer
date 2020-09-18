@@ -16,10 +16,12 @@ const ArticleCard = (props) => {
 
       <ContentWrapper>
         <p>{article.date}</p>
-        <h5>{article.title}</h5>
+        <h3>{article.title}</h3>
         <p style={{ padding: '0.75rem 0' }}>{article.description}</p>
       </ContentWrapper>
-      <StyledLink to={`/${article.slug}`}><StyledButton>Lire l'article</StyledButton></StyledLink>
+      <BtnDiv>
+        <StyledLink to={`/${article.slug}`}><StyledButton>Lire l'article</StyledButton></StyledLink>
+      </BtnDiv>
     </ArticleWrapper>
   )
 }
@@ -31,14 +33,19 @@ const ArticleWrapper = styled(Container)`
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content:start;
+  justify-content:center;
+  height:80vh;
   /* padding: 3rem 1rem; */
   @media ${device.laptop} {
     width:30vw;
-    height:65vh;
+    justify-content:space-around;
   }
 
 `
+const BtnDiv = styled.div`
+  min-height: 10vh;
+`
+
 const ImgWrapper = styled.img`
 padding-top:2rem;
   --ratio: 135 / 240;
@@ -56,15 +63,12 @@ const ContentWrapper = styled(Container)`
   box-sizing:border-box;
   justify-content: start;
   align-items: baseline;
-  height: auto;
+  height:40vh;
   width:100vw;
   padding: 0 1rem;
-  p{
+  /* p{
     font-size:1rem;
-  }
-  h5{
-    font-size: 1.5rem;
-  }
+  } */
   @media ${device.laptop} {
     width:100%;
    

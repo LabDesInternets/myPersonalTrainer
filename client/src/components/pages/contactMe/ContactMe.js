@@ -31,35 +31,39 @@ const contactFormValidation = yup.object().shape({
 });
 
 
-const ContactMe = ({ element }) => {
+const ContactMe = ({ element, history }) => {
+
+  let countInterval;
+  let [countdown, setCountdown] = useState(5)
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    return () => {
+      clearInterval(countInterval)
+    }
   }, [])
 
+
+  // useEffect(() => {
+
+  // }, [])
   const [message, setMessage] = useState('')
 
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    subject: '',
-    messageToSend: ''
-  });
 
   const { register, handleSubmit, errors, reset } = useForm({
     resolver: yupResolver(contactFormValidation)
   });
 
-
-  const updateFormData = event => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value
-    })
+  const redirect = () => {
+    countInterval = setInterval(() => {
+      setCountdown(countdown -= 1)
+      if (countdown === 0) history.push('/')
+    }, 1000)
   }
 
+
   const onSubmit = async data => {
+
     const newMessage = { ...data };
     try {
       const response = await axios.post(urlContact, newMessage)
@@ -68,13 +72,21 @@ const ContactMe = ({ element }) => {
     } catch (error) {
       console.log(error);
     }
+    reset()
+    redirect()
+
   };
 
   return (
     <Wrapper ref={element}>
       <h1>Contact</h1>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
-        {message && <FlashMessage>{message}</FlashMessage>}
+        {message && <>
+          <FlashMessage>{message}</FlashMessage>
+          <p>Vous allez être redirigé vers la page d'acceuil dans {countdown} secondes ...</p>
+        </>
+        }
+
         <FormWrapper>
 
           <StyledInput
@@ -82,8 +94,6 @@ const ContactMe = ({ element }) => {
             type="text"
             placeholder="Prénom"
             ref={register}
-            value={formData.firstName}
-            onChange={updateFormData}
           />
           {errors.firstName?.message}
 
@@ -92,8 +102,6 @@ const ContactMe = ({ element }) => {
             type="text"
             placeholder="Nom"
             ref={register}
-            value={formData.lastName}
-            onChange={updateFormData}
           />
           {errors.lastName?.message}
 
@@ -102,8 +110,7 @@ const ContactMe = ({ element }) => {
             type="email"
             placeholder="Adresse email"
             ref={register}
-            value={formData.email}
-            onChange={updateFormData}
+
           />
           {errors.email?.message}
 
@@ -112,8 +119,6 @@ const ContactMe = ({ element }) => {
             type="text"
             placeholder="Sujet"
             ref={register}
-            value={formData.subject}
-            onChange={updateFormData}
           />
           {errors.subject?.message}
 
@@ -122,16 +127,11 @@ const ContactMe = ({ element }) => {
             type="text"
             placeholder="Message..."
             ref={register}
-            value={formData.messageToSend}
-            onChange={updateFormData}
-            minLength='15'
-            maxLength='500'
-            required
           ></STextArea>
           {errors.messageToSend?.message}
         </FormWrapper>
         <div>
-          <StyledButton type="submit" onClick={reset}>Envoyer</StyledButton>
+          <StyledButton type="submit">Envoyer</StyledButton>
         </div>
       </StyledForm>
     </Wrapper>
@@ -147,6 +147,7 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 4rem 2rem 0 2rem;
   min-height:110vh;
+  max-height:160vh;
 @media ${device.laptop} {
   flex-direction: row;
   justify-content: space-around;
@@ -194,14 +195,8 @@ const STextArea = styled.textarea`
   font-size: calc(0.8rem + 0.4vw); 
 
   &:focus {
-    /* border-color: #0096c7; */
+    border-color: #0096c7;
     outline: none;
-  }
-  &:valid {
-    border-color: #07BEB8;
-  };
-  &:invalid {
-    border-color: #d16666;
   }
 
 `

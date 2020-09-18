@@ -1,26 +1,33 @@
 .slick-dots {
   bottom: 0px;
+  height: 5vh;
 }
 
 .slick-list {
-  height:80vh;
+  height:85vh;
 }
-
+.slick-track {
+  height: 85vh;
+}
 .slick-prev {
   left:0px;
 }
 .slick-next {
   right:0px;
 }
+.slick-slider {
+  height:90vh;
+}
 .slick-initialized .slick-slide {
   display: flex;
   justify-content: center;
 }
 @media (min-width:992px) {
-  .slick-slider {
-    height:65vh;
+  .slick-slider, .slick-list, .slick-track{
+    height:80vh;
   
   }
+
   .laptop {
     height:40vh;
   }

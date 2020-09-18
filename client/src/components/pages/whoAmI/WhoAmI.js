@@ -26,7 +26,7 @@ const WhoAmI = ({ element }) => {
             <p>{category.content2}</p>
           </ContentWrapper>
         </Wrapper>
-        <Wrapper bgImg={servicesStairsBottom}>
+        <Wrapper bgImg={servicesStairsBottom} reSize>
           <ContentWrapper textTop>
             <p>{category.content3}</p>
             <p>{category.content4}</p>
@@ -71,15 +71,22 @@ const Wrapper = styled.div`
     left: 0px;
     background-color: rgba(0,0,0,0.25);
   }
+  ${props =>
+    props.reSize &&
+    css`
+    height:58vh;
+      `}
+
 
 `
 
 const ContentWrapper = styled(Container)`
-   padding:2rem 1.5rem 0rem 1.5rem;
-   background-color:black;
-   font-weight:500;
-   flex-wrap:nowrap;
+  padding:2rem 1.5rem 0rem 1.5rem;
+  background-color:black;
+  font-weight:500;
+  flex-wrap:nowrap;
   opacity:0.8;
+  font-size: calc(1rem + 0.8vw);
   ${props =>
     props.textBottom &&
     css`
@@ -92,8 +99,11 @@ const ContentWrapper = styled(Container)`
       `}
    @media ${device.tablet} {
      padding: 4rem;
+     line-height: 3rem;
    }
    @media ${device.laptop} {
+    font-size: calc(0.8rem + 0.5vw);
+    line-height: calc(1.5rem + 0.8vw);
     font-weight:400;
     height:60vh;
    }

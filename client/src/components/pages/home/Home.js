@@ -36,7 +36,7 @@ const Home = (props) => {
       <Category cat={categories.services}></Category>
       <Category cat={categories.prices}></Category>
 
-      {articles && (
+      {articles.length >= 1 && (
         <Blog history={history} />
       )}
 
