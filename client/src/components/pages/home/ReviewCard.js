@@ -40,11 +40,13 @@ const ReviewWrapper = styled(Container)`
 
 `
 const ImgWrapper = styled.img`
- width:50vw;
+  --ratio: 240 / 240;
+  width:50vw;
+  height: calc(50vw * var(--ratio));
   border-radius:50%;
 @media ${device.laptop} {
-    width:20vw;
-    
+    width:15vw;
+    height: calc(15vw * var(--ratio));
   }
  
 `

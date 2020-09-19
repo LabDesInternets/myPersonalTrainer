@@ -1,6 +1,6 @@
 .slick-dots {
   bottom: 0px;
-  height: 5vh;
+  min-height: 5vh;
 }
 
 .slick-list {
@@ -29,9 +29,9 @@
   }
 
   .laptop {
-    height:40vh;
+    height:50vh;
   }
   .laptop > div {
-    height: 45vh;
+    height: 50vh;
   }
 }

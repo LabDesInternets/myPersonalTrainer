@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
+${props => console.log(props)};
   color: inherit;
   text-decoration:none;
   cursor: pointer;
@@ -12,8 +13,7 @@ const StyledLink = styled(Link)`
     text-decoration:none;
     color: #0096c7;
   }
-  &:focus {
-    outline:none;
+  &.active {
     color: #0096c7;
   }
 `;

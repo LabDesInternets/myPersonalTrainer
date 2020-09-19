@@ -7,7 +7,7 @@ const Menu = ({ open, setOpen }) => {
   return (
     <div>
       <StyledMenu open={open}>
-        <StyledLink to='/' onClick={() => setOpen(!open)}>Accueil</StyledLink>
+        <StyledLink exact to='/' onClick={() => setOpen(!open)}>Accueil</StyledLink>
         <StyledLink to='/about' onClick={() => setOpen(!open)}>Qui suis-je</StyledLink>
         <StyledLink to='/services' onClick={() => setOpen(!open)}>Prestations</StyledLink>
         <StyledLink to='/prices' onClick={() => setOpen(!open)}>Tarifs et formules</StyledLink>

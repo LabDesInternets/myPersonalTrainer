@@ -42,8 +42,9 @@ const ArticleWrapper = styled(Container)`
   }
 
 `
-const BtnDiv = styled.div`
+const BtnDiv = styled(Container)`
   min-height: 10vh;
+  max-height:15vh;
 `
 
 const ImgWrapper = styled.img`

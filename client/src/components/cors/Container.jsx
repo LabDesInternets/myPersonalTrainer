@@ -10,7 +10,6 @@ const Container = styled.div`
   width: ${props => props.width || "100%"};
   padding: ${props => props.padding || "0"};
   background-color: ${props => props.bgColor || "none"};
-  overflow:scroll;
 `;
 
 export default Container;

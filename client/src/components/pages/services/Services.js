@@ -30,18 +30,18 @@ export default Services
 const ServicesContainer = styled(Container)`
   @media ${device.laptop}{
     width:100vw;
-  height:100vh;
-  padding:4.5rem 0;
-  background-image: url(".${props => props.bgImg}");
-  background-size: cover;
-  background-position:50%;
+    height:100vh;
+    padding:4.5rem 0;
+    background-image: url(".${props => props.bgImg}");
+    background-size: cover;
+    background-position:50%;
   }
 `
 
 const Wrapper = styled.div`
   display:flex;
   flex-direction:column;
-
+  height:100%;
   @media ${device.laptop} {
     flex-direction: row;
   }

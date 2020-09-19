@@ -10,11 +10,11 @@ const Review = () => {
 
   return (
     <Wrapper>
-      <Container height='10vh' bgColor='#0096c7' width='100vw'>
+      <CatTitle>
         <h6>
           Leur retour d'expérience
         </h6>
-      </Container>
+      </CatTitle>
       <Laptop>
         <ReviewSlide display='laptop' />
       </Laptop>
@@ -27,8 +27,15 @@ const Review = () => {
 
 export default Review
 
+const CatTitle = styled(Container)`
+  min-height:10vh;
+  height:10vh;
+  background-color: #0096c7;
+  width:100vw;
+`
+
 const Wrapper = styled.div`
-  height:90vh;
+  height:100vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -38,13 +45,14 @@ const Wrapper = styled.div`
     color:white;
   }
   @media ${device.laptop} {
-    max-height:60vh;
+    max-height:65vh;
   }
 `
 const Laptop = styled.div`
   display:none;
   @media ${device.laptop} {
     display:block;
+    height:55vh;
   }
 `
 const Mobile = styled.div`

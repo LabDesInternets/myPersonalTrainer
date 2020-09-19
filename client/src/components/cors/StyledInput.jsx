@@ -16,7 +16,7 @@ const StyledInput = styled.input`
     outline: none;
   }
   @media ${device.laptop} {
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
   }
 `;
 

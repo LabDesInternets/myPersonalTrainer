@@ -17,6 +17,7 @@ body {
   font-size: calc(0.8rem + 0.5vw);
   div{
     box-sizing: border-box; 
+    overflow:scroll;
   }
   h1{
     font-size: calc(2.5rem + 0.8vw);

@@ -43,10 +43,6 @@ const ContactMe = ({ element, history }) => {
     }
   }, [])
 
-
-  // useEffect(() => {
-
-  // }, [])
   const [message, setMessage] = useState('')
 
 
@@ -83,7 +79,7 @@ const ContactMe = ({ element, history }) => {
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         {message && <>
           <FlashMessage>{message}</FlashMessage>
-          <p>Vous allez être redirigé vers la page d'acceuil dans {countdown} secondes ...</p>
+          <p>Vous allez être redirigé vers la page d'acceuil dans <span style={{ color: '#d16666' }}>{countdown}</span> secondes ...</p>
         </>
         }
 
