@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router-dom'
 
 
 const StyledLink = styled(NavLink)`
-${props => console.log(props)};
   color: inherit;
   text-decoration:none;
   cursor: pointer;

@@ -81,6 +81,7 @@ const Wrapper = styled.div`
 `
 
 const ContentWrapper = styled(Container)`
+  height:100%;
   padding:2rem 1.5rem 0rem 1.5rem;
   background-color:black;
   font-weight:500;

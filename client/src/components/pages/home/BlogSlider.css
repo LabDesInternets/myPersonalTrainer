@@ -3,30 +3,22 @@
   min-height: 5vh;
 }
 
-.slick-list {
+.slick-slider, .slick-list, .slick-track{
   height:85vh;
 }
-.slick-track {
-  height: 85vh;
-}
+
 .slick-prev {
   left:0px;
 }
 .slick-next {
   right:0px;
 }
-.slick-slider {
-  height:90vh;
-}
+
 .slick-initialized .slick-slide {
   display: flex;
   justify-content: center;
 }
 @media (min-width:992px) {
-  .slick-slider, .slick-list, .slick-track{
-    height:80vh;
-  
-  }
 
   .laptop {
     height:50vh;
@@ -34,4 +26,8 @@
   .laptop > div {
     height: 50vh;
   }
+  .laptop > div > div {
+    height: 50vh;
+  }
+
 }

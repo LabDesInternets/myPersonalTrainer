@@ -61,15 +61,11 @@ const Wrapper = styled.div`
   justify-content:center;
   width:100vw;
   height:90vh;
-  p { font-size: 1rem;}
   h6 { 
     font-size: 2rem;
     color:white;
   }
   @media ${device.laptop} {
-    height:80vh;
-    p {
-      font-size: 1.25rem;
-    }
+    height:85vh;
   }
 `

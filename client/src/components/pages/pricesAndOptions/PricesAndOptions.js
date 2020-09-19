@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react'
 import styled, { css } from 'styled-components'
-import pricesAndOptionsRaw from '../../../assets/images/pricesAndOptionsRaw.jpg'
-import pricesAndOptionsRaw1 from '../../../assets/images/pricesAndOptionsRaw1.jpg'
-import pricesAndOptionsRaw2 from '../../../assets/images/pricesAndOptionsRaw2.jpg'
-import pricesAndOptionsRaw3 from '../../../assets/images/pricesAndOptionsRaw3.jpg'
 import pricesAndOptionsGroupRaw from '../../../assets/images/pricesAndOptionsGroupRaw.jpg'
 import PricesCard from './PricesCard'
 import prices from './pricesContent'
 import { device } from '../../cors/ResponsiveSettings'
+import StyledButton from '../../cors/StyledButton'
+import StyledLink from '../../cors/StyledLink'
 
 
 
@@ -23,23 +21,32 @@ const PricesAndOptions = ({ element }) => {
       <MobileWrapper mobile>
         <Wrapper bgColor='#caf0f8'>
           <PricesCard prices={prices.oneSession}></PricesCard>
+          <StyledLink to='/contact'><StyledButton dark>Réserver ma séance gratuite</StyledButton></StyledLink>
         </Wrapper>
         <Wrapper bgColor='#ffe5d9'>
           <PricesCard prices={prices.fiveSessions}></PricesCard>
-        </Wrapper>
-        <Wrapper bgColor='#ffe5d9'>
-          <PricesCard prices={prices.tenSessions}></PricesCard>
+          <StyledLink to='/contact'><StyledButton dark>Réserver ma séance gratuite</StyledButton></StyledLink>
         </Wrapper>
         <Wrapper bgColor='#d8e2dc'>
+          <PricesCard prices={prices.tenSessions}></PricesCard>
+          <StyledLink to='/contact'><StyledButton dark>Réserver ma séance gratuite</StyledButton></StyledLink>
+        </Wrapper>
+        <Wrapper bgColor='#FEFEE3'>
           <PricesCard prices={prices.groupSession}></PricesCard>
+          <StyledLink to='/contact'><StyledButton dark>Réserver ma séance gratuite</StyledButton></StyledLink>
         </Wrapper>
       </MobileWrapper>
 
       <Wrapper ref={element} laptop bgImg={pricesAndOptionsGroupRaw}>
-        <PricesCard prices={prices.oneSession}></PricesCard>
-        <PricesCard prices={prices.fiveSessions}></PricesCard>
-        <PricesCard prices={prices.tenSessions}></PricesCard>
-        <PricesCard prices={prices.groupSession}></PricesCard>
+        <CardContainer>
+          <PricesCard prices={prices.oneSession}></PricesCard>
+          <PricesCard prices={prices.fiveSessions}></PricesCard>
+          <PricesCard prices={prices.tenSessions}></PricesCard>
+          <PricesCard prices={prices.groupSession}></PricesCard>
+        </CardContainer>
+        <BtnDiv>
+          <StyledLink to='/contact'><StyledButton dark>Réserver ma séance gratuite</StyledButton></StyledLink>
+        </BtnDiv>
       </Wrapper>
 
     </>
@@ -58,6 +65,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items:center;
   justify-content: center;
+  flex-direction:column;
 
   ${props =>
     props.laptop &&
@@ -65,8 +73,17 @@ const Wrapper = styled.div`
       display: none;
         @media ${device.laptop} {
           display:flex;
+          justify-content: flex-end;
         }
     `}
+`
+const CardContainer = styled.div`
+  display:flex;
+`
+
+const BtnDiv = styled.div`
+  height: 10vh;
+  margin:2rem;
 `
 
 const MobileWrapper = styled.div`

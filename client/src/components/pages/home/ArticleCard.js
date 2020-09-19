@@ -35,10 +35,10 @@ const ArticleWrapper = styled(Container)`
   align-items: center;
   justify-content:center;
   height:80vh;
-  /* padding: 3rem 1rem; */
   @media ${device.laptop} {
     width:30vw;
     justify-content:space-around;
+    height:85vh;
   }
 
 `
@@ -48,7 +48,7 @@ const BtnDiv = styled(Container)`
 `
 
 const ImgWrapper = styled.img`
-padding-top:2rem;
+  padding-top:2rem;
   --ratio: 135 / 240;
   width:95vw;
   height: calc(95vw * var(--ratio));
@@ -67,11 +67,7 @@ const ContentWrapper = styled(Container)`
   height:40vh;
   width:100vw;
   padding: 0 1rem;
-  /* p{
-    font-size:1rem;
-  } */
   @media ${device.laptop} {
     width:100%;
-   
   }
 `

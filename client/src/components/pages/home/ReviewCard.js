@@ -33,20 +33,20 @@ const ReviewWrapper = styled(Container)`
   font-size:1rem;
   @media ${device.laptop} {
     width:45vw;
-    height:40vh;
+    height:50vh;
     flex-direction:row;
   
   }
 
 `
 const ImgWrapper = styled.img`
-  --ratio: 240 / 240;
+  /* --ratio: 240 / 240; */
   width:50vw;
-  height: calc(50vw * var(--ratio));
+  /* height: calc(50vw * var(--ratio)); */
   border-radius:50%;
 @media ${device.laptop} {
     width:15vw;
-    height: calc(15vw * var(--ratio));
+    /* height: calc(15vw * var(--ratio)); */
   }
  
 `
@@ -69,7 +69,9 @@ const ContentWrapper = styled(Container)`
   }
 
   @media ${device.laptop} {
+    justify-content:center;
     width:50vw;
+    height:50vh;
     font-size:1rem;
     padding:0;
   }
