@@ -23,7 +23,16 @@ const StyledButton = styled.button`
 
     `}
 
-
+    ${props =>
+    props.dark &&
+    css`
+      background-color:#03071e;
+      color: white;
+      width: 17rem;
+      border: 2px solid white;
+      &&:hover {
+        background: #0096c7;
+    `}
   @media ${device.laptop} {
     background: transparent;
     &&:hover {
@@ -44,6 +53,17 @@ const StyledButton = styled.button`
       color: white;
 
     `}
+    ${props =>
+    props.dark &&
+    css`
+      background-color:#03071e;
+      color: white;
+      width: 17rem;
+      border: 2px solid white;
+      &&:hover {
+        background: #0096c7;
+    `}
+
   }
 
 `;

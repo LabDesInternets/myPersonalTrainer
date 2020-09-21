@@ -2,14 +2,13 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   display: flex;
-  flex-wrap: ${props => props.wrap || "wrap"};
+  flex-wrap: ${props => props.wrap || "nowrap"};
   flex-direction: ${props => props.fD || "column"};
   justify-content: ${props => props.jC || "center"};
   align-items: ${props => props.aI || "center"};
-  height: ${props => props.height || "100%"};
+  height: ${props => props.height || "auto"};
   width: ${props => props.width || "100%"};
   padding: ${props => props.padding || "0"};
-  /* font-size: 1.5rem; */
   background-color: ${props => props.bgColor || "none"};
 `;
 

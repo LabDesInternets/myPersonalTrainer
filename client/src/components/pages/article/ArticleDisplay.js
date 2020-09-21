@@ -12,7 +12,7 @@ const ArticleDisplay = (props) => {
         <Wrapper>
           <ImgWrapper src={article.picture} alt='' main />
           <h3>{article.title}</h3>
-          <div>{article.description}</div>
+          <Intro>{article.description}</Intro>
           <p>{article.text1}</p>
           {article.picture2 && article.title2 && article.text2 && (
             <>
@@ -60,18 +60,19 @@ const Wrapper = styled.div`
     padding:1rem ;
     @media ${device.laptop} {
     width:50vw;
+    }
   }
   p {
     padding: 1rem 0;
     }
-  }
-
 `
+
+
 const ImgWrapper = styled.img`
    --ratio: 135 / 240;
   width:100%;
   height: calc(100% * var(--ratio));
-  object-position: top;
+  object-position: 50%;
   object-fit: cover;
   padding: 1rem 0;
   @media ${device.laptop} {
@@ -85,5 +86,11 @@ const ImgWrapper = styled.img`
       height: calc(50vw * 135 / 240);
     `}
 
+  }
+`
+const Intro = styled.div`
+  min-height: 30vh;
+  @media ${device.laptop} {
+    min-height:25vh;
   }
 `

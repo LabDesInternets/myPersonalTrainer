@@ -29,7 +29,9 @@ const Blog = ({ history }) => {
         <BlogSlider blog={articles} display='mobile' />
 
       </Mobile>
-      <StyledButton primary onClick={() => history.push('./blog')}>Voir tous les articles</StyledButton>
+      <BtnDiv>
+        <StyledButton primary onClick={() => history.push('./blog')}>Voir tous les articles</StyledButton>
+      </BtnDiv>
     </Wrapper>
 
 
@@ -43,10 +45,18 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content:space-between;
   h6{
     font-size: 2rem;
     color:white;
   }
+  @media ${device.laptop} {
+    min-height:100vh;
+    
+  }
+`
+const BtnDiv = styled.div`
+  min-height: 10vh;
 `
 const BlogLink = styled(StyledLink)`
   &:hover{
@@ -59,10 +69,12 @@ const Laptop = styled.div`
   display:none;
   @media ${device.laptop} {
     display:block;
+    min-height:80vh;
   }
 `
 const Mobile = styled.div`
   display:block;
+  min-height: 90vh;
   @media ${device.laptop} {
     display:none;
   }

@@ -12,13 +12,13 @@ import AuthProvider from './context/AuthContext'
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
-    <AuthProvider>
-      <BlogProvider>
-        <UserProvider>
-          <App />
-        </UserProvider>
-      </BlogProvider>
-    </AuthProvider>
+    {/* <AuthProvider> */}
+    <BlogProvider>
+      <UserProvider>
+        <App />
+      </UserProvider>
+    </BlogProvider>
+    {/* </AuthProvider> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

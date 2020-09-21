@@ -46,7 +46,6 @@ const PricesCard = ({ prices }) => {
         <div>
           <div style={{ display: 'flex', flexDirection: 'column', padding: 0 }}>
             <Home size='medium' color='#0096c7' />
-            <TreeOption size='medium' color='#0096c7' />
           </div>
           <div>A domicile ou en extérieur</div>
         </div>
@@ -74,9 +73,7 @@ export const fadeIn = keyframes`
 const Card = styled(Container)`
   width:90vw;
   height:80vh;
-  background-color:#071013;
-  opacity:0.85;
-  border-radius:10px ;
+
   margin:1rem;
   padding:1rem 0.5rem;
   font-size:1.3rem;
@@ -96,25 +93,40 @@ const Card = styled(Container)`
     }
 
   h2{
-    color: #0096c7;
+    
+    font-size: 2rem;
   }
   h3 {
-    color: white;
+
+    font-size:1.5rem;
   }
   img{
     height:22px;
     margin-left:-3px;
   }
   @media ${device.tablet} {
+    width:70vw;
+    height:70vh;
     font-size: 1.5rem;
   }
   @media ${device.laptop} {
+    background-color:#071013;
+  opacity:0.85;
+  border-radius:10px;
     font-size: 1.3vw;
     height: 60vh;
     width:25%;
     margin:calc(0.7rem + 1vw);
-    padding: 3rem calc(0.7rem + 0.8vw);
-    justify-content: space-around;
+    padding: calc(1rem + 2vw) calc(0.2rem + 1.1vw);
+    justify-content: space-between;
+    h2{
+      color: #0096c7;
+      font-size: calc(1rem + 0.6vw);
+    }
+    h3 {
+      color: white;
+      font-size: calc(0.9rem + 0.6vw);
+    }
   }
   
 `
@@ -132,14 +144,18 @@ const Section = styled.div`
     align-items:baseline;
     justify-content:center;
     padding: 0.5rem 1rem;
-    color: white;
+    
     line-height:1.2rem;
   }
   @media ${device.tablet} {
-    align-items:center;
+    align-items:baseline;
+    padding: 0 4rem;
   }
   @media ${device.laptop} {
-    align-items:baseline;
+   padding:0;
+   div {
+    color: white;
+   }
   }
 
 `
@@ -150,7 +166,7 @@ const Header = styled.div`
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  color: #bdede0;
+  
   line-height:1;
   padding:1rem 0;
   p{
@@ -167,10 +183,17 @@ const Header = styled.div`
     props.optionAlign &&
     css`
       position:relative;
-      bottom: 12%;
+      bottom: calc(1% + 1.1vh + 0.55vw);
       text-align:center;
     `}
+  @media ${device.laptop} {
+    padding:calc(0.1rem + 2vh) 0;
+    color: #bdede0;
+  }
 `
 const HeaderWrapper = styled.div`
-  height:25%;
+  height:30%;
+@media ${device.laptop} {
+  height:40%;
+}
 `

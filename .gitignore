@@ -29,3 +29,7 @@ yarn-error.log*
 .sequelizerc
 .npmrc
 
+/client/src/components/pages/home/categoriesContent.js
+/client/src/components/pages/home/reviewsContent.js
+/client/src/components/pages/pricesAndOptions/pricesContent.js
+client/src/components/pages/services/servicesContent.js

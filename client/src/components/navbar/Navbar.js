@@ -4,13 +4,14 @@ import styled, { keyframes, css } from 'styled-components'
 import { device } from '../cors/ResponsiveSettings'
 
 
+
 const Navbar = (props) => {
   const { sticky } = props
   return (
 
     <Wrapper cl={sticky ? 'navbarSticky' : 'navbar'}>
       <NavContainer>
-        <StyledLink to='/'>Accueil</StyledLink>
+        <StyledLink exact to='/'>Accueil</StyledLink>
         <StyledLink to='/about'>Qui suis-je</StyledLink>
         <StyledLink to='/services'>Prestations</StyledLink>
         <StyledLink to='/prices'>Tarifs et formules</StyledLink>

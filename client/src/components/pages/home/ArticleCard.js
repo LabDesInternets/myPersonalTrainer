@@ -16,10 +16,12 @@ const ArticleCard = (props) => {
 
       <ContentWrapper>
         <p>{article.date}</p>
-        <h5>{article.title}</h5>
+        <h3>{article.title}</h3>
         <p style={{ padding: '0.75rem 0' }}>{article.description}</p>
       </ContentWrapper>
-      <StyledLink to={`/${article.slug}`}><StyledButton>Lire l'article</StyledButton></StyledLink>
+      <BtnDiv>
+        <StyledLink to={`/${article.slug}`}><StyledButton>Lire l'article</StyledButton></StyledLink>
+      </BtnDiv>
     </ArticleWrapper>
   )
 }
@@ -31,20 +33,26 @@ const ArticleWrapper = styled(Container)`
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content:start;
-  /* padding: 3rem 1rem; */
+  justify-content:center;
+  height:80vh;
   @media ${device.laptop} {
     width:30vw;
-    height:65vh;
+    justify-content:space-around;
+    height:85vh;
   }
 
 `
+const BtnDiv = styled(Container)`
+  min-height: 10vh;
+  max-height:15vh;
+`
+
 const ImgWrapper = styled.img`
-padding-top:2rem;
+  padding-top:2rem;
   --ratio: 135 / 240;
   width:95vw;
   height: calc(95vw * var(--ratio));
-  object-position: top;
+  object-position: 50%;
   object-fit: cover;
   @media ${device.laptop} {
     width:28vw;
@@ -56,17 +64,10 @@ const ContentWrapper = styled(Container)`
   box-sizing:border-box;
   justify-content: start;
   align-items: baseline;
-  height: auto;
+  height:40vh;
   width:100vw;
   padding: 0 1rem;
-  p{
-    font-size:1rem;
-  }
-  h5{
-    font-size: 1.5rem;
-  }
   @media ${device.laptop} {
     width:100%;
-   
   }
 `

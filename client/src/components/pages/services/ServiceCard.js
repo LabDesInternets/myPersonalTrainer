@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components'
 import Container from '../../cors/Container'
 import { size, device } from '../../cors/ResponsiveSettings'
 import { fadeIn } from '../pricesAndOptions/PricesCard'
+import StyledButton from '../../cors/StyledButton'
+import StyledLink from '../../cors/StyledLink'
 
 
 
@@ -27,7 +29,9 @@ const ServiceCard = ({ service, section }) => {
         <div>{service.content2}</div>
         <div>{service.content3}</div>
       </ContentWrapper>
-
+      <BtnDiv>
+        <StyledLink to='/contact'><StyledButton w='17rem' dark>Réserver ma séance gratuite</StyledButton></StyledLink>
+      </BtnDiv>
     </Wrapper>
 
   )
@@ -35,12 +39,19 @@ const ServiceCard = ({ service, section }) => {
 
 export default ServiceCard
 
+const BtnDiv = styled.div`
+  @media ${device.laptop} {
+    display:none;
+  }
+`
+
 const Wrapper = styled(Container)`
- text-align: justify;
+  flex-wrap: nowrap;
+  text-align: justify;
   text-justify: inter-word;
-  box-sizing:border-box;
   max-width:100%;
   height:100vh;
+  padding: 1rem 0;
   animation: ${fadeIn} 3s;
   &:nth-child(1) { 
     animation-duration: 1s;
@@ -74,10 +85,9 @@ const Wrapper = styled(Container)`
 
     @media ${device.laptop} {
       font-weight:400;
-      width:25vw;
+      max-width:25vw;
       height: 70vh;
       margin:2rem;
-      font-size: 1.5vw;
       opacity:0.9;
       background-color:aliceblue;
     }
@@ -89,7 +99,7 @@ const Icon = styled.img`
     width:8rem;
   }
   @media ${device.laptop} {
-    width:5rem;
+    width:3rem;
   }
 `
 const Title = styled.h3`
@@ -104,8 +114,8 @@ display:flex;
 flex-direction:column;
 justify-content:space-around;
 align-items:center;
-height:60%;
-padding: 2rem;
+height:65%;
+padding: 1rem 2rem 0 2rem;
 font-size:1.25rem;
 line-height:1.5;
 text-align: justify;
@@ -116,6 +126,7 @@ text-justify: inter-word;
     }
 
     @media ${device.laptop}{
-      font-size: 1.3vw;
+      font-size: calc(0.5rem + 0.7vw);
+      justify-content: space-between;
     }
 `

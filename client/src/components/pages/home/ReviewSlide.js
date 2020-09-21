@@ -47,15 +47,13 @@ const ReviewSlide = ({ display }) => {
 
   return (
 
-    <Container width='100vw'>
-      <Wrapper>
-        <Slider className='laptop' {...settings}>
-          {reviews.map(review =>
-            <ReviewCard key={review.name} review={review} />
-          )}
-        </Slider>
-      </Wrapper>
-    </Container>
+    <Wrapper>
+      <Slider className='laptop' {...settings}>
+        {reviews.map(review =>
+          <ReviewCard key={review.name} review={review} />
+        )}
+      </Slider>
+    </Wrapper>
 
   )
 }
@@ -63,10 +61,13 @@ const ReviewSlide = ({ display }) => {
 export default ReviewSlide
 
 const Wrapper = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items:center;
   width:90vw;
-  height:80vh;
+  height:90vh;
   @media ${device.laptop} {
-    height:45vh;
-    padding:3rem 0;
+    height:55vh;
+   
   }
 `

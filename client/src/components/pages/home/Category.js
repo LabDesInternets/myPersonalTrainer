@@ -42,14 +42,14 @@ height:100vh;
 display:flex;
 flex-direction: column;
 justify-content: center;
-font-size: 1.25rem;
+font-size: calc(1rem +0.6vw);
 position: absolute;
 top:0;
 z-index:10;
 color:white;
 font-weight:400;
 h1{
-  font-size: 2.75rem;
+  font-size: calc(2rem + 0.8vw);
   font-weight: 400;
   padding:0.5rem 1rem;
 }
@@ -66,7 +66,11 @@ p{
   line-height:2;
   align-items:center;
   text-align:center;
-  font-size: 1.5rem;
+
+}
+
+@media (max-width:992px) {
+  font-size: calc(1rem + 0.8vw);
 }
 `
 
