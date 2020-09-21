@@ -5,6 +5,7 @@ import { device } from '../../cors/ResponsiveSettings'
 const ArticleDisplay = (props) => {
   const { article } = props
 
+
   return (
 
     <>
@@ -42,6 +43,8 @@ const ArticleDisplay = (props) => {
               <p>{article.text5}</p>
             </>
           )}
+          {article.conclusion && <p>{article.conclusion}</p>
+          }
         </Wrapper>
       )}
     </>
@@ -78,7 +81,7 @@ const ImgWrapper = styled.img`
   @media ${device.laptop} {
     --ratio: 160 /240;
     width:30vw;
-    height: calc(30vw * var(--ratio));
+    /* height: calc(30vw * var(--ratio)); */
     ${props =>
     props.main &&
     css`

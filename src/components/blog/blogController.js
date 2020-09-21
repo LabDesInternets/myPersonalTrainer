@@ -6,7 +6,7 @@ const HttpStatusCode = require('../../helpers/status_code');
 const blogController = {
   getAllArticles: async () => {
     const articles = await Article.findAll({
-      attributes: ['id', 'slug', 'picture', 'title', 'description', 'title1', 'text1', 'picture1', 'title2', 'text2', 'picture2', 'title3', 'text3', 'picture3', 'title4', 'text4', 'picture4', 'title5', 'text5', 'picture5', 'date'],
+      attributes: ['id', 'slug', 'picture', 'title', 'description', 'title1', 'text1', 'picture1', 'title2', 'text2', 'picture2', 'title3', 'text3', 'picture3', 'title4', 'text4', 'picture4', 'title5', 'text5', 'conclusion', 'picture5', 'date'],
       order: [['date', 'DESC']]
     });
     if (!articles) {
@@ -18,7 +18,7 @@ const blogController = {
   getOneArticle: async (slug) => {
     const article = await Article.findOne({
       where: { slug },
-      attributes: ['id', 'slug', 'picture', 'title', 'description', 'title1', 'text1', 'picture1', 'title2', 'text2', 'picture2', 'title3', 'text3', 'picture3', 'title4', 'text4', 'picture4', 'title5', 'text5', 'picture5', 'date']
+      attributes: ['id', 'slug', 'picture', 'title', 'description', 'title1', 'text1', 'picture1', 'title2', 'text2', 'picture2', 'title3', 'text3', 'picture3', 'title4', 'text4', 'picture4', 'title5', 'text5', 'conclusion', 'picture5', 'date']
     });
     if (!article) {
       throw new AppError(
