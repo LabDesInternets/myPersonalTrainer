@@ -103,7 +103,7 @@ const ContentWrapper = styled(Container)`
      line-height: 3rem;
    }
    @media ${device.laptop} {
-    font-size: calc(0.8rem + 0.5vw);
+    font-size: calc(0.8rem + 0.4vw);
     line-height: calc(1.5rem + 0.8vw);
     font-weight:400;
     height:60vh;

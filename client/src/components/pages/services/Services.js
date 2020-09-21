@@ -31,8 +31,9 @@ const Services = ({ element }) => {
           {objectives.map(objective => <ServiceCard key={objective.title} service={objective} section={objective.title} />)}
         </ContentWrapper>
 
-        <StyledLink to='/contact'><StyledButton dark>Réserver ma séance gratuite</StyledButton></StyledLink>
-
+        <BtnDiv>
+          <StyledLink to='/contact'><StyledButton dark>Réserver ma séance gratuite</StyledButton></StyledLink>
+        </BtnDiv>
       </Laptop>
     </>
 
@@ -46,7 +47,10 @@ const Mobile = styled(Container)`
     display:none;
   }
 `
+const BtnDiv = styled.div`
+  min-height: 15vh;
 
+`
 
 const Laptop = styled(Container)`
   display:none;

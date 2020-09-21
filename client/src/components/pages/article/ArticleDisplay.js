@@ -72,7 +72,7 @@ const ImgWrapper = styled.img`
    --ratio: 135 / 240;
   width:100%;
   height: calc(100% * var(--ratio));
-  object-position: top;
+  object-position: 50%;
   object-fit: cover;
   padding: 1rem 0;
   @media ${device.laptop} {

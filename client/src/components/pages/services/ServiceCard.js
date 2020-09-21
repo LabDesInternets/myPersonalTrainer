@@ -99,7 +99,7 @@ const Icon = styled.img`
     width:8rem;
   }
   @media ${device.laptop} {
-    width:5rem;
+    width:3rem;
   }
 `
 const Title = styled.h3`
@@ -114,7 +114,7 @@ display:flex;
 flex-direction:column;
 justify-content:space-around;
 align-items:center;
-height:60%;
+height:65%;
 padding: 1rem 2rem 0 2rem;
 font-size:1.25rem;
 line-height:1.5;

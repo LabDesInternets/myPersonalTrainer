@@ -29,7 +29,7 @@ body {
     font-weight: 550;
   }
   h3 {
-    font-size: calc(0.9rem + 0.6vw);
+    font-size: calc(0.9rem + 0.5vw);
     font-weight: 550;
   }
   h4 {

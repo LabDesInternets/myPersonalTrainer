@@ -82,8 +82,7 @@ const CardContainer = styled.div`
 `
 
 const BtnDiv = styled.div`
-  height: 10vh;
-  margin:2rem;
+  min-height: 15vh;
 `
 
 const MobileWrapper = styled.div`

@@ -183,6 +183,7 @@ const FormWrapper = styled.div`
 
 const STextArea = styled.textarea`
   resize:none;
+  min-height:10rem;
   height:10rem;
   border: 1px solid gray;
   border-radius:5px;
