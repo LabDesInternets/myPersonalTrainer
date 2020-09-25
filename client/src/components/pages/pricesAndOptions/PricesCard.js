@@ -37,7 +37,7 @@ const PricesCard = ({ prices }) => {
       <Section>
         <div>
           <span><Gift size='medium' color='#0096c7' /></span>
-          <div>1ère séance offerte</div>
+          <div>Séance d'essai gratuite</div>
         </div>
         <div>
           <span><Clock size='medium' color='#0096c7' /></span>

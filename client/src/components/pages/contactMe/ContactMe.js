@@ -6,7 +6,9 @@ import * as yup from 'yup';
 import styled from 'styled-components'
 import StyledInput from '../../cors/StyledInput'
 import StyledButton from '../../cors/StyledButton'
+import Container from '../../cors/Container'
 import { device } from '../../cors/ResponsiveSettings'
+import contactPic from '../../../assets/images/tennis-ball-on-court-darko-nesic-unsplash.jpg'
 
 const urlContact = `/api/contact/send`
 
@@ -75,68 +77,96 @@ const ContactMe = ({ element, history }) => {
 
   return (
     <Wrapper ref={element}>
-      <h1>Contact</h1>
-      <StyledForm onSubmit={handleSubmit(onSubmit)}>
-        {message && <>
-          <FlashMessage>{message}</FlashMessage>
-          <p>Vous allez être redirigé vers la page d'acceuil dans <span style={{ color: '#d16666' }}>{countdown}</span> secondes ...</p>
-        </>
-        }
+      <Container style={{ zIndex: '10' }}>
+        <StyledForm onSubmit={handleSubmit(onSubmit)}>
+          {message && <>
+            <FlashMessage>{message}</FlashMessage>
+            <p>Vous allez être redirigé vers la page d'acceuil dans <span style={{ color: '#d16666' }}>{countdown}</span> secondes ...</p>
+          </>
+          }
 
-        <FormWrapper>
+          <FormWrapper>
+            <FormInput>
+              <InputsWrapper>
+                <StyledInput
+                  name="firstName"
+                  type="text"
+                  placeholder="Prénom"
+                  ref={register}
+                  dark
+                />
+                {errors.firstName?.message}
 
-          <StyledInput
-            name="firstName"
-            type="text"
-            placeholder="Prénom"
-            ref={register}
-          />
-          {errors.firstName?.message}
+                <StyledInput
+                  name="lastName"
+                  type="text"
+                  placeholder="Nom"
+                  ref={register}
+                  dark
+                />
+                {errors.lastName?.message}
 
-          <StyledInput
-            name="lastName"
-            type="text"
-            placeholder="Nom"
-            ref={register}
-          />
-          {errors.lastName?.message}
+                <StyledInput
+                  name="email"
+                  type="email"
+                  placeholder="Adresse email"
+                  ref={register}
+                  dark
+                />
+                {errors.email?.message}
 
-          <StyledInput
-            name="email"
-            type="email"
-            placeholder="Adresse email"
-            ref={register}
+                <StyledInput
+                  name="subject"
+                  type="text"
+                  placeholder="Sujet"
+                  ref={register}
+                  dark
+                />
+                {errors.subject?.message}
+              </InputsWrapper>
+              <Title>
+                <h1 style={{ fontSize: '4.5rem' }}>Contact</h1>
+              </Title>
+            </FormInput>
 
-          />
-          {errors.email?.message}
+            <STextArea
+              name="messageToSend"
+              type="text"
+              placeholder="Message..."
+              ref={register}
+            ></STextArea>
+            {errors.messageToSend?.message}
 
-          <StyledInput
-            name="subject"
-            type="text"
-            placeholder="Sujet"
-            ref={register}
-          />
-          {errors.subject?.message}
-
-          <STextArea
-            name="messageToSend"
-            type="text"
-            placeholder="Message..."
-            ref={register}
-          ></STextArea>
-          {errors.messageToSend?.message}
-        </FormWrapper>
-        <div>
-          <StyledButton type="submit">Envoyer</StyledButton>
-        </div>
-      </StyledForm>
+          </FormWrapper>
+          <div>
+            <StyledButton type="submit" mobile>Envoyer</StyledButton>
+          </div>
+        </StyledForm>
+      </Container>
     </Wrapper>
   )
 }
 
 export default ContactMe
 
+const FormInput = styled(Container)`
+  @media ${device.laptop} {
+    flex-direction: row;
+  }
+`
+const InputsWrapper = styled(Container)`
+    @media ${device.laptop} {
+    width: 50%;
+    align-items:flex-start;
+  }
+`
 const Wrapper = styled.div`
+  background-image: url(.${contactPic});
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position:50%;
+  position: relative;
+  z-index:1;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -144,15 +174,32 @@ const Wrapper = styled.div`
   padding: 4rem 2rem 0 2rem;
   min-height:110vh;
   max-height:160vh;
+  color:white;
+  &&::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.25);
+  }
 @media ${device.laptop} {
   flex-direction: row;
   justify-content: space-around;
-  align-items: baseline;
+  
   height: 100vh;
-  margin: 0 10%;
   padding: 4rem 2rem;
 }
 `
+const Title = styled(Container)`
+  @media ${device.laptop} {
+    width:50%;
+    justify-content:flex-end;
+    height:100%;
+  }
+`
+
 const StyledForm = styled.form`
   display:flex;
   flex-direction: column;
@@ -160,7 +207,6 @@ const StyledForm = styled.form`
   align-items:center;
   height: ${props => props.height || "100%"};
   width: ${props => props.width || "100%"};
-
   @media ${device.laptop} {
     width: 50rem;
   }
@@ -175,9 +221,12 @@ const FormWrapper = styled.div`
   width: ${props => props.width || "100%"};
   align-items: normal;
   padding: 1rem 0;
+
   @media ${device.laptop} {
     padding: 1rem 1rem;
-    height: 60vh;
+    min-height: 65vh;
+    height:auto;
+ 
   }
 `
 

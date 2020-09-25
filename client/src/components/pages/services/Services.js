@@ -32,7 +32,7 @@ const Services = ({ element }) => {
         </ContentWrapper>
 
         <BtnDiv>
-          <StyledLink to='/contact'><StyledButton dark>Réserver ma séance gratuite</StyledButton></StyledLink>
+          <StyledLink to='/book'><StyledButton dark>Réserver ma séance d'essai gratuite</StyledButton></StyledLink>
         </BtnDiv>
       </Laptop>
     </>

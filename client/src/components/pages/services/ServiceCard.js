@@ -30,7 +30,7 @@ const ServiceCard = ({ service, section }) => {
         <div>{service.content3}</div>
       </ContentWrapper>
       <BtnDiv>
-        <StyledLink to='/contact'><StyledButton w='17rem' dark>Réserver ma séance gratuite</StyledButton></StyledLink>
+        <StyledLink to='/book'><StyledButton w='17rem' dark>Réserver ma séance d'essai gratuite</StyledButton></StyledLink>
       </BtnDiv>
     </Wrapper>
 

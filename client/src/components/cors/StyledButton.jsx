@@ -28,7 +28,7 @@ const StyledButton = styled.button`
     css`
       background-color:#03071e;
       color: white;
-      width: 17rem;
+      width: 20rem;
       border: 2px solid white;
       &&:hover {
         background: #0096c7;
@@ -58,7 +58,7 @@ const StyledButton = styled.button`
     css`
       background-color:#03071e;
       color: white;
-      width: 17rem;
+      width: 20rem;
       border: 2px solid white;
       &&:hover {
         background: #0096c7;

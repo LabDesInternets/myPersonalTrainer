@@ -17,10 +17,10 @@ const contactController = require('../contact/contactController');
 const userRouter = express.Router();
 
 
-userRouter.get('/', async (request, response) => {
-  const articles = await getAllUsers();
+userRouter.get('/', authenticate.isAuth, async (request, response) => {
+  const users = await getAllUsers();
 
-  response.status(OK).json(articles);
+  response.status(OK).json(users);
 });
 
 userRouter.post('/register', validateSignup, checkAccount, async (request, response) => {
