@@ -1,15 +1,21 @@
 import React from 'react'
+import { withRouter } from 'react-router'
 import StyledLink from '../cors/StyledLink'
 import styled, { keyframes, css } from 'styled-components'
 import { device } from '../cors/ResponsiveSettings'
+import logoLight from '../../assets/icons/logo-raph-light-copie.png'
+import logoDark from '../../assets/icons/logo-raph-sans-fond-dark-copie.png'
 
 
 
 const Navbar = (props) => {
-  const { sticky } = props
+
+  const { sticky, location } = props
+
   return (
 
-    <Wrapper cl={sticky ? 'navbarSticky' : 'navbar'}>
+    <Wrapper cl={sticky ? 'navbarSticky' : 'navbar'} mode={location.pathname === '/contact' ? 'dark' : null}>
+      <StyledLink exact to='/' onClick={() => window.scrollTo(0, 0)}><Logo src={logoLight} /></StyledLink>
       <NavContainer>
         <StyledLink exact to='/'>Accueil</StyledLink>
         <StyledLink to='/about'>Qui suis-je</StyledLink>
@@ -23,7 +29,7 @@ const Navbar = (props) => {
   )
 }
 
-export default Navbar
+export default withRouter(Navbar)
 
 const NavContainer = styled.div`
   width:75%;
@@ -31,7 +37,12 @@ const NavContainer = styled.div`
   justify-content: space-between;
 `
 
-
+const Logo = styled.img`
+  position: fixed;
+  top: calc(0.4vw + 1.7vh);
+  left:10px;
+  width:1.5em;
+`
 const moveDown = keyframes`
   from {
     transform: translateY(-5rem);
@@ -71,5 +82,11 @@ const Wrapper = styled.nav`
       color:white;
       animation: ${moveDown} 0.5s ease-in-out;
     `}
+    ${props =>
+    props.mode === 'dark' &&
+    css`
+      color:white;
+    `}
+
       
 `

@@ -10,7 +10,6 @@ const StyledMenu = styled.nav`
   opacity:1;
   width:100vw;
   height: 100vh;
-  /* padding: 0 1rem; */
   text-align: center;
   position: fixed;
   z-index:100;
@@ -21,7 +20,6 @@ const StyledMenu = styled.nav`
   
   a {
     font-size: 1.5rem;
-    /* text-transform: uppercase; */
     padding: 2rem 0;
     letter-spacing: 0.5rem;
     color: white;
@@ -33,19 +31,8 @@ const StyledMenu = styled.nav`
     }
   }
     
-    @media ${device.laptop} {
-      height:10vh;
-      padding: 0 4.5rem;
-      display:flex;
-      flex-direction:row;
-      justify-content: space-between;
-      background:transparent;
-    
-    a {
-        padding: 1.25rem 0;
-        color:black;
-        font-size: 1.5vw;
-      }
+  @media ${device.laptop} {
+    display:none;
   }
 `;
 

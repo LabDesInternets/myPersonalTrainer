@@ -21,19 +21,19 @@ const PricesAndOptions = ({ element }) => {
       <MobileWrapper mobile>
         <Wrapper bgColor='#caf0f8'>
           <PricesCard prices={prices.oneSession}></PricesCard>
-          <StyledLink to='/contact'><StyledButton dark>Réserver ma séance gratuite</StyledButton></StyledLink>
+          <StyledLink to='/book'><StyledButton dark>Réserver ma séance d'essai gratuite</StyledButton></StyledLink>
         </Wrapper>
         <Wrapper bgColor='#ffe5d9'>
           <PricesCard prices={prices.fiveSessions}></PricesCard>
-          <StyledLink to='/contact'><StyledButton dark>Réserver ma séance gratuite</StyledButton></StyledLink>
+          <StyledLink to='/book'><StyledButton dark>Réserver ma séance d'essai gratuite</StyledButton></StyledLink>
         </Wrapper>
         <Wrapper bgColor='#d8e2dc'>
           <PricesCard prices={prices.tenSessions}></PricesCard>
-          <StyledLink to='/contact'><StyledButton dark>Réserver ma séance gratuite</StyledButton></StyledLink>
+          <StyledLink to='/book'><StyledButton dark>Réserver ma séance d'essai gratuite</StyledButton></StyledLink>
         </Wrapper>
         <Wrapper bgColor='#FEFEE3'>
           <PricesCard prices={prices.groupSession}></PricesCard>
-          <StyledLink to='/contact'><StyledButton dark>Réserver ma séance gratuite</StyledButton></StyledLink>
+          <StyledLink to='/book'><StyledButton dark>Réserver ma séance d'essai gratuite</StyledButton></StyledLink>
         </Wrapper>
       </MobileWrapper>
 
@@ -45,7 +45,7 @@ const PricesAndOptions = ({ element }) => {
           <PricesCard prices={prices.groupSession}></PricesCard>
         </CardContainer>
         <BtnDiv>
-          <StyledLink to='/contact'><StyledButton dark>Réserver ma séance gratuite</StyledButton></StyledLink>
+          <StyledLink to='/book'><StyledButton dark>Réserver ma séance d'essai gratuite</StyledButton></StyledLink>
         </BtnDiv>
       </Wrapper>
 

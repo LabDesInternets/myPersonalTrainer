@@ -39,7 +39,35 @@ const contactController = {
       if (error) {
         logger.error(error);// Show a page indicating failure
       } else {
-        logger.info('email sent'); // Show a page indicating success
+        logger.info('contact email sent'); // Show a page indicating success
+      }
+    });
+  },
+  sendBookingMail: async (bookingInfo) => {
+    const {
+      firstName, lastName, phone, email, messageToSend
+    } = bookingInfo;
+
+    const bookingMailOptions = {
+      from: `${firstName} ${lastName}, ${email}`, // This is ignored by Gmail
+      to: process.env.GMAIL_USER,
+      subject: `Demande de réservation séance d'essai gratuite`,
+      text: `${firstName} (${email}) says: ${messageToSend}`,
+      html: `
+    <p>Nom : ${firstName} ${lastName}</p>
+    <p>Tel : ${phone}</p>
+    <p>Email : ${email}<p>
+    <p>Message : 
+    <br>
+    <p>${messageToSend.replace(/\n/g, '<br>')}</p>
+    `
+    };
+
+    smtpTransporter.sendMail(bookingMailOptions, (error) => {
+      if (error) {
+        logger.error(error);// Show a page indicating failure
+      } else {
+        logger.info('booking email sent'); // Show a page indicating success
       }
     });
   },

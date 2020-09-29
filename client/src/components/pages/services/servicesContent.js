@@ -19,7 +19,7 @@ const services = {
   competition: {
     icon: trophy,
     title: 'Préparer une compétition',
-    content1: `Ce programme sur-mesure est fait pour vous si vous préparer une compétition ou si vous avez un objectif personnel de performance sur une discipline.`,
+    content1: `Ce programme sur-mesure est fait pour vous si vous préparez une compétition ou si vous avez un objectif personnel de performance sur une discipline.`,
     content2: `Les séances permettront le développement des qualités physiques nécessaires à l'amélioration de vos performances, notamment avec l'utilisation de résistance (élastiques, charges).`
   }
 }

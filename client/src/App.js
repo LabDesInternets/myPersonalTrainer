@@ -19,6 +19,8 @@ import PrivateRoute from './components/HOC/PrivateRoute'
 import ResetPw from './components/pages/resetPw'
 import BlogPage from './components/pages/blogPage'
 import ArticlePage from './components/pages/article'
+import BookForm from './components/pages/bookForm'
+import Logo from './components/logo'
 
 const urlAdmin = process.env.REACT_APP_ADMIN
 
@@ -33,6 +35,7 @@ const App = () => {
   return (
     <Router>
       <div ref={node}>
+        <Logo />
         <Burger open={open} setOpen={setOpen} />
         <Menu open={open} setOpen={setOpen} />
         <Navbar sticky={isSticky} />
@@ -43,6 +46,7 @@ const App = () => {
         <Route path="/services" render={props => <Services {...props} element={element} />} />
         <Route path="/prices" render={props => <PricesAndOptions {...props} element={element} />} />
         <Route path="/contact" render={props => <ContactMe {...props} element={element} />} />
+        <Route path="/book" render={props => <BookForm {...props} element={element} />} />
         <Route path="/signin" component={SignIn} />
         <PrivateRoute path="/signup" component={SignUp} />
         <PrivateRoute exact path={`/${urlAdmin}`} component={Admin} />
