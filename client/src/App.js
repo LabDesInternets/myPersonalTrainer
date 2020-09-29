@@ -20,6 +20,7 @@ import ResetPw from './components/pages/resetPw'
 import BlogPage from './components/pages/blogPage'
 import ArticlePage from './components/pages/article'
 import BookForm from './components/pages/bookForm'
+import Logo from './components/logo'
 
 const urlAdmin = process.env.REACT_APP_ADMIN
 
@@ -34,6 +35,7 @@ const App = () => {
   return (
     <Router>
       <div ref={node}>
+        <Logo />
         <Burger open={open} setOpen={setOpen} />
         <Menu open={open} setOpen={setOpen} />
         <Navbar sticky={isSticky} />

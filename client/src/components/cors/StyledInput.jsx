@@ -19,9 +19,10 @@ const StyledInput = styled.input`
   ${props =>
     props.dark &&
     css`
-      border: 1px solid white;
+      /* border: 1px solid white; */
       border-radius:3px;
       padding: 0.5rem 0.5rem;
+      border-bottom:none;
       &:focus {
       border: 1px solid #0096c7;
       outline: none;

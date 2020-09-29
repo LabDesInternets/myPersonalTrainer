@@ -8,7 +8,7 @@ import StyledInput from '../../cors/StyledInput'
 import StyledButton from '../../cors/StyledButton'
 import Container from '../../cors/Container'
 import { device } from '../../cors/ResponsiveSettings'
-import bookingPic from '../../../assets/images/workHarderLarge.jpg'
+import bookingPic from '../../../assets/images/athlete-on-starting-block-braden-collum-unsplash.jpg'
 
 
 const urlBooking = `/api/contact/book/send`
@@ -250,7 +250,7 @@ const FlashMessage = styled.div`
   background-color: #8ac4ff;
   border-radius:5px;
   padding:1rem;
- 
+  color:white;
   
 `
 const Error = styled.p`

@@ -8,7 +8,7 @@ import StyledInput from '../../cors/StyledInput'
 import StyledButton from '../../cors/StyledButton'
 import Container from '../../cors/Container'
 import { device } from '../../cors/ResponsiveSettings'
-import contactPic from '../../../assets/images/tennis-ball-on-court-darko-nesic-unsplash.jpg'
+import contactPic from '../../../assets/images/man-no-face-weight-victor-freitas-unsplash.jpg'
 
 const urlContact = `/api/contact/send`
 
@@ -155,9 +155,16 @@ const FormInput = styled(Container)`
   }
 `
 const InputsWrapper = styled(Container)`
+  input {
+    width:80%;
+  }
     @media ${device.laptop} {
+    min-height:10em;
     width: 50%;
     align-items:flex-start;
+    input {
+      width:95%;
+    }
   }
 `
 const Wrapper = styled.div`
@@ -194,6 +201,7 @@ const Wrapper = styled.div`
 `
 const Title = styled(Container)`
   @media ${device.laptop} {
+    min-height:10em;
     width:50%;
     justify-content:flex-end;
     height:100%;

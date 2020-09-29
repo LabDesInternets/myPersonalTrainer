@@ -35,7 +35,7 @@ const CatTitle = styled(Container)`
 `
 
 const Wrapper = styled.div`
-  height:100vh;
+  min-height:110vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -45,6 +45,7 @@ const Wrapper = styled.div`
     color:white;
   }
   @media ${device.laptop} {
+    min-height:40vh;
     max-height:65vh;
   }
 `
