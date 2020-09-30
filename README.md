@@ -8,7 +8,9 @@
   - 🎣 Hooks 
   - 🧺 Context
   - 💅 Styled Components
+  - 📱 Mobile first responsive design
   - 💨 Express
+  
   
   Web app for a sports coach.  
   On the internet, here: https://raphaelcoachsportif.com/
