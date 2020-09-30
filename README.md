@@ -15,6 +15,6 @@
 
 <p align="center">
   <br><br>
-  <img src="/src/git/my-persononal-trainer-preview.gif">
+  <img src="/src/git/my-persononal-trainer-preview.gif" />
   <br><br>
 </p>
