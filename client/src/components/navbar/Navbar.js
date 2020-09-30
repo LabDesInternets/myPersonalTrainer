@@ -15,7 +15,7 @@ const Navbar = (props) => {
   return (
 
     <Wrapper cl={sticky ? 'navbarSticky' : 'navbar'} mode={location.pathname === '/contact' ? 'dark' : null}>
-      <StyledLink exact to='/' onClick={() => window.scrollTo(0, 0)}><Logo src={logoLight} /></StyledLink>
+      <StyledLink exact to='/' onClick={() => window.scrollTo(0, 0)}><Logo src={sticky ? logoDark : logoLight} /></StyledLink>
       <NavContainer>
         <StyledLink exact to='/'>Accueil</StyledLink>
         <StyledLink to='/about'>Qui suis-je</StyledLink>
