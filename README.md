@@ -10,10 +10,14 @@
   - 💅 Styled Components
   - 📱 Mobile first responsive design
   - 💨 Express
+  - 🦦 Mongoose
+  - 📑 MongoDb 
   
   
   Web app for a sports coach.  
   On the internet, here: https://raphaelcoachsportif.com/
+
+  Work in progress ...
 
 <p align="center">
   <br><br>

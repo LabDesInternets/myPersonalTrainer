@@ -65,7 +65,7 @@ const Wrapper = styled.div`
   justify-content:center;
   align-items:center;
   width:90vw;
-  height:90vh;
+  min-height:100vh;
   @media ${device.laptop} {
     height:55vh;
    

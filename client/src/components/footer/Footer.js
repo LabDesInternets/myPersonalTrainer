@@ -16,7 +16,7 @@ const Footer = () => {
       <MainContainer>
         <Text>Retrouvez moi sur</Text>
         <Icons>
-          <StyledA href='https://www.instagram.com/scientitrainer/'><Instagram size='medium' color='white' /></StyledA>
+          <StyledA href='https://www.instagram.com/abnraphael/'><Instagram size='medium' color='white' /></StyledA>
           <StyledA href='https://www.facebook.com/Raphael-Abouna-100101365135643'><Facebook size='medium' color='white' /></StyledA>
           <StyledA href='https://g.page/r/CbTS5v-ViOcjEAE'><Google size='medium' color='white' /></StyledA>
           <StyledA href='https://www.linkedin.com/in/raphael-abouna-ba23421b2/?originalSubdomain=fr'><Linkedin size='medium' color='white' /></StyledA>
