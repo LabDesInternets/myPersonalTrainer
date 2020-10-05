@@ -1,10 +1,14 @@
 .slick-dots {
   bottom: 0px;
-  min-height: 5vh;
+  height: 10%;
+  /* min-height: 5vh; */
 }
 
-.slick-slider, .slick-list, .slick-track{
-  height:90vh;
+.slick-slider, .slick-track{
+  height: 100%;
+}
+.slick-list {
+  height: 90%;
 }
 
 .slick-prev {
@@ -20,14 +24,12 @@
 }
 @media (min-width:992px) {
 
-  .laptop {
-    height:50vh;
+  .laptop > div { 
+    min-height: 0;
+
   }
-  .laptop > div {
-    height: 50vh;
-  }
-  .laptop > div > div {
-    height: 50vh;
-  }
+  .slick-list {
+    min-height: 30rem;
+  } 
 
 }

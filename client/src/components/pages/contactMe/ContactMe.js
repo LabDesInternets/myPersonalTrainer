@@ -77,7 +77,7 @@ const ContactMe = ({ element, history }) => {
 
   return (
     <Wrapper ref={element}>
-      <Container style={{ zIndex: '10' }}>
+      <FormContainer>
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
           {message && <>
             <FlashMessage>{message}</FlashMessage>
@@ -125,7 +125,7 @@ const ContactMe = ({ element, history }) => {
                 {errors.subject?.message}
               </InputsWrapper>
               <Title>
-                <h1 style={{ fontSize: '4.5rem' }}>Contact</h1>
+                <h1>Contact</h1>
               </Title>
             </FormInput>
 
@@ -138,35 +138,17 @@ const ContactMe = ({ element, history }) => {
             {errors.messageToSend?.message}
 
           </FormWrapper>
-          <div>
+          <BtnDiv>
             <StyledButton type="submit" mobile>Envoyer</StyledButton>
-          </div>
+          </BtnDiv>
         </StyledForm>
-      </Container>
+      </FormContainer>
     </Wrapper>
   )
 }
 
 export default ContactMe
 
-const FormInput = styled(Container)`
-  @media ${device.laptop} {
-    flex-direction: row;
-  }
-`
-const InputsWrapper = styled(Container)`
-  input {
-    width:80%;
-  }
-    @media ${device.laptop} {
-    min-height:10em;
-    width: 50%;
-    align-items:flex-start;
-    input {
-      width:95%;
-    }
-  }
-`
 const Wrapper = styled.div`
   background-image: url(.${contactPic});
   background-repeat: no-repeat;
@@ -178,9 +160,9 @@ const Wrapper = styled.div`
   flex-direction:column;
   justify-content:center;
   align-items: center;
-  padding: 4rem 2rem 0 2rem;
-  min-height:110vh;
-  max-height:160vh;
+  padding: 0 2rem;
+  height:100vh;
+  min-height: 36rem;
   color:white;
   &&::before{
     content: "";
@@ -194,65 +176,84 @@ const Wrapper = styled.div`
 @media ${device.laptop} {
   flex-direction: row;
   justify-content: space-around;
-  
-  height: 100vh;
-  padding: 4rem 2rem;
 }
 `
-const Title = styled(Container)`
-  @media ${device.laptop} {
-    min-height:10em;
-    width:50%;
-    justify-content:flex-end;
-    height:100%;
-  }
+const FormContainer = styled(Container)`
+  z-index:10;
+  position: relative;
+  top:2rem;
+  height:90%;
 `
-
 const StyledForm = styled.form`
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items:center;
-  height: ${props => props.height || "100%"};
+  height: 100%;
   width: ${props => props.width || "100%"};
   @media ${device.laptop} {
     width: 50rem;
   }
 `
 
-const FormWrapper = styled.div`
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
-  height: ${props => props.height || "100%"};
-  width: ${props => props.width || "100%"};
-  align-items: normal;
-  padding: 1rem 0;
-
+const FormWrapper = styled(Container)`
+  align-items:normal;
+  height: 85%;
   @media ${device.laptop} {
     padding: 1rem 1rem;
-    min-height: 65vh;
-    height:auto;
- 
+  }
+`
+
+const FormInput = styled(Container)`
+  min-height:18rem;
+  height:60%;
+  @media ${device.laptop} {
+    min-height:10rem;
+    flex-direction: row;
+    align-items:end;
+    padding: 1rem 0;
+  }
+`
+const InputsWrapper = styled(Container)`
+  height:60%;
+  input {
+    width:80%;
+  }
+    @media ${device.laptop} {
+    height:100%;
+    width: 50%;
+    align-items:flex-start;
+    justify-content: flex-end;
+    input {
+      width:95%;
+    }
+  }
+`
+const Title = styled(Container)`
+  height:30%;
+  min-height:5rem;
+  h1{font-size:4.5rem;}
+  @media ${device.laptop} {
+    width:50%;
+    justify-content:flex-end;
+    height:100%;
   }
 `
 
 const STextArea = styled.textarea`
   resize:none;
-  min-height:10rem;
-  height:10rem;
+  height:40%;
   border: 1px solid gray;
   border-radius:5px;
   padding: 1rem;
-  margin-top: 2rem;
   font-size: calc(0.8rem + 0.4vw); 
-
   &:focus {
     border-color: #0096c7;
     outline: none;
   }
-
+`
+const BtnDiv = styled.div`
+  height:15%;
 `
 
 const FlashMessage = styled.div`

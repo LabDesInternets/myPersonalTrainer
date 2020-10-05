@@ -21,19 +21,21 @@ const Services = ({ element }) => {
   return (
     <>
       <Mobile>
-        <ContentWrapper>
+        <CardContainer>
           {objectives.map(objective => <ServiceCard key={objective.title} service={objective} section={objective.title} />)}
-        </ContentWrapper>
+        </CardContainer>
       </Mobile>
 
       <Laptop ref={element} bgImg={servicesBg}>
         <ContentWrapper>
-          {objectives.map(objective => <ServiceCard key={objective.title} service={objective} section={objective.title} />)}
-        </ContentWrapper>
+          <CardContainer>
+            {objectives.map(objective => <ServiceCard key={objective.title} service={objective} section={objective.title} />)}
+          </CardContainer>
 
-        <BtnDiv>
-          <StyledLink to='/book'><StyledButton dark>Réserver ma séance d'essai gratuite</StyledButton></StyledLink>
-        </BtnDiv>
+          <BtnDiv>
+            <StyledLink to='/book'><StyledButton dark>Réserver ma séance d'essai gratuite</StyledButton></StyledLink>
+          </BtnDiv>
+        </ContentWrapper>
       </Laptop>
     </>
 
@@ -48,8 +50,8 @@ const Mobile = styled(Container)`
   }
 `
 const BtnDiv = styled.div`
-  min-height: 15vh;
-
+  min-height: 4rem;
+  height:15%;
 `
 
 const Laptop = styled(Container)`
@@ -58,22 +60,24 @@ const Laptop = styled(Container)`
     display:flex;
     width:100vw;
     height:100vh;
-    padding-top:4.5rem;
+    min-height:40em;
     background-image: url(".${props => props.bgImg}");
     background-size: cover;
     background-position:50%;
   }
 `
+const ContentWrapper = styled(Container)`
+  position: relative;
+  top: 75px;
+  height:80%;
+  min-height: 30em;
+`
 
-const ContentWrapper = styled.div`
+const CardContainer = styled.div`
 
   @media ${device.laptop} {
-    height:80vh;
+    height:85%;
     display:flex;
     flex-direction: row;
   }
-`
-
-const Wrapper = styled.div`
-
 `

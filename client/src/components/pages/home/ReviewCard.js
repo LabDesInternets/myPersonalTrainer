@@ -23,7 +23,6 @@ const ReviewCard = ({ review }) => {
 export default ReviewCard
 
 const ReviewWrapper = styled(Container)`
-  
   display:flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -33,7 +32,7 @@ const ReviewWrapper = styled(Container)`
   font-size:1rem;
   @media ${device.laptop} {
     width:45vw;
-    height:50vh;
+    /* height:50vh; */
     flex-direction:row;
   
   }
@@ -54,7 +53,6 @@ const Id = styled.p`
   font-weight:400;
 `
 const ContentWrapper = styled(Container)`
-  
   justify-content: start;
   align-items: baseline;
   height: auto;
@@ -62,6 +60,7 @@ const ContentWrapper = styled(Container)`
   padding:1rem;
   p{
     padding:0.5rem 1rem;
+    overflow-x:auto;
   }
   @media ${device.tablet} {
     font-size:1.25rem;
@@ -71,7 +70,6 @@ const ContentWrapper = styled(Container)`
   @media ${device.laptop} {
     justify-content:center;
     width:50vw;
-    height:50vh;
     font-size:1rem;
     padding:0;
   }

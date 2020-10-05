@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { BlogContext } from '../../../context/BlogContext'
 import { device } from '../../cors/ResponsiveSettings'
 import ArticleCard from '../home/ArticleCard'
-import Container from '../../cors/Container'
+import CatTitle from '../../cors/CatTitle'
 import ArticleCardBlogPage from './ArticleCardBlogPage'
 
 const BlogPage = (props) => {
@@ -17,11 +17,11 @@ const BlogPage = (props) => {
 
   return (
     <Wrapper ref={element}>
-      <Container height='10vh' bgColor='#0096c7' width='100vw'>
+      <CatTitle>
         <h6>
           Le blog
         </h6>
-      </Container>
+      </CatTitle>
       <Mobile>
         {articles && articles.map(article =>
           <ArticleCard key={article.id} article={article} />
@@ -51,7 +51,7 @@ const Wrapper = styled.div`
 
   @media ${device.laptop}{
     position: relative;
-  top:8vh;
+  top:75px;
   padding-bottom:30px;
   }
 `

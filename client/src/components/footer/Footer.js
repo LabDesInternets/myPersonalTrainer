@@ -52,14 +52,14 @@ const MailTo = styled.a`
 `
 
 const Icons = styled.div`
-  padding:10px 0;
+  padding:7px 0;
   @media ${device.laptop} {
     padding:0;
   }
 `
 const InfoDiv = styled.div`
   color: #ffd6e0;  
-  font-size:1rem;
+  font-size:0.8rem;
 `
 
 const Wrapper = styled.div`
@@ -69,13 +69,11 @@ const Wrapper = styled.div`
   align-items: center;
   flex-shrink: 0;
   height: 15vh;
-  font-size: 1rem;
   background-color: #03071e;
   color:white;
+  min-height: 85px;
     @media ${device.laptop} {
       height: 10vh;
-      justify-content: end;
-      font-size: 1.5rem;
     }
  
 `

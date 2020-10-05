@@ -15,7 +15,9 @@ const Navbar = (props) => {
   return (
 
     <Wrapper cl={sticky ? 'navbarSticky' : 'navbar'} mode={location.pathname === '/contact' ? 'dark' : null}>
+      {/* <LogoContainer> */}
       <StyledLink exact to='/' onClick={() => window.scrollTo(0, 0)}><Logo src={sticky ? logoDark : logoLight} /></StyledLink>
+      {/* </LogoContainer> */}
       <NavContainer>
         <StyledLink exact to='/'>Accueil</StyledLink>
         <StyledLink to='/about'>Qui suis-je</StyledLink>
@@ -32,16 +34,16 @@ const Navbar = (props) => {
 export default withRouter(Navbar)
 
 const NavContainer = styled.div`
-  width:75%;
+  width:85%;
   display:flex;
   justify-content: space-between;
 `
 
 const Logo = styled.img`
   position: fixed;
-  top: calc(0.4vw + 1.7vh);
-  left:10px;
-  width:1.5em;
+  top: 30px;
+  left: 30px;
+  width: 1.5em;
 `
 const moveDown = keyframes`
   from {
@@ -52,7 +54,7 @@ const moveDown = keyframes`
   }
 `
 const Wrapper = styled.nav`
-    font-size: calc(1rem + 0.6vw);
+    font-size: calc(0.8rem + 0.6vw);
     display: none;
     position: fixed;
     top: 0;
@@ -67,6 +69,7 @@ const Wrapper = styled.nav`
 
   @media ${device.laptop} {
     display:flex;
+    min-height: 75px;
   }
 
     ${props =>

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { device } from '../../cors/ResponsiveSettings'
 import StyledLink from '../../cors/StyledLink'
 import StyledButton from '../../cors/StyledButton'
+import Container from '../../cors/Container'
 
 
 const Category = ({ cat, element }) => {
@@ -11,9 +12,11 @@ const Category = ({ cat, element }) => {
       {cat.switchDisplay ? (
         <Section>
           <Wrapper>
-            <h1>{cat.title}</h1>
-            <p>{cat.content1}..</p>
-            <StyledLink to={cat.linkTo}><StyledButton>En savoir plus</StyledButton></StyledLink>
+            <ContentWrapper>
+              <h1>{cat.title}</h1>
+              <p>{cat.content1}..</p>
+              <StyledLink to={cat.linkTo}><StyledButton>En savoir plus</StyledButton></StyledLink>
+            </ContentWrapper>
           </Wrapper>
           <ImageWrapper bgImg={cat.img}></ImageWrapper>
         </Section>
@@ -22,9 +25,11 @@ const Category = ({ cat, element }) => {
             <ImageWrapper bgImg={cat.img} bgPos={cat.bgPos}></ImageWrapper>
 
             <Wrapper>
-              <h1>{cat.title}</h1>
-              <p>{cat.content1}..</p>
-              <StyledLink to={cat.linkTo}><StyledButton>En savoir plus</StyledButton></StyledLink>
+              <ContentWrapper>
+                <h1>{cat.title}</h1>
+                <p>{cat.content1}..</p>
+                <StyledLink to={cat.linkTo}><StyledButton>En savoir plus</StyledButton></StyledLink>
+              </ContentWrapper>
             </Wrapper>
 
           </Section>
@@ -38,7 +43,7 @@ export default Category
 
 const Wrapper = styled.div`
 width:100vw;
-height:100vh;
+height:100%;
 display:flex;
 flex-direction: column;
 justify-content: center;
@@ -55,6 +60,8 @@ h1{
 }
 p{
   padding: 0.5rem 1rem;
+  /* overflow-x:auto; */
+  /* min-height: 7rem; */
 }
 
 @media ${device.laptop} {
@@ -73,10 +80,14 @@ p{
   font-size: calc(1rem + 0.8vw);
 }
 `
+const ContentWrapper = styled(Container)`
+  align-items:normal;
+  height: 60%;
+`
 
 const ImageWrapper = styled.div`
 width:100vw;
-height:100vh;
+height:100%;
 position: relative;
 z-index:1;
 background-image: url(.${props => props.bgImg});
@@ -104,7 +115,7 @@ const Section = styled.div`
 position:relative;
 max-width:100vw;
 height: 100vh;
-
+min-height:35rem;
 @media ${device.laptop} {
   display:flex;
 }

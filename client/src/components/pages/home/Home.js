@@ -22,7 +22,7 @@ const Home = (props) => {
 
   return (
     <Wrapper>
-      <Container width='100vw' height='100vh'>
+      <HpWrapper>
         <Banner>
           <BannerContent>
             <h1>Raphael Coaching</h1>
@@ -30,7 +30,7 @@ const Home = (props) => {
             <StyledLink to="/services"><StyledButton mobile>Découvrir</StyledButton></StyledLink>
           </BannerContent>
         </Banner>
-      </Container>
+      </HpWrapper>
 
       <Category element={element} cat={categories.about}></Category>
       <Category cat={categories.services}></Category>
@@ -49,7 +49,11 @@ const Home = (props) => {
 
 export default Home
 
-
+const HpWrapper = styled(Container)`
+  width:100vw;
+  height:100vh;
+  min-height:35rem;
+`
 const BannerContent = styled.div`
   padding:1rem;
   p{
