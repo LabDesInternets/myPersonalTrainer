@@ -61,13 +61,10 @@ const ReviewSlide = ({ display }) => {
 export default ReviewSlide
 
 const Wrapper = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items:center;
   width:90vw;
-  min-height:100vh;
+  height:100%;
   @media ${device.laptop} {
-    height:55vh;
-   
+    /* height:55vh; */
+    min-height:0;
   }
 `

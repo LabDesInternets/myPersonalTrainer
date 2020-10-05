@@ -41,10 +41,11 @@ const ArticleWrapper = styled.div`
 const ImgWrapper = styled.img`
   width:100%;
   @media ${device.laptop} {
-    width:30vw;
-    height:20.025vw;
-    object-position: top;
+    --ratio: 135 / 240;
+    object-position: 50%;
     object-fit: cover;
+    width:30vw;
+    height: calc(30vw * var(--ratio));
   }
 `
 
@@ -57,5 +58,11 @@ const ContentWrapper = styled(Container)`
   }
   h5{
     font-size: 1.75rem;
+  }
+  @media ${device.laptop} {
+    justify-content:space-around;
+    --ratio: 135 / 240;
+    height: calc(30vw * var(--ratio));
+    p { line-height: calc(1rem + 0.5vw); }
   }
 `

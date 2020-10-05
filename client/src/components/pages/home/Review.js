@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Container from '../../cors/Container'
+import CatTitle from '../../cors/CatTitle'
 import { device } from '../../cors/ResponsiveSettings'
 import ReviewSlide from './ReviewSlide'
 
@@ -27,15 +28,10 @@ const Review = () => {
 
 export default Review
 
-const CatTitle = styled(Container)`
-  min-height:10vh;
-  height:10vh;
-  background-color: #0096c7;
-  width:100vw;
-`
 
 const Wrapper = styled.div`
-  min-height:110vh;
+  min-height:40rem;
+  height:100vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -45,19 +41,21 @@ const Wrapper = styled.div`
     color:white;
   }
   @media ${device.laptop} {
-    min-height:40vh;
-    max-height:65vh;
+    min-height:25rem;
+    height:55vh;
   }
 `
 const Laptop = styled.div`
   display:none;
+  height: 90%;
   @media ${device.laptop} {
     display:block;
-    height:55vh;
+    /* height:55vh; */
   }
 `
 const Mobile = styled.div`
   display:block;
+  height: 90%;
   @media ${device.laptop} {
     display:none;
   }

@@ -2,16 +2,15 @@ import styled, { css } from 'styled-components'
 import { device } from './ResponsiveSettings'
 
 const StyledButton = styled.button`
-    background-color:white;
-    color: #0096c7;
-    opacity:0.8;
-  border-radius: 20px;
-  width: ${props => props.w || "11rem"};
+  background-color:white;
+  color: #0096c7;
+  opacity:0.8;
+  border-radius: 1000vh;
+  width: ${props => props.w || "10rem"};
   border: 2px solid #0096c7;
   color: #0096c7;
   margin: 1rem 0rem; 
-  padding: 0.5rem 0;
-  font-size: 1rem;
+  padding: 0.4rem 0;
   font-weight: 400;
   cursor: pointer;
 

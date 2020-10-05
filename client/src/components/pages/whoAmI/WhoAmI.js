@@ -51,6 +51,7 @@ const WhoAmI = ({ element }) => {
 export default WhoAmI
 
 const Wrapper = styled.div`
+  min-height:36rem;
   width:100vw;
   height:100vh;
   background-image: url(".${props => props.bgImg}");
@@ -74,6 +75,7 @@ const Wrapper = styled.div`
   ${props =>
     props.reSize &&
     css`
+    min-height:21rem;
     height:58vh;
       `}
 
@@ -103,6 +105,9 @@ const ContentWrapper = styled(Container)`
      line-height: 3rem;
    }
    @media ${device.laptop} {
+    position:relative;
+    top:75px;
+    min-height:20rem;
     font-size: calc(0.8rem + 0.4vw);
     line-height: calc(1.5rem + 0.8vw);
     font-weight:400;

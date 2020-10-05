@@ -12,4 +12,4 @@ const Container = styled.div`
   background-color: ${props => props.bgColor || "none"};
 `;
 
-export default Container;
+export default Container

@@ -21,16 +21,17 @@ const ServiceCard = ({ service, section }) => {
   return (
 
     <Wrapper bgColor={section === 'Perdre du poids' ? 'paleOrange' : section === 'Se muscler' ? 'blue' : 'waterGreen'}>
-
-      <Icon src={service.icon} />
-      <Title>{service.title}</Title>
+      <CatWrapper>
+        <Icon src={service.icon} />
+        <Title>{service.title}</Title>
+      </CatWrapper>
       <ContentWrapper>
         <div>{service.content1}</div>
         <div>{service.content2}</div>
         <div>{service.content3}</div>
       </ContentWrapper>
       <BtnDiv>
-        <StyledLink to='/book'><StyledButton w='17rem' dark>Réserver ma séance d'essai gratuite</StyledButton></StyledLink>
+        <StyledLink to='/book'><StyledButton w='15rem' dark>Réserver ma séance d'essai gratuite</StyledButton></StyledLink>
       </BtnDiv>
     </Wrapper>
 
@@ -46,6 +47,7 @@ const BtnDiv = styled.div`
 `
 
 const Wrapper = styled(Container)`
+  min-height:40em;
   flex-wrap: nowrap;
   text-align: justify;
   text-justify: inter-word;
@@ -84,15 +86,20 @@ const Wrapper = styled(Container)`
   `}
 
     @media ${device.laptop} {
+      min-height: 20rem;
       font-weight:400;
       max-width:25vw;
-      height: 70vh;
+      height: 90%;
       margin:2rem;
       opacity:0.9;
       background-color:aliceblue;
     }
 `
+const CatWrapper = styled(Container)`
+  height:25%;
+  padding: 1rem 0;
 
+`
 const Icon = styled.img`
   width: 6rem;
   @media ${device.tablet} {
@@ -126,7 +133,8 @@ text-justify: inter-word;
     }
 
     @media ${device.laptop}{
-      font-size: calc(0.5rem + 0.7vw);
+      height:70%;
+      font-size: calc(0.5rem + 0.5vw);
       justify-content: space-between;
     }
 `

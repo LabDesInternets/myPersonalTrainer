@@ -5,8 +5,7 @@ const StyledInput = styled.input`
   height: ${props => props.height || '2rem'};
   width: ${props => props.width || '100%'};
   border-radius: 0;
-  font-family: 'Dosis';  
-  font-size: calc(0.8rem + 0.4vw); 
+  /* font-size: calc(0.8rem + 0.4vw);  */
   padding: 0.5rem 0;
   margin: 0.5rem 0;
   border: none; 

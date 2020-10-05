@@ -7,6 +7,7 @@ const StyledLink = styled(NavLink)`
   text-decoration:none;
   cursor: pointer;
   text-align: center;
+  height: ${props => props.height || 'auto'};
   padding: ${props => props.padding || '0 1rem'};
   &:hover{
     text-decoration:none;

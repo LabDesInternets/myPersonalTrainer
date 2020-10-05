@@ -79,70 +79,73 @@ const BookForm = ({ element, history }) => {
 
   return (
     <Wrapper ref={element}>
-      <Intro>
-        <h1 style={{ textAlign: 'center', lineHeight: '1' }}>Réserve ta séance d'éssai gratuite</h1>
-        <h3>Pour cela, il te suffit de remplir le questionnaire ci-dessous et je te recontacterai dans les meilleurs délais.</h3>
-        <p>Pour rappel, la séance d’essai est une séance test qui me permettra d’en découvrir un peu plus sur toi et ton/tes objectif(s) dans le but d’élaborer des séances (et un plan d’entraînement) qui répondront au mieux à tes besoins et à tes attentes.</p>
-        <p>N’hésite pas à me préciser dans le message toutes les infos que tu trouveras pertinentes.</p>
-      </Intro>
-      <StyledForm onSubmit={handleSubmit(onSubmit)}>
-        {message && (<>
-          <FlashMessage>{message}</FlashMessage>
-          <p style={{ color: 'white', fontWeight: '500' }}>Vous allez être redirigé vers la page d'acceuil dans <span style={{ color: '#d16666' }}>{countdown}</span> secondes ...</p>
-        </>
-        )}
+      <ContentWrapper>
+        <Intro>
+          <h1 style={{ textAlign: 'center', lineHeight: '1' }}>Réserve ta séance d'éssai gratuite</h1>
+          <h3>Pour cela, il te suffit de remplir le questionnaire ci-dessous et je te recontacterai dans les meilleurs délais.</h3>
+          <p>Pour rappel, la séance d’essai est une séance test qui me permettra d’en découvrir un peu plus sur toi et ton/tes objectif(s) dans le but d’élaborer des séances (et un plan d’entraînement) qui répondront au mieux à tes besoins et à tes attentes.</p>
+          <p>N’hésite pas à me préciser dans le message toutes les infos que tu trouveras pertinentes.</p>
+          {message && (<>
+            <FlashMessage>{message}</FlashMessage>
+            <p>Vous allez être redirigé vers la page d'acceuil dans <span style={{ color: '#d16666' }}>{countdown}</span> secondes ...</p>
+          </>
+          )}
+        </Intro>
+        <StyledForm onSubmit={handleSubmit(onSubmit)}>
 
-        <FormWrapper>
 
-          <StyledInput
-            name="firstName"
-            type="text"
-            placeholder="Prénom"
-            ref={register}
-            dark
-          />
-          <Error>{errors.firstName?.message}</Error>
+          <FormWrapper>
 
-          <StyledInput
-            name="lastName"
-            type="text"
-            placeholder="Nom"
-            ref={register}
-            dark
-          />
-          <Error>{errors.lastName?.message}</Error>
+            <StyledInput
+              name="firstName"
+              type="text"
+              placeholder="Prénom"
+              ref={register}
+              dark
+            />
+            <Error>{errors.firstName?.message}</Error>
 
-          <StyledInput
-            name="phone"
-            type="tel"
-            pattern="[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}"
-            placeholder="Numéro de téléphone"
-            ref={register}
-            dark
-          />
-          <Error>{errors.phone?.message}</Error>
+            <StyledInput
+              name="lastName"
+              type="text"
+              placeholder="Nom"
+              ref={register}
+              dark
+            />
+            <Error>{errors.lastName?.message}</Error>
 
-          <StyledInput
-            name="email"
-            type="email"
-            placeholder="Adresse email"
-            ref={register}
-            dark
-          />
-          <Error>{errors.email?.message}</Error>
+            <StyledInput
+              name="phone"
+              type="tel"
+              pattern="[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}"
+              placeholder="Numéro de téléphone"
+              ref={register}
+              dark
+            />
+            <Error>{errors.phone?.message}</Error>
 
-          <STextArea
-            name="messageToSend"
-            type="text"
-            placeholder="Message..."
-            ref={register}
-          ></STextArea>
-          <Error>{errors.messageToSend?.message}</Error>
-        </FormWrapper>
-        <div>
-          <StyledButton type="submit" mobile>Envoyer</StyledButton>
-        </div>
-      </StyledForm>
+            <StyledInput
+              name="email"
+              type="email"
+              placeholder="Adresse email"
+              ref={register}
+              dark
+            />
+            <Error>{errors.email?.message}</Error>
+
+            <STextArea
+              name="messageToSend"
+              type="text"
+              placeholder="Message..."
+              ref={register}
+            ></STextArea>
+            <Error>{errors.messageToSend?.message}</Error>
+          </FormWrapper>
+          <BtnDiv>
+            <StyledButton type="submit" mobile>Envoyer</StyledButton>
+          </BtnDiv>
+        </StyledForm>
+      </ContentWrapper>
     </Wrapper>
   )
 }
@@ -155,16 +158,22 @@ z-index:10;
   flex-direction:column;
   justify-content:center;
   align-items: center;
-  padding-top: 4rem;
-  min-height:110vh;
-  max-height:200vh;
+  min-height:65rem;
+  height:120vh;
 @media ${device.laptop} {
-  min-height:100vh;
-  justify-content:flex-end;
   p{
     text-align:center;
   }
 }
+`
+const ContentWrapper = styled(Container)`
+  position: relative;
+  top:2rem;
+  height:95%;
+  @media ${device.laptop} {
+    top:70px;
+    height:100%;
+  }
 `
 const StyledForm = styled.form`
   background-image: url(.${bookingPic});
@@ -178,8 +187,8 @@ const StyledForm = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items:center;
-  min-height:80vh;
-  height: ${props => props.height || "100%"};
+  min-height:35rem;
+  height: 55%;
   width: ${props => props.width || "100%"};
   &&::before{
     content: "";
@@ -191,14 +200,17 @@ const StyledForm = styled.form`
     background-color: rgba(0,0,0,0.25);
   }
   @media ${device.laptop} {
-    min-height:70vh;
+    min-height:25rem;
+    height: 60%;
   }
 `
 const Intro = styled(Container)`
-  min-height:70vh;
+  min-height:30rem;
   padding: 1rem;
+  height:40%;
   @media ${device.laptop} {
-    min-height:60vh;
+    height:30%;
+    min-height:20rem;
     padding:0 5rem;
   }
 `
@@ -209,8 +221,8 @@ z-index:10;
   flex-direction: column;
   justify-content: center;
   align-items:center;
-  height: ${props => props.height || "100%"};
-  width: ${props => props.width || "100%"};
+  height: 85%;
+  width: 100%;
   align-items: center;
   padding: 1rem;
   input {
@@ -244,7 +256,9 @@ const STextArea = styled.textarea`
     width:40rem;
   }
 `
-
+const BtnDiv = styled.div`
+  height:15%;
+`
 const FlashMessage = styled.div`
   border: solid 1px #0096c7;
   background-color: #8ac4ff;

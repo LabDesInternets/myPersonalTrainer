@@ -60,12 +60,9 @@ const Wrapper = styled.div`
   flex-direction:column;
   justify-content:center;
   width:100vw;
-  height:90vh;
+  height:100%;
   h6 { 
     font-size: 2rem;
     color:white;
-  }
-  @media ${device.laptop} {
-    height:85vh;
   }
 `

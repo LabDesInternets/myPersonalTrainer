@@ -26,7 +26,7 @@ const PricesCard = ({ prices }) => {
             </div>
           </Header>
         ) : (
-            <Header align>
+            <Header>
               <h3>{prices.price} €</h3>
               <p>{prices.priceOption}</p>
             </Header>
@@ -71,9 +71,8 @@ export const fadeIn = keyframes`
 `
 
 const Card = styled(Container)`
-  width:90vw;
-  height:80vh;
-
+  width:90%;
+  height:85%;
   margin:1rem;
   padding:1rem 0.5rem;
   font-size:1.3rem;
@@ -105,16 +104,17 @@ const Card = styled(Container)`
     margin-left:-3px;
   }
   @media ${device.tablet} {
-    width:70vw;
-    height:70vh;
+    width:70%;
+    height:70%;
     font-size: 1.5rem;
   }
   @media ${device.laptop} {
+    min-height:25rem;
     background-color:#071013;
-  opacity:0.85;
-  border-radius:10px;
+    opacity:0.85;
+    border-radius:10px;
     font-size: 1.3vw;
-    height: 60vh;
+    height: 90%;
     width:25%;
     margin:calc(0.7rem + 1vw);
     padding: calc(1rem + 2vw) calc(0.2rem + 1.1vw);
@@ -131,7 +131,7 @@ const Card = styled(Container)`
   
 `
 const Section = styled.div`
-  height:60%;
+  height:70%;
   width:100%;
   display:flex;
   flex-direction:column;
@@ -144,7 +144,6 @@ const Section = styled.div`
     align-items:baseline;
     justify-content:center;
     padding: 0.5rem 1rem;
-    
     line-height:1.2rem;
   }
   @media ${device.tablet} {
@@ -152,6 +151,7 @@ const Section = styled.div`
     padding: 0 4rem;
   }
   @media ${device.laptop} {
+    height:60%;
    padding:0;
    div {
     color: white;
@@ -166,19 +166,11 @@ const Header = styled.div`
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  
   line-height:1;
   padding:1rem 0;
   p{
     font-size:1rem;
   }
-
-  ${props =>
-    props.align &&
-    css`
-      /* position:relative; */
-    `}
-
     ${props =>
     props.optionAlign &&
     css`
