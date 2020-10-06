@@ -81,7 +81,7 @@ const ContactMe = ({ element, history }) => {
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
           {message && <>
             <FlashMessage>{message}</FlashMessage>
-            <p>Vous allez être redirigé vers la page d'acceuil dans <span style={{ color: '#d16666' }}>{countdown}</span> secondes ...</p>
+            <p>Vous allez être redirigé vers la page d'accueil dans <span style={{ color: '#d16666' }}>{countdown}</span> secondes ...</p>
           </>
           }
 

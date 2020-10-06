@@ -15,7 +15,8 @@ const prices = {
     title: 'Séance en groupe',
     price: 'Base 80',
     priceOption: '+ 10€/pers supplementaire',
-    option: 'max 4 personnes'
+    // option: 'max 4 personnes',
+    display: 'group'
   }
 }
 
