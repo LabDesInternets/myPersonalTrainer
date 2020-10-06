@@ -87,7 +87,7 @@ const BookForm = ({ element, history }) => {
           <p>N’hésite pas à me préciser dans le message toutes les infos que tu trouveras pertinentes.</p>
           {message && (<>
             <FlashMessage>{message}</FlashMessage>
-            <p>Vous allez être redirigé vers la page d'acceuil dans <span style={{ color: '#d16666' }}>{countdown}</span> secondes ...</p>
+            <p>Vous allez être redirigé vers la page d'accueil dans <span style={{ color: '#d16666' }}>{countdown}</span> secondes ...</p>
           </>
           )}
         </Intro>
@@ -161,6 +161,7 @@ z-index:10;
   min-height:65rem;
   height:120vh;
 @media ${device.laptop} {
+  min-height:60rem;
   p{
     text-align:center;
   }
@@ -171,7 +172,7 @@ const ContentWrapper = styled(Container)`
   top:2rem;
   height:95%;
   @media ${device.laptop} {
-    top:70px;
+    top:2rem;
     height:100%;
   }
 `

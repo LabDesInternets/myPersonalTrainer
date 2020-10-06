@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
 import Container from '../../cors/Container'
-import { Clock, Gift, Home, TreeOption } from 'grommet-icons'
+import { Clock, Gift, Home, Group } from 'grommet-icons'
 import equipment from '../../../assets/icons/gym-blue.png'
 import { device } from '../../cors/ResponsiveSettings'
 
@@ -16,10 +16,10 @@ const PricesCard = ({ prices }) => {
       <HeaderWrapper>
         <Header>
           <h2>{prices.title}</h2>
-          {prices.option && <p>{prices.option}</p>}
+          {/* {prices.option && <p>{prices.option}</p>} */}
         </Header>
         {prices.priceOption ? (
-          <Header optionAlign>
+          <Header>
             <div>
               <h3>{prices.price} €</h3>
               <p>{prices.priceOption}</p>
@@ -28,17 +28,25 @@ const PricesCard = ({ prices }) => {
         ) : (
             <Header>
               <h3>{prices.price} €</h3>
-              <p>{prices.priceOption}</p>
             </Header>
           )
         }
 
       </HeaderWrapper>
       <Section>
-        <div>
-          <span><Gift size='medium' color='#0096c7' /></span>
-          <div>Séance d'essai gratuite</div>
-        </div>
+        {prices.display == 'group' ? (
+          <div>
+            <span><Group size='medium' color='#0096c7' /></span>
+            <div>4 personnes maximum</div>
+          </div>
+        ) : (
+            <div>
+              <span><Gift size='medium' color='#0096c7' /></span>
+              <div>Séance d'essai gratuite</div>
+            </div>
+          )
+        }
+
         <div>
           <span><Clock size='medium' color='#0096c7' /></span>
           <div>1h15</div>
@@ -148,10 +156,11 @@ const Section = styled.div`
   }
   @media ${device.tablet} {
     align-items:baseline;
+    justify-content: flex-start;
     padding: 0 4rem;
   }
   @media ${device.laptop} {
-    height:60%;
+    height:65%;
    padding:0;
    div {
     color: white;
@@ -160,6 +169,7 @@ const Section = styled.div`
 
 `
 const Header = styled.div`
+  text-align:center;
   display:flex;
   padding: 0.5rem 1rem;
   display:flex;
@@ -169,15 +179,15 @@ const Header = styled.div`
   line-height:1;
   padding:1rem 0;
   p{
-    font-size:1rem;
+    font-size:0.9rem;
   }
-    ${props =>
+    /* ${props =>
     props.optionAlign &&
     css`
       position:relative;
       bottom: calc(1% + 1.1vh + 0.55vw);
       text-align:center;
-    `}
+    `} */
   @media ${device.laptop} {
     padding:calc(0.1rem + 2vh) 0;
     color: #bdede0;
@@ -186,6 +196,6 @@ const Header = styled.div`
 const HeaderWrapper = styled.div`
   height:30%;
 @media ${device.laptop} {
-  height:40%;
+  height:35%;
 }
 `
