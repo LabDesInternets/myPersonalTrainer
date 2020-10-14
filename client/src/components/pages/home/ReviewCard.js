@@ -43,7 +43,10 @@ const ImgWrapper = styled.img`
   width:50vw;
   /* height: calc(50vw * var(--ratio)); */
   border-radius:50%;
-@media ${device.laptop} {
+  @media ${device.tablet} {
+    width:30vw;
+  }
+  @media ${device.laptop} {
     width:15vw;
     /* height: calc(15vw * var(--ratio)); */
   }

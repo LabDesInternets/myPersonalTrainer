@@ -8,6 +8,7 @@ import Container from '../../cors/Container'
 import categories from './categoriesContent'
 import Review from './Review'
 import Blog from './Blog'
+import Localisation from './Localisation'
 import { BlogContext } from '../../../context/BlogContext'
 
 
@@ -42,6 +43,8 @@ const Home = (props) => {
 
 
       <Review />
+
+      <Localisation />
 
     </Wrapper>
   )
