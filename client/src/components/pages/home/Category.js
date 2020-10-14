@@ -54,7 +54,7 @@ z-index:10;
 color:white;
 font-weight:400;
 h1{
-  font-size: calc(2rem + 0.8vw);
+  font-size: calc(2rem + 0.5vw);
   font-weight: 400;
   padding:0.5rem 1rem;
 }

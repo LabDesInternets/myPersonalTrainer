@@ -21,7 +21,7 @@ body {
     box-sizing: border-box; 
   }
   h1{
-    font-size: calc(2.5rem + 0.8vw);
+    font-size: calc(2.5rem + 0.7vw);
     font-weight:500;
     padding: 1.5rem 0;
   }

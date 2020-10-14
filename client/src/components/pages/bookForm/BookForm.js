@@ -73,6 +73,7 @@ const BookForm = ({ element, history }) => {
       console.log(error);
     }
     reset()
+    window.scrollTo(0, 0);
     redirect()
 
   };
