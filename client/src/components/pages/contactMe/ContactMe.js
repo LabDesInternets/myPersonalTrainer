@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 import axios from 'axios'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers';
@@ -77,6 +78,13 @@ const ContactMe = ({ element, history }) => {
 
   return (
     <Wrapper ref={element}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Raphael Coaching | Contact</title>
+        <meta name="description"
+          content="Vous avez une question concernant la séance d'essai ? Vous souhaitez plus d'information sur le déroulement des séances ? Vous souhaitez être rappelé ? 
+          Remplissez le formulaire pour une réponse rapide" />
+      </Helmet>
       <FormContainer>
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
           {message && <>

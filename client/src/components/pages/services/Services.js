@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 import services from './servicesContent'
 import ServiceCard from './ServiceCard'
@@ -20,6 +21,13 @@ const Services = ({ element }) => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Raphael Coaching | Services et prestations</title>
+        <meta name="description"
+          content="Perte de poids, remise en forme, bien être, prise de muscle, je t'accompagne et je t'encadre dans la réalisation de tes objectifs physiques. 
+          Que tu sois débutant ou athlète confirmé, je m'adapte à tes attentes et à tes besoins pour te proposer un programme sur-mesure, personnalisé..." />
+      </Helmet>
       <Mobile>
         <CardContainer>
           {objectives.map(objective => <ServiceCard key={objective.title} service={objective} section={objective.title} />)}

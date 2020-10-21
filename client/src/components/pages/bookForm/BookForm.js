@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 import axios from 'axios'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers';
@@ -80,6 +81,12 @@ const BookForm = ({ element, history }) => {
 
   return (
     <Wrapper ref={element}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Raphael Coaching | Réserve ta séance d'essai gratuite</title>
+        <meta name="description"
+          content="Pour réserver ta séance d'essai gratuite, c'est ici...Il te suffit de compléter ce formulaire..." />
+      </Helmet>
       <ContentWrapper>
         <Intro>
           <h1 style={{ textAlign: 'center', lineHeight: '1' }}>Réserve ta séance d'éssai gratuite</h1>

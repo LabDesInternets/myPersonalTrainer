@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 import styled, { css } from 'styled-components'
 import pricesAndOptionsGroupRaw from '../../../assets/images/pricesAndOptionsGroupRaw.jpg'
 import PricesCard from './PricesCard'
@@ -20,6 +21,12 @@ const PricesAndOptions = ({ element }) => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Raphael Coaching | Tarifs et formules</title>
+        <meta name="description"
+          content="La santé n'a pas de prix. Etre en forme physique c'est aussi avoir plus confiance en soi et être mieux mentalement. Séance à l'unité à partir de 60€ - Pack de 5 séances à 275€ (55€ la séance) - Pack de 10 séances à 500€ (50€ la séance) - Coach agréé service à la personne - 50% de réduction d'impôts sur les séances à domicile..." />
+      </Helmet>
       <MobileWrapper mobile>
         <Wrapper bgColor='#caf0f8'>
           <PricesCard prices={prices.oneSession}></PricesCard>
