@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 import styled, { css } from 'styled-components'
 import Container from '../../cors/Container'
 import { device } from '../../cors/ResponsiveSettings'
@@ -18,7 +19,12 @@ const WhoAmI = ({ element }) => {
   const category = categories.about
   return (
     <div ref={element}>
-
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Raphael Abouna | Coach sportif</title>
+        <meta name="description"
+          content="Diplômé d'Etat depuis presque 1 an, j'accompagne mes clients avec avec la plus grande rigueur et le plus grand professionnalisme, qu'ils aient un objectif de perte de poids, de prise de muscle, de remise en forme ou tout simplement de bien-être..." />
+      </Helmet>
       <Mobile>
         <Wrapper bgImg={servicesStairsTop}>
           <ContentWrapper textBottom>

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 import { BlogContext } from '../../../context/BlogContext'
 import { device } from '../../cors/ResponsiveSettings'
@@ -17,6 +18,12 @@ const BlogPage = (props) => {
 
   return (
     <Wrapper ref={element}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Raphael Coaching | Le Blog</title>
+        <meta name="description"
+          content="Retrouvez de nombreux articles sur l'actualité et le monde du fitness et de la musculation...Les bases de la musculation - Les bienfaits de la pratique sportive - Des conseils nutrition...l'essentiel de l'information pour te guider vers tes objectifs..." />
+      </Helmet>
       <CatTitle>
         <h6>
           Le blog

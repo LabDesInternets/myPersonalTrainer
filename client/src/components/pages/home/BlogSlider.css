@@ -21,6 +21,7 @@
 .slick-initialized .slick-slide {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 @media (min-width:992px) {
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from 'react'
+import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 import Category from './Category'
 import Banner from '../../cors/Banner'
@@ -23,6 +24,12 @@ const Home = (props) => {
 
   return (
     <Wrapper>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Coach sportif Paris | Raphael Coaching | Personal Trainer</title>
+        <meta name="description"
+          content="Coach sportif spécialisé en remise en forme, bien-être, perte de poids et musculation. Coach personnel à domicile ou en extérieur - Paris, Hauts-de-Seine - Programmes d'entraînements 100% adaptés à vos besoins - Approche personnalisée - Coach agréé service à la personne, 50% de réduction d'impôts..." />
+      </Helmet>
       <HpWrapper>
         <Banner>
           <BannerContent>
